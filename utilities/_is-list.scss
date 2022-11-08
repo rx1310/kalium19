@@ -1,0 +1,34 @@
+/// Функция `is-list()` является оберткой над `type-of`
+/// и проверяет соответствие вводимого значения типу `list`.
+/// ---
+/// @name is-list()
+/// @group utils
+/// @access public
+/// @since 6.0.0
+/// @author takamoso
+/// @link https://github.com/takamoso
+/// @example scss - Пример использования
+/// 	$test: 1, 2, 3;
+/// 	@debug is-list(1);       //=> Debug: false
+/// 	@debug is-list(1 2 3);   //=> Debug: true
+/// 	@debug is-list($test);   //=> Debug: true
+/// 	@debug is-list(1, 2, 3); //=> Error: Only 2 arguments allowed, but 3 were passed.
+/// @param {List} $list - проверяемое значение
+/// @return {Boolean} `true` или `false`
+@function is-list($list) {
+
+	// // Если это `list`...
+	// @if type-of($list) == list or type-of($list) == arglist {
+	// 	@return true; // ... то вернем `true`,
+	// } @else { // а если нет...
+	// 	@return false; // ... то вернем `false`.
+	// }
+
+	// Просто вернем `true` или `false`:
+	@return type-of($list) == list or type-of($list) == arglist;
+
+	// По сути тот первый вариант (закоментированный код)
+	// вполне рабочий. Вторая же версия делает ровно также,
+	// но без лишних условных конструкций.
+
+}
