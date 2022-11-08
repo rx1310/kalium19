@@ -11,3 +11,11 @@
 /// 	$strict-mode: warn  // Компилирует CSS до конца, но без "проблемного" участка
 /// 	$strict-mode: false // Отключает сообщения о проблемах вообще
 $strict-mode: 'error' !default;
+
+/// Список всех браузерных префиксов, которые я смог найти.
+/// ---
+/// @name $prefixes-all
+/// @access public
+/// @since 6.0.0
+/// @type List
+$prefixes-all: webkit khtml moz ms o !default;

@@ -1,0 +1,81 @@
+@use '../../config' as *;
+
+/// Миксин, позволяющий добавлять CSS-свойствам
+/// браузерные префиксы. Не autoprefixer, конечно,
+/// но работает как часики.
+/// ---
+/// @name prefixer()
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Варианты использования
+/// 	@include prefixer(
+/// 		box-shadow,
+/// 		rgba(149, 157, 165, 0.2) 0px 8px 24px,
+/// 		webkit moz,
+/// 	);
+/// @example css - Результат
+/// 	-webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+/// 	-moz-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+/// 	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+/// @param {String} $property - CSS-свойство
+/// @param {String} $value - значение CSS-свойства
+/// @param {List} $prefixes - список браузерных префиксов
+/// @param {Boolean} $is-save-initial [true] - сохранение исходного CSS-свойства без префикса
+/// @param {Boolean} $is-property-prefix [false] - добавление префикса не к свойству, а к значению
+@mixin prefixer(
+	$property,
+	$value,
+	$prefixes: (),
+	$is-save-initial: true,
+	$is-property-prefix: false) {
+
+	// В случае, если в списке префиксов указано ключевое
+	// слово `all`, будут добавлены все браузерные префиксы.
+	@if $prefixes == "all" {
+
+		// Отдельно, если необходимо добавить префиксы не
+		// свойствам, а значениям:
+		@if $is-property-prefix == true {
+
+			// Проходимся по списку циклом и добавляем префикс:
+			@each $prefix in $prefixes-all {
+				#{$property}: -#{$prefix}-#{$value};
+			}
+
+		}
+
+		// Ну тут отдельно, если не надо добавлять
+		// префиксы значениям:
+		@else {
+
+			// Также пробегаемся по циклю и добавляем префиксы:
+			@each $prefix in $prefixes-all {
+				-#{$prefix}-#{$property}: #{$value};
+			}
+
+		}
+
+	}
+
+	// А тут если выбираются префиксы самостоятельно.
+	@else {
+		@if $is-property-prefix == true {
+			@each $prefix in $prefixes {
+				#{$property}: -#{$prefix}-#{$value};
+			}
+		} @else {
+			@each $prefix in $prefixes {
+				-#{$prefix}-#{$property}: #{$value};
+			}
+		}
+	}
+
+	// Сохранение исходного свойтсва без
+	// браузерного префикса:
+	@if $is-save-initial {
+		#{$property}: #{$value};
+	}
+
+}
