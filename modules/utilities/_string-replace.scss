@@ -14,7 +14,7 @@
 /// @param {String} $string - строка, в которой заменяемое слово
 /// @param {String} $replaceable - заменяемое слово
 /// @param {String} $replacement [] - замена слова
-/// @return {String} результат
+/// @return {String} строка с замененными данными
 @function string-replace($string, $replaceable, $replacement: '') {
 
 	$index: str-index($string, $replaceable);
