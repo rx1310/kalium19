@@ -1,0 +1,13 @@
+contact_links:
+  - name: Начать дискуссию
+    about: Задавайте вопросы, получайте ответы и узнавайте много нового!
+    url: https://github.com/rx1310/kalium19/discussions/new
+  - name: Посмотреть Issues
+    about: Проверьте существующие Issues. Возможно до Вас проблема была обнаружена, а идея предложена.
+    url: https://github.com/rx1310/kalium19/issues
+  - name: Обновления в Telegram
+    about: Канал, в котором всегда можно проследить о выходе обновлений проекта.
+    url: https://t.me/rx1310_dev
+  - name: Чат в Telegram
+    about: Читайте новости о развитии проекта, а также комментируйте и узнавайте подробности.
+    url: https://t.me/rx1310_talk

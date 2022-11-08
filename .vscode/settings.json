@@ -1,0 +1,37 @@
+{
+
+	"git.ignoreLimitWarning"           : true,
+	"npm-scripts.showStartNotification": false,
+
+	"files.exclude": {
+		// ".github/"          : true,
+		// ".editorconfig"     : true,
+		// ".npmignore"        : true,
+		// ".gitignore"        : true,
+		// "CHANGELOG.*"       : false,
+		// "LICENSE"           : true,
+		// "package-lock.*"    : true,
+		// "CONTRIBUTING.md"   : true,
+		// "CODE_OF_CONDUCT.md": true,
+		// "CODEOWNERS"        : true
+	},
+
+	"better-comments.tags": [
+		{
+			"tag"            : "!",
+			"color"          : "#FF2D00",
+			"strikethrough"  : false,
+			"underline"      : false,
+			"backgroundColor": "transparent",
+			"bold"           : true,
+			"italic"         : false
+		},{
+			"tag"            : "*",
+			"color"          : "#98C379"
+		},{
+			"tag"            : "?",
+			"color"          : "#3498DB"
+		}
+	],
+
+}
