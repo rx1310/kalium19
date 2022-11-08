@@ -1,0 +1,23 @@
+/// Функция `number-clamp()` позволяет установить
+/// рамки, за которые число не сможет выйти.
+/// ---
+/// @name number-clamp()
+/// @group utils
+/// @access public
+/// @since 6.0.0
+/// @author Sindre Sorhus
+/// @link https://github.com/sindresorhus - GitHub-профиль автора
+/// @link https://github.com/sindresorhus/sass-extras/blob/main/index.scss - Исходный код
+/// @example scss - Пример использования
+/// @param {Number} $number - число, которое будет "зажато"
+/// @param {Number} $min - минимальное число, до которого `$number` может опуститься (пол)
+/// @param {Number} $max - максимальное число, до которого `$number` может подняться (потолок)
+/// @return {Number} число, которое "уперлось" в рамки или просто еще не дошло до них
+@function number-clamp($number, $min, $max) {
+	@return min(
+		max(
+			$number,
+			$min
+		), $max
+	);
+}
