@@ -9,6 +9,9 @@
 /// @link https://github.com/sindresorhus - GitHub-профиль автора
 /// @link https://github.com/sindresorhus/sass-extras/blob/main/index.scss - Исходный код
 /// @example scss - Пример использования
+/// 	@debug number-clamp(35, 50, 100); //=> 50
+/// 	@debug number-clamp(21, 0, 20);   //=> 20
+/// 	@debug number-clamp(200, 0, 100); //=> 100
 /// @param {Number} $number - число, которое будет "зажато"
 /// @param {Number} $min - минимальное число, до которого `$number` может опуститься (пол)
 /// @param {Number} $max - максимальное число, до которого `$number` может подняться (потолок)
