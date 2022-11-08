@@ -1,0 +1,34 @@
+/// Функция `color-shade()` затемняет нужный цвет
+/// на нужное количество процентов.
+/// ---
+/// @name color-shade()
+/// @group utils
+/// @access public
+/// @since 6.0.0
+/// @author Kitty Giraudel
+/// @link https://github.com/KittyGiraudel
+/// @example scss - Пример использования
+/// 	@debug color-shade(#ffffff, 10%);  //=> #e6e6e6
+/// 	@debug color-shade(#ffffff, 20%);  //=> #cccccc
+/// 	@debug color-shade(#ffffff, 30%);  //=> #b3b3b3
+/// 	@debug color-shade(#ffffff, 40%);  //=> #999999
+/// 	@debug color-shade(#ffffff, 50%);  //=> gray
+/// 	@debug color-shade(#ffffff, 60%);  //=> #666666
+/// 	@debug color-shade(#ffffff, 70%);  //=> #4d4d4d
+/// 	@debug color-shade(#ffffff, 80%);  //=> #333333
+/// 	@debug color-shade(#ffffff, 90%);  //=> #1a1a1a
+/// 	@debug color-shade(#ffffff, 100%); //=> black
+/// @param {String} $color - цвет, который необходимо затемнить
+/// @param {Number} $percentage - процент того, насколько надо затемнить цвет
+/// @return {String} HEX-код или название цвета
+@function color-shade($color, $percentage) {
+
+	// Миксуем цвет из `$color` с черным
+	// в процентном соотношении из `$percentage`:
+	@return mix(
+		black,
+		$color,
+		$percentage
+	);
+
+}
