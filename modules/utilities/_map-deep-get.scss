@@ -9,6 +9,14 @@
 /// @author Kitty Giraudel
 /// @link https://github.com/KittyGiraudel
 /// @example scss - Пример использования
+/// 	$testMap: (
+/// 		string: "Kalium19",
+/// 		int: "1310"
+/// 	);
+///
+/// 	@debug map-deep-get($testMap, string); //=> Kalium19
+/// 	@debug map-deep-get($testMap, int); //=> 1310
+/// 	@debug map-deep-get($testMap, int string); //=> null
 /// @param {Map} $map - карта
 /// @param {List} $keys... - список ключей, которые должны быть получены
 /// @return {*} требуемое значение
