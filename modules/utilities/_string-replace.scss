@@ -1,0 +1,31 @@
+/// Функция `string-replace()` заменяет из строки слово
+/// на то, что нужно.
+/// ---
+/// @name string-replace()
+/// @group utils
+/// @access public
+/// @since 6.0.0
+/// @author Sindre Sorhus
+/// @link https://github.com/sindresorhus
+/// @example scss - Пример использования
+/// 	@debug string-replace('foo bar baz', 'bar', 'unicorn'); //=> foo unicorn baz
+/// 	@debug string-replace('red blue green', 'blue', 'orange'); //=> red orange green
+/// 	@debug string-replace('redbluegreen', 'blue', 'orange'); //=> redorangegreen
+/// @param {String} $string - строка, в которой заменяемое слово
+/// @param {String} $replaceable - заменяемое слово
+/// @param {String} $replacement [] - замена слова
+/// @return {String} результат
+@function string-replace($string, $replaceable, $replacement: '') {
+
+	$index: str-index($string, $replaceable);
+
+	@if $index {
+		@return
+			str-slice($string, 1, $index - 1)
+			+ $replacement
+			+ string-replace(str-slice($string, $index + str-length($replaceable)), $replaceable, $replacement);
+	}
+
+	@return $string;
+
+}
