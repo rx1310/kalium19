@@ -1,0 +1,59 @@
+{
+	"name": "@rx1310/kalium19",
+	"version": "6.0.0",
+	"description": "📦 Большой набор миксинов, карт и функций на языке CSS-препроцессора @sass для помощи в ускорении и упрощении написания CSS-стилей.",
+	"main": "index.scss",
+	"publishConfig": {
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/rx1310/kalium19.git"
+	},
+	"funding": {
+		"type": "opencollective",
+		"url": "https://opencollective.com/rx1310"
+	},
+	"keywords": [
+		"sass",
+		"scss",
+		"sass-mixin",
+		"scss-mixin",
+		"sass-function",
+		"scss-function",
+		"sass-utils",
+		"scss-utils",
+		"kalium19",
+		"rx1310",
+		"k19",
+		"rx1310",
+		"css"
+	],
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/rx1310/kalium19/issues"
+	},
+	"author": {
+		"name": "Haba Kudzaev (rx1310)",
+		"email": "rx1310@inbox.ru",
+		"url": "https://rx1310.github.io"
+	},
+	"homepage": "https://github.com/rx1310/kalium19#readme",
+	"scripts": {
+		"sass:watch": "sass --no-source-map --watch test.scss:test.css",
+		"sass:watch-min": "sass --watch . --style compressed",
+		"sass:compile": "sass --no-source-map .",
+		"sass:compile-min": "sass --no-source-map . --style compressed",
+		"editorconfig": "editorconfig-checker",
+		"npm:publish": "npm publish --access=public --tag release",
+		"git:log-last-tag": "git log \"$(git describe --tags --abbrev=0)..HEAD\" --oneline --decorate --pretty=format:'- [`%h`](https://github.com/rx1310/kalium19/commit/%H) [@%an](https://github.com/%an): %s' | tee CHANGELOG.log",
+		"git:log-full": "git log --oneline --decorate --pretty=format:'- [`%h`](https://github.com/rx1310/kalium19/commit/%H) [@%an](https://github.com/%an): %s' | tee CHANGELOG.log"
+	},
+	"dependencies": {
+		"sass": "^1.56.0"
+	},
+	"devDependencies": {
+		"editorconfig-checker": "^4.0.2",
+		"npm-run-all": "^4.1.5"
+	}
+}
