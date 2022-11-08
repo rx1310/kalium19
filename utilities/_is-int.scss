@@ -1,0 +1,40 @@
+/// Функция `is-int()` является оберткой над `type-of`
+/// и проверяет является ли принимаемое значение целым числом.
+/// ---
+/// @name is-int()
+/// @group utils
+/// @access public
+/// @since 6.0.0
+/// @author Zsolt Pentz
+/// @link https://github.com/pentzzsolt/sass-recursive-map-merge
+/// @example scss - Пример использования
+/// 	@debug is-int(1310); //=> Debug: true
+/// 	@debug is-int(rx1310); //=> Debug: false
+/// 	@debug is-int(13.10); //=> Debug: false
+/// @param {Int} $value - число, которое будет проверено
+/// @param {Boolean} $show-warning [true] - отображение предупреждения в консоли
+/// @param {Boolean} $return-null [false] - возвращать `null` вместо `false`?
+/// @return {Boolean} `true` или `false`
+@function is-int($value, $show-warning: true, $return-null: false) {
+
+	// Проверяем `$value` на тип:
+	@if type-of($value) != number {
+
+		// Отображаем предупреждение в консоли:
+		@if $show-warning == true {
+			@warn '`#{$value}` не является подходящим числом!';
+		}
+
+		// ... и возвращаем `false` или `null` в
+		// зависимости от значения `$return-null`:
+		@if $return-null == true {
+			@return null;
+		} @else {
+			@return false;
+		}
+
+	}
+
+	@return round($value) == $value;
+
+}
