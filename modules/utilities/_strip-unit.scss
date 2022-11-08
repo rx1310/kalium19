@@ -3,8 +3,8 @@
 /// Функция `strip-unit()` удаляет единицы
 /// измерения (px, em, %, etc...) с чисел.
 /// ---
-/// @name strip-unit()
-/// @group utils
+/// @name strip-unit
+/// @group utils:number
 /// @access public
 /// @since 6.0.0
 /// @author Sindre Sorhus
@@ -23,7 +23,7 @@
 
 	// Deprecation Warning: Using / for division outside of
 	// `calc()` is deprecated and will be removed in Dart Sass 2.0.0.
-	// 
+	//
 	// `@return $value, $value * 0 + 1;`
 
 }

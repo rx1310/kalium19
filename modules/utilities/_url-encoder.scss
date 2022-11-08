@@ -3,7 +3,7 @@
 /// Карта со всеми символами, которые
 /// необходимо закодировать.
 /// ---
-/// @name $-characters
+/// @name -characters
 /// @access private
 /// @since 6.0.0
 /// @type Map
@@ -32,8 +32,8 @@ $-characters: (
 /// Функция `url-encode()` кодирует небезопасные
 /// для URL-адреса символы из `$url`
 /// ---
-/// @name url-encode()
-/// @group utils
+/// @name url-encode
+/// @group utils:string
 /// @access public
 /// @since 6.0.0
 /// @author Sindre Sorhus
@@ -41,8 +41,9 @@ $-characters: (
 /// @example scss - Пример использования
 /// 	@debug url-encode('#foo@bar'); //=> %23foo%40bar
 /// 	@debug url-encode('https://github.com'); //=> https%3A%2F%2Fgithub.com
-/// @param {String} $url -
+/// @param {String} $url - ссылка, символы которой нужно закодировать
 /// @return {String} строку с закодированными символами
+/// @require {function} string-replace
 @function url-encode($url) {
 
 	$ret: $url;
