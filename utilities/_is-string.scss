@@ -1,0 +1,29 @@
+/// Функция `is-string()` является оберткой над `type-of`
+/// и проверяет соответствие вводимого значения типу `string`.
+/// ---
+/// @name is-string()
+/// @group utils
+/// @access public
+/// @since 6.0.0
+/// @author takamoso
+/// @link https://github.com/takamoso
+/// @example scss - Пример использования
+/// 	$string: String;
+/// 	$string-with-quotes: "String";
+/// 	$string-with-number: "String 3";
+/// 	$int: 1310;
+/// 	$map: (
+/// 		color: #ff0000,
+/// 		name: "Red"
+/// 	);
+///
+/// 	@debug is-string($string); //=> true
+/// 	@debug is-string($string-with-quotes); //=> true
+/// 	@debug is-string($string-with-number); //=> true
+/// 	@debug is-string($int); //=> false
+/// 	@debug is-string($map); //=> false
+/// @param {String} $value - проверяемое значение
+/// @return {Boolean} `true` или `false`
+@function is-string($value) {
+	@return type-of($value) == string;
+}
