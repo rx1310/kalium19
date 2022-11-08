@@ -1,0 +1,32 @@
+/// Функция `is-exist()` проверяет наличие
+/// передаваемого параметра в списке.
+/// ---
+/// @name is-exist()
+/// @group utils
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://github.com/rx1310/kalium19
+/// @example scss - Пример использования
+/// 	$list: red blue green;
+/// 	$blue: blue;
+/// 	$color-list: red green;
+/// 	$map: (
+/// 		red: red,
+/// 		blue: blue
+/// 	);
+///
+/// 	@debug is-exist($list, red);         //=> true
+/// 	@debug is-exist($list, $blue);       //=> true
+/// 	@debug is-exist($list, $color-list); //=> false
+/// 	@debug is-exist($list, purple);      //=> false
+/// 	@debug is-exist($map, red);          //=> false
+/// @param {List} $list - список, в котором мы ищем совпадение
+/// @param {String | Number} $value - значение, которое мы хотим найти в списке `$list`
+/// @return {Boolean} `true` или `false`
+@function is-exist($list, $value) {
+	@return not not index(
+		$list,
+		$value
+	);
+}
