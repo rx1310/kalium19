@@ -1,0 +1,18 @@
+/// Функция `number-invert()` инвертирует
+/// отрицательные числа в положительные и наоборот.
+/// ---
+/// @name number-invert()
+/// @group utils
+/// @access public
+/// @since 6.0.0
+/// @author Sindre Sorhus
+/// @link https://github.com/sindresorhus - GitHub-профиль автора
+/// @link https://github.com/sindresorhus/sass-extras/blob/main/index.scss - Исходный код
+/// @example scss - Пример использования
+/// 	@debug number-invert(-5); //=> 5
+/// 	@debug number-invert(5); //=> -5
+/// @param {Number} $number - число, которое нужно инвертировать
+/// @return {Number} инвертированное число
+@function number-invert($number) {
+	@return $number * -1;
+}
