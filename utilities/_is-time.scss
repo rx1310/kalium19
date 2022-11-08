@@ -1,0 +1,53 @@
+/// Функция `is-list()` является оберткой над `type-of`
+/// и проверяет соответствие вводимого значения типу `list`.
+/// ---
+/// @name is-time()
+/// @group utils
+/// @access public
+/// @since 6.0.0
+/// @author Halil İbrahim Çakıroğlu
+/// @link https://github.com/selfishprimate/gerillass/blob/master/scss/utilities/_is-time.scss Исходный код функции
+/// @link https://github.com/selfishprimate Автор кода
+/// @example scss - Пример использования
+/// 	$the-24h: 24h;
+/// 	$the-2s: 2s;
+/// 	$the-1ms: "1ms";
+/// 	$the-int: 1310;
+/// 	$the-string: "Kalium19";
+///
+/// 	@debug is-time($the-24h);    //=> true
+/// 	@debug is-time($the-2s);     //=> true
+/// 	@debug is-time($the-1ms);    //=> error
+/// 	@debug is-time($the-int);    //=> error
+/// 	@debug is-time($the-string); //=> error
+/// 	@debug is-time(12h);         //=> true
+/// 	@debug is-time(12, false);   //=> false
+/// @param {String} $value - проверяемое значение (без кавычек)
+/// @param {Boolean} $show-error [true] - в случае ошибки, отображать ошибку в консоли?
+/// @return {String | Boolean} error, true или false
+@function is-time($value, $show-error: true) {
+
+	@for $i from 1 through length($value) {
+
+		// Если `$value` соответствует типу `number` и содержит `ms`, `s` или `h`:
+		@if (type-of($value) == "number" and index("ms" "s" "h", unit($value)) != null) or $value == 0 {
+			@return true; // вернем `true`
+		} @else {
+
+			// если не соответсвует и в параметр `$show-error`
+			// передано значение `true`...
+			@if $show-error == true {
+				// ... выводим ошибку в консоль.
+				@error "'#{$value}' не является верной формой заполнения параметра времени. Значения времени должны быть указаны либо в секундах (s), либо в миллисекундах (ms). Попробуйте использовать одну из следующих форм: «1s», «0,2s» или «3ms».";
+			}
+
+			// А если в параметр `$show-error` передано
+			// значение `false`...
+			@else {
+				@return false; // ... то просто вернем `false`
+			}
+
+		}
+
+	}
+}
