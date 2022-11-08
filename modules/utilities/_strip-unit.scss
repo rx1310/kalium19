@@ -18,5 +18,12 @@
 /// @param {Number} $value - число с единицей измерения
 /// @return {Number} число без единицы измерения
 @function strip-unit($value) {
-	@return math.div($value, $value * 0 + 1)
+
+	@return math.div($value, $value * 0 + 1);
+
+	// Deprecation Warning: Using / for division outside of
+	// `calc()` is deprecated and will be removed in Dart Sass 2.0.0.
+	// 
+	// `@return $value, $value * 0 + 1;`
+
 }
