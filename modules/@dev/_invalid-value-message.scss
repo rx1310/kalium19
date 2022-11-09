@@ -1,0 +1,69 @@
+@use '../../config' as *;
+@use '../utilities/is-exist' as *;
+
+/// Миксин выводит ошибку в случае, если введенное
+/// значение CSS-свойство не может принять (защита
+/// от выстрела в ногу).
+/// ---
+/// @name invalid-value-message
+/// @name dev:mixin
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	$variants: webkit moz ms;
+///
+/// 	@mixin box-shadow-test($variant) {
+/// 		@if is-exist($variants, $variant) {
+/// 			@debug 'Вариант #{$variant} существует в списке $variants!';
+/// 		} @else {
+/// 			@include invalid-value-message($variants, box-shadow, $variant);
+/// 		}
+/// 	}
+///
+/// 	.class {
+/// 		@include box-shadow-test(webkit); //=> Вариант webkit существует в списке $variants!
+/// 		@include box-shadow-test(o); //=> 🟥 «box-shadow» не может принять значение «o»! Допустимые значения: webkit moz ms.
+/// 	}
+/// @example css - Пример вывода в CSS
+/// 	.class {
+/// 	  /* 🟧 «box-shadow» не был сгенерирован, т.к. не может принимать значение «o»! */
+/// 	  /* 🟦 ┌ Допустимые значения для «box-shadow»: */
+/// 	  /* ✅ └─ webkit */
+/// 	  /* ✅ └─ moz */
+/// 	  /* ✅ └─ ms */
+/// 	  /* 🟥 └⤬ o */
+/// 	}
+/// @output Выводится список допустимых свойств
+/// @param {List} $variants - список допустимых вариантов
+/// @param {String} $property - CSS-свойство
+/// @param {String} $value - значение, которое должно быть проверено на допустимость
+/// @require {function} is-exist для проверки наличия значения в списке
+@mixin invalid-value-message($variants, $property, $value) {
+
+	$_message-error: "🟥 «#{$property}» не может принять значение «#{$value}»! Допустимые значения: #{$variants}.";
+	$_message-warn: "🟧 «#{$property}» не был сгенерирован, т.к. не может принимать значение «#{$value}»!";
+	$_message-valid-variants: '🟦 ┌ Допустимые значения для «#{$property}»:';
+
+	@if $strict-mode == 'warn' {
+
+		@warn $_message-warn;
+		@debug $_message-warn;
+		@debug $_message-valid-variants;
+
+		/* #{$_message-warn} */
+		/* #{$_message-valid-variants} */
+
+		@each $variant in $variants {
+			@debug '✅ └─ #{$variant}';
+			/* ✅ └─ #{$variant} */
+		}
+
+		/* 🟥 └⤬ #{$value} */
+
+	} @else if $strict-mode == 'error' {
+		@error $_message-error;
+	}
+
+}
