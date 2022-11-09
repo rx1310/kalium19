@@ -19,3 +19,26 @@
 @function list-first($list) {
 	@return nth($list, 1);
 }
+
+/// Алиас для функции `list-first()`.
+/// ---
+/// @name first-of-list
+/// @alias list-first
+/// @group utils
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev
+/// @link https://github.com/rx1310
+/// @example scss - Пример использования
+/// 	$list: 1 2 3;
+/// 	$list-with-comma: 1, 2, 3;
+///
+/// 	@debug first-of-list($list); //=> 1
+/// 	@debug first-of-list($list-with-comma); //=> 1
+/// 	@debug first-of-list((2, 3, 9)); //=> 2
+/// @param {List} $list - лист, из которого достается значение
+/// @return {*} первое значение из списка
+/// @require {function} list-first
+@function first-of-list($list) {
+	@return list-first($list);
+}
