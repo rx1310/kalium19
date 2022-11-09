@@ -1,0 +1,27 @@
+@use '../../config' as *;
+
+/// Функция `set-initial()` устанавливает CSS-свойствам
+/// значение по умолчанию.
+/// ---
+/// @name set-initial
+/// @group utils
+/// @access public
+/// @since 6.0.0
+/// @author takamoso
+/// @link https://github.com/takamoso
+/// @example scss - Пример использования
+/// 	@debug set-initial(align-content);       //=> normal
+/// 	@debug set-initial(background-position); //=> 0% 0%
+/// 	@debug set-initial(block-size);          //=> auto
+/// 	@debug set-initial(border-image);        //=> none 100%/1/0 stretch
+/// 	@debug set-initial(border-inline);       //=> medium none currentColor
+/// @param {String} $property - свойство, чье значение по умолчанию нужно
+/// @return {String} значение CSS-свойства
+@function set-initial($property) {
+	@if map-has-key($initials, $property) {
+		@return map-get($initials, $property);
+	} @else {
+		@error '⛔ Свойство `#{$property}` не существует в карте `$initials.';
+	}
+}
+
