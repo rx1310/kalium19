@@ -1,0 +1,7 @@
+/// Список допустимых значений для миксина `wh()`.
+/// ---
+/// @name $valid-values-wh
+/// @access public
+/// @since 6.0.0
+/// @type List
+$valid-values-wh: min max normal !default;
