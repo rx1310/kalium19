@@ -364,6 +364,8 @@ $initials: (
 /// @access public
 /// @since 6.0.0
 /// @type Map
+/// @prop {String} bem.element [__] - разделитель элемента
+/// @prop {String} bem.modifier [--] - разделитель модификатора
 $bem: (
 	element: "__",
 	modifier: "--"
