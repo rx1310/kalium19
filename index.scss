@@ -1,9 +1,10 @@
 @charset "UTF-8";
 
-@forward 'config';
+@forward 'configs';
 
 @forward 'modules/prefixer';
 @forward 'modules/bem';
+@forward 'modules/wh';
 
 @forward 'modules/utilities/color-shade';
 @forward 'modules/utilities/color-tint';
