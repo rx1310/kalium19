@@ -1,0 +1,21 @@
+/// Функция `list-last()` достает из
+/// списка последний элемент.
+/// ---
+/// @name list-last
+/// @group utils
+/// @access public
+/// @since 6.0.0
+/// @author Sindre Sorhus
+/// @link https://github.com/sindresorhus
+/// @example scss - Пример использования
+/// 	$list: 1 2 3;
+/// 	$list-with-comma: 1, 2, 3;
+///
+/// 	@debug list-last($list); //=> 3
+/// 	@debug list-last($list-with-comma); //=> 3
+/// 	@debug list-last((2, 3, 9)); //=> 9
+/// @param {List} $list - лист, из которого достается значение
+/// @return {*} последнее значение из списка
+@function list-last($list) {
+	@return nth($list, -1);
+}
