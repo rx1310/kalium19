@@ -19,3 +19,26 @@
 @function list-last($list) {
 	@return nth($list, -1);
 }
+
+/// Алиас для функции `list-last()`.
+/// ---
+/// @name last-of-list
+/// @alias list-last
+/// @group utils
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev
+/// @link https://github.com/rx1310
+/// @example scss - Пример использования
+/// 	$list: 1 2 3;
+/// 	$list-with-comma: 1, 2, 3;
+///
+/// 	@debug last-of-list($list); //=> 3
+/// 	@debug last-of-list($list-with-comma); //=> 3
+/// 	@debug last-of-list((2, 3, 9)); //=> 9
+/// @param {List} $list - лист, из которого достается значение
+/// @return {*} последнее значение из списка
+/// @require {function} list-last
+@function last-of-list($list) {
+	@return list-last($list);
+}
