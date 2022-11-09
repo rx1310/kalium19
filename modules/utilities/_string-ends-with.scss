@@ -1,0 +1,26 @@
+/// Функция `string-ends-with()` проверяет оканчивается
+/// ли строка на определенные символы.
+/// ---
+/// @name string-ends-with
+/// @group utils:string
+/// @access public
+/// @since 6.0.0
+/// @author Sindre Sorhus
+/// @link https://github.com/sindresorhus
+/// @example scss - Пример использования
+/// 	@debug string-ends-with('Kalium19', 'K'); //=> false
+/// 	@debug string-ends-with('Kalium19', '19'); //=> true
+/// 	@debug string-ends-with('foo bar', 'foo'); //=> false
+/// 	@debug string-ends-with('foo bar', 'bar'); //=> true
+/// 	@debug string-ends-with('foobar', 'bar'); //=> true
+/// @param {String} $string - строка, в которой будет производиться поиск
+/// @param {String} $string -
+/// @return {Boolean} `true` или `false`
+@function string-ends-with($string, $substring) {
+
+	/// @deprecated This crashes libsass…
+	// @return str-slice($string, str-length($substring) * -1) == $substring;
+
+	@return str-slice($string, (str-length($string) - str-length($substring) + 1)) == $substring;
+
+}
