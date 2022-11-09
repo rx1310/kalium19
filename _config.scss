@@ -355,3 +355,16 @@ $initials: (
 	'writing-mode': horizontal-tb,
 	'z-index': auto,
 ) !default;
+
+/// Конфигурация группы миксинов `b()`,
+/// `e()` и `m()`.
+/// ---
+/// @name bem
+/// @group BEM
+/// @access public
+/// @since 6.0.0
+/// @type Map
+$bem: (
+	element: "__",
+	modifier: "--"
+) !default;

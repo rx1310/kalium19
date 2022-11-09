@@ -1,0 +1,24 @@
+@use 'selector-to-string' as *;
+
+/// @name get-block
+/// @group utils
+/// @access private
+/// @since 6.0.0
+/// @author Marcmintel
+/// @link https://medium.com/@marcmintel
+/// @ignore Функция используется только для миксинов `b()`, `e()` и `m()`
+/// @param {String} $selector
+/// @param {String} $modifier
+/// @return {String} результат выполнения функции
+@function get-block($selector, $modifier) {
+
+	$selector: selector-to-string($selector);
+	$modifierStart: str-index($selector, $modifier) - 1;
+
+	@return str-slice(
+		$selector,
+		0,
+		$modifierStart
+	);
+
+}

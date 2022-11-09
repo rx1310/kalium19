@@ -1,0 +1,20 @@
+/// @name selector-to-string
+/// @group utils
+/// @access private
+/// @since 6.0.0
+/// @author Marcmintel
+/// @link https://medium.com/@marcmintel
+/// @ignore Функция используется только для миксинов `b()`, `e()` и `m()`
+/// @param {String} $selector
+/// @return {String} результат выполнения функции
+@function selector-to-string($selector) {
+
+	// приведение к строке
+	$selector: inspect($selector);
+
+	// удаление скобок
+	$selector: str-slice($selector, 2, -2);
+
+	@return $selector;
+
+}

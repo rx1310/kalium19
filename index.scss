@@ -3,6 +3,7 @@
 @forward 'config';
 
 @forward 'modules/prefixer';
+@forward 'modules/bem';
 
 @forward 'modules/utilities/color-shade';
 @forward 'modules/utilities/color-tint';

@@ -1,0 +1,151 @@
+@use '../../config' as *;
+@use '../utilities/map-deep-get' as *;
+@use '../utilities/contains-modifier' as *;
+@use '../utilities/get-block' as *;
+@use '../utilities/selector-to-string' as *;
+
+/// Миксин `b()` оборачивает CSS-свойства в блок,
+/// название которого указывается в параметре `$block`.
+/// ---
+/// @name b
+/// @group BEM
+/// @access public
+/// @since 6.0.0
+/// @author Marcmintel
+/// @link https://medium.com/@marcmintel
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	@include b(block) {
+/// 		color: red;
+/// 	}
+/// @example css - Результат в CSS
+/// 	.block {
+/// 	  color: red;
+/// 	}
+/// @param {String} $block - название блока
+/// @content CSS-стили блока
+@mixin b($block) {
+	.#{$block} {
+		@content;
+	}
+}
+
+/// Миксин `e()` оборачивает стили в элемент, который
+/// оборачивается в блок миксином `b()`.
+/// ---
+/// @name e
+/// @group BEM
+/// @access public
+/// @since 6.0.0
+/// @author Marcmintel
+/// @link https://medium.com/@marcmintel
+/// @example scss Пример использования в Sass (SCSS)
+/// 	@include b(block) {
+///
+/// 		color: red;
+///
+/// 		@include e(element) {
+/// 			background-color: #fff;
+/// 		}
+///
+/// 	}
+/// @example css Результат в CSS
+/// 	.block {
+/// 	  color: red;
+/// 	}
+///
+/// 	.block__element {
+/// 	  background-color: #fff;
+/// 	}
+/// @param {String} $element - название элемента
+/// @require {function} map-deep-get
+/// @require {function} contains-modifier
+/// @require {function} get-block
+/// @content CSS-стили элемента
+@mixin e($element) {
+
+	$selector: &;
+
+	@if contains-modifier($selector, map-deep-get($bem, modifier)) {
+
+		$block: get-block($selector, map-deep-get($bem, modifier));
+
+		@at-root {
+			#{$selector} {
+				#{$block + map-deep-get($bem, element) + $element} {
+					@content;
+				}
+			}
+		}
+
+	} @else {
+
+		@at-root {
+			#{$selector + map-deep-get($bem, element) + $element } {
+				@content;
+			}
+		}
+
+	}
+
+}
+
+/// Миксин `m()` оборачивает стили в модификатор по БЕМу.
+/// ---
+/// @name m
+/// @group BEM
+/// @access public
+/// @since 6.0.0
+/// @author Marcmintel
+/// @link https://medium.com/@marcmintel
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	@include b(block) {
+///
+/// 		/* Block */
+///
+/// 		@include e(element) {
+///
+/// 			/* Element */
+///
+/// 			@include m(click) {
+/// 				/* Modificator */
+/// 			}
+///
+/// 		}
+///
+/// 	}
+///
+/// 	@include b(block2) {
+///
+/// 		/* Block 2 */
+///
+/// 		@include m(click) {
+/// 			/* Modificator 2 */
+/// 		}
+///
+/// 	}
+/// @example css - Результат в CSS
+/// 	.block {
+/// 	  /* Block */
+/// 	}
+/// 	.block__element {
+/// 	  /* Element */
+/// 	}
+/// 	.block__element--click {
+/// 	  /* Modificator */
+/// 	}
+/// 	.block2 {
+/// 	  /* Block 2 */
+/// 	}
+/// 	.block2--click {
+/// 	  /* Modificator 2 */
+/// 	}
+/// @param {String} $modifier - название модификатора
+/// @require {function} map-deep-get
+/// @content CSS-стили модификатора
+@mixin m($modifier) {
+	@at-root {
+		#{&}#{ map-deep-get($bem, modifier) + $modifier } {
+			@content;
+		}
+	}
+}
