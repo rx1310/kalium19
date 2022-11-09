@@ -1,0 +1,20 @@
+/// Функция `string-contains()` проверяет есть ли
+/// в строке `$string` часть `$substring` .
+/// ---
+/// @name string-contains
+/// @group utils:string
+/// @access public
+/// @since 6.0.0
+/// @author Sindre Sorhus
+/// @link https://github.com/sindresorhus
+/// @example scss - Пример использования
+/// 	@debug string-contains('foo bar baz', 'bar'); //=> true
+/// 	@debug string-contains('foo bar baz', 'foo'); //=> true
+/// 	@debug string-contains('foo bar', 'baz'); //=> false
+/// 	@debug string-contains('foobar', 'oob'); //=> true
+/// @param {String} $string -
+/// @param {String} $substring -
+/// @return {Boolean} `true` или `false`
+@function string-contains($string, $substring) {
+	@return str-index($string, $substring) != null;
+}
