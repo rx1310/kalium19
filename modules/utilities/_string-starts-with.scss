@@ -1,0 +1,23 @@
+/// Проверьте, начинается ли `$string` с
+///  заданной `$substring`.
+/// ---
+/// @name string-starts-with
+/// @group utils:string
+/// @access public
+/// @since 6.0.0
+/// @author Sindre Sorhus
+/// @link https://github.com/sindresorhus
+/// @example scss - Пример использования
+/// 	@debug string-starts-with('Kalium19', 'K'); //=> true
+/// 	@debug string-starts-with('foo bar', 'bar'); //=> false
+/// 	@debug string-starts-with('foo bar', 'foo'); //=> true
+/// 	@debug string-starts-with('foobar', 'foo'); //=> true
+/// @param {String} $string - строка, в которой проводится поиск
+/// @param {String} $substring - подстрока для поиска в начале `$string`
+/// @return {Boolean} `true` или `false`
+@function string-starts-with($string, $substring) {
+	@return str-index(
+		$string,
+		$substring
+	) == 1;
+}
