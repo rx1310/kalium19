@@ -1,0 +1,39 @@
+@use '../wh' as *;
+
+/// Миксин `visually-hidden()` добавляет
+/// CSS-свойства, которые позволяют визуально
+/// скрыть элемент на странице.
+/// ---
+/// @name visually-hidden
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev
+/// @link https://github.com/rx1310/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include visually-hidden();
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 	  border: 0;
+/// 	  clip: rect(0 0 0 0);
+/// 	  margin: -1px;
+/// 	  overflow: hidden;
+/// 	  padding: 0;
+/// 	  position: absolute;
+/// 	  width: 1px;
+/// 	  height: 1px;
+/// 	}
+/// @require {mixin} wh
+@mixin visually-hidden() {
+
+	border: 0;
+	clip: rect(0 0 0 0);
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+
+	@include wh(1px); //=> width: 1px; height: 1px;
+
+}
