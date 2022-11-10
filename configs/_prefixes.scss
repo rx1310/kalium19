@@ -91,3 +91,15 @@ $prefixes-transition-timing-function: webkit moz o !default;
 /// @see {mixin} prefixer
 /// @see {mixin} transform
 $prefixes-transform: webkit moz ms o !default;
+
+/// Список браузерных префиксов для CSS-свойства
+/// `transform-origin` и одноименного миксина.
+/// ---
+/// @name prefixes-transform-origin
+/// @group configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} transform-origin
+$prefixes-transform-origin: webkit moz ms o !default;

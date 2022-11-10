@@ -1,0 +1,40 @@
+@use '../../configs' as *;
+@use '../utilities/is-int' as *;
+@use '../prefixer' as *;
+
+/// Миксин `transform-origin-hard()` позволяет сгенерировать
+/// свойство `transform-origin` с нужными браузерными
+/// префиксами, но указываются эти данные жестко через
+/// запятую порядком `x, y, z`.
+/// ---
+/// @name transform-origin-hard
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include transform-origin-hard(100%, 0, null);
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 	  -webkit-transform-origin: 100% 0;
+/// 	  -moz-transform-origin: 100% 0;
+/// 	  -ms-transform-origin: 100% 0;
+/// 	  -o-transform-origin: 100% 0;
+/// 	  transform-origin: 100% 0;
+/// 	}
+/// @param {Number | String} $x [50%] - координата по оси X
+/// @param {Number | String} $y [50%] - координата по оси Y
+/// @param {Number} $z [0] - координата по оси Z
+@mixin transform-origin-hard($x: 50%, $y: 50%, $z: 0) {
+
+	// Генерируем свойство с браузерными префиксами
+	// с помощью миксина `prefixer()`:
+	@include prefixer(
+		transform-origin,
+		$x $y $z,
+		$prefixes-transform-origin
+	);
+
+}

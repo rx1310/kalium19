@@ -1,0 +1,36 @@
+@use '../../configs' as *;
+@use '../prefixer' as *;
+
+/// Миксин `transform-origin()` позволяет сгенерировать
+/// свойство `transform-origin` с нужными браузерными
+/// префиксами.
+/// ---
+/// @name transform-origin
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include transform-origin(100% 0);
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 	  -webkit-transform-origin: 100% 0;
+/// 	  -moz-transform-origin: 100% 0;
+/// 	  -ms-transform-origin: 100% 0;
+/// 	  -o-transform-origin: 100% 0;
+/// 	  transform-origin: 100% 0;
+/// 	}
+/// @param {Number | String} $params... - значение CSS-свойства `transform-origin`
+@mixin transform-origin($params...) {
+
+	// Генерируем свойство с браузерными префиксами
+	// с помощью миксина `prefixer()`:
+	@include prefixer(
+		transform-origin,
+		$params,
+		$prefixes-transform-origin
+	);
+
+}
