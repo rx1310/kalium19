@@ -70,3 +70,46 @@
 
 }
 
+/// Миксин `size()` является алиасом для миксина
+/// `wh()`.
+/// ---
+/// @name size
+/// @alias wh
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include size(100px);
+/// 	}
+/// 	.example {
+/// 		@include size(100px, 80px);
+/// 	}
+/// 	.example {
+/// 		@include size(100px, null, max);
+/// 	}
+/// 	.example {
+/// 		@include size(null, 80px, min);
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 	  width: 100px;
+/// 	  height: 100px;
+/// 	}
+/// 	.example {
+/// 	  width: 100px;
+/// 	  height: 80px;
+/// 	}
+/// 	.example {
+/// 	  max-width: 100px;
+/// 	}
+/// 	.example {
+/// 	  min-height: 80px;
+/// 	}
+/// @param {Number} $width - ширина
+/// @param {Number} $height [$width] - высота
+/// @param {String} $type [normal] - тип (mix/max или без них)
+@mixin size($width, $height: $width, $type: normal) {
+	@include wh($width, $height, $type);
+}
