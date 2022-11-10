@@ -46,3 +46,27 @@
 	}
 
 }
+
+/// Алиас для миксина `user-select()`
+/// ---
+/// @name unselect
+/// @alias user-select
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include unselect();
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 	  -webkit-user-select: none;
+/// 	  -moz-user-select: none;
+/// 	  -ms-user-select: none;
+/// 	  user-select: none;
+/// 	}
+/// @require {mixin} user-select
+@mixin unselect() {
+	@include user-select(none);
+}
