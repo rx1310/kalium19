@@ -5,4 +5,17 @@
 /// @access public
 /// @since 6.0.0
 /// @type List
+/// @see {mixin} prefixer
 $prefixes-all: webkit khtml moz ms o !default;
+
+/// Списокбраузерных префиксов для CSS-свойства
+/// `user-select` и одноименного миксина.
+/// ---
+/// @name prefixes-user-select
+/// @group configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} user-select
+$prefixes-user-select: webkit moz ms !default;

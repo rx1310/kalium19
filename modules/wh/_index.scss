@@ -44,8 +44,8 @@
 /// @param {String} $type [normal] - тип (mix/max или без них)
 @mixin wh($width, $height: $width, $type: normal) {
 
-	// Проверяем, есть ли `$type` в списке `$valid-values-wh`...
-	@if is-exist($valid-values-wh, $type) {
+	// Проверяем, есть ли `$type` в списке `$vvalues-wh`...
+	@if is-exist($vvalues-wh, $type) {
 
 		// ... если да, то проверяем тип.
 		// Если тип `normal`, то:
@@ -62,10 +62,10 @@
 
 	}
 
-	// Если `$type` нет в списке `$valid-values-wh`
+	// Если `$type` нет в списке `$vvalues-wh`
 	// отобразим сообщение об этом:
 	@else {
-		@include invalid-value-message($valid-values-wh, 'wh()', $type);
+		@include invalid-value-message($vvalues-wh, 'wh()', $type);
 	}
 
 }

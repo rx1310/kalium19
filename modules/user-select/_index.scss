@@ -1,0 +1,48 @@
+@use '../../configs' as *;
+@use '../prefixer' as *;
+@use '../utilities/is-exist' as *;
+@use '../@invalid-value-message' as *;
+
+/// Миксин `user-select()` позволяет сгенерировать
+/// свойство `user-select` с нужными браузерными
+/// префиксами.
+/// ---
+/// @name user-select
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include user-select(all);
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 	  -webkit-user-select: all;
+/// 	  -moz-user-select: all;
+/// 	  -ms-user-select: all;
+/// 	  user-select: all;
+/// 	}
+/// @param {String} $value - значение CSS-свойства `user-select`
+@mixin user-select($value) {
+
+	// Проверяем, есть ли `$value` в списке допустимых.
+	// Если да, то...
+	@if is-exist($vvalues-user-select, $value) {
+		// ... с помощью миксина `prefixer()` генерируем
+		// CSS-свойство `user-select()` с браузерными префиксами:
+		@include prefixer(
+			user-select,
+			$value,
+			$prefixes-user-select
+		);
+	}
+
+	// Если `$value` не обнаружено в `$vvalues-user-select`,
+	// то просто выкидываем ошибку или предупреждение (в
+	// зависимости от настройки `$strict-mode`) об этом:
+	@else {
+		@include invalid-value-message($vvalues-user-select, user-select, $value);
+	}
+
+}

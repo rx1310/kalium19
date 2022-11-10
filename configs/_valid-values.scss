@@ -1,8 +1,19 @@
 /// Список допустимых значений для миксина `wh()`.
 /// ---
-/// @name $valid-values-wh
+/// @name vvalues-wh
 /// @group configs
 /// @access public
 /// @since 6.0.0
 /// @type List
-$valid-values-wh: min max normal !default;
+/// @see {mixin} wh
+$vvalues-wh: min max normal !default;
+
+/// Список допустимых значений для миксина `user-select()`.
+/// ---
+/// @name vvalues-user-select
+/// @group configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} user-select
+$vvalues-user-select: auto none text all contain !default;
