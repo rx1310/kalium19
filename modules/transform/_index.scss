@@ -1,0 +1,36 @@
+@use '../../configs' as *;
+@use '../prefixer' as *;
+
+/// Миксин `transform()` позволяет сгенерировать
+/// свойство `transform` с нужными браузерными
+/// префиксами.
+/// ---
+/// @name transform
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include transform(rotate(15deg));
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 	  -webkit-transform: rotate(15deg);
+/// 	  -moz-transform: rotate(15deg);
+/// 	  -ms-transform: rotate(15deg);
+/// 	  -o-transform: rotate(15deg);
+/// 	  transform: rotate(15deg);
+/// 	}
+/// @param {String} $params... - значения для CSS-свойства `transform`
+@mixin transform($params...) {
+
+	// Генерируем свойство с браузерными префиксами
+	// с помощью миксина `prefixer()`:
+	@include prefixer(
+		transform,
+		$params,
+		$prefixes-transform
+	);
+
+}
