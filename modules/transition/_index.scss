@@ -1,0 +1,37 @@
+@use '../../configs' as *;
+@use '../prefixer' as *;
+
+/// Миксин `transition()` позволяет сгенерировать
+/// свойство `transition` с нужными браузерными
+/// префиксами.
+/// ---
+/// @name transition
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include transition(500ms linear)
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 	  -webkit-transition: 500ms linear;
+/// 	  -moz-transition: 500ms linear;
+/// 	  -o-transition: 500ms linear;
+/// 	  transition: 500ms linear;
+/// 	}
+/// @param {String} $params... - значения для CSS-свойства `transition`
+@mixin transition($params...) {
+
+	// С помощью миксина `prefixer()` генерируем
+	// CSS-свойство `transition()` с браузерными префиксами:
+	@include prefixer(
+		transition,
+		$params,
+		$prefixes-transition
+	);
+
+	// TODO: prefers-reduced-motion
+
+}

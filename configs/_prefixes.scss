@@ -8,7 +8,7 @@
 /// @see {mixin} prefixer
 $prefixes-all: webkit khtml moz ms o !default;
 
-/// Списокбраузерных префиксов для CSS-свойства
+/// Список браузерных префиксов для CSS-свойства
 /// `user-select` и одноименного миксина.
 /// ---
 /// @name prefixes-user-select
@@ -19,3 +19,15 @@ $prefixes-all: webkit khtml moz ms o !default;
 /// @see {mixin} prefixer
 /// @see {mixin} user-select
 $prefixes-user-select: webkit moz ms !default;
+
+/// Список браузерных префиксов для CSS-свойства
+/// `transition` и одноименного миксина.
+/// ---
+/// @name prefixes-transition
+/// @group configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} transition
+$prefixes-transition: webkit moz o !default;
