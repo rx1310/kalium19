@@ -6,6 +6,7 @@
 /// компиляции Sass в CSS.
 /// ---
 /// @name strict-mode
+/// @group configs
 /// @access public
 /// @since 6.0.0
 /// @type String | Boolean
@@ -19,6 +20,7 @@ $strict-mode: 'warn' !default;
 /// CSS-свойств для функции `set-initial()`.
 /// ---
 /// @name initials
+/// @group configs
 /// @access public
 /// @since 6.0.0
 /// @type Map
@@ -355,7 +357,7 @@ $initials: (
 /// `e()` и `m()`.
 /// ---
 /// @name bem
-/// @group BEM
+/// @group configs
 /// @access public
 /// @since 6.0.0
 /// @type Map

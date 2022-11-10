@@ -1,5 +1,5 @@
 @use '../../configs' as *;
-@use '../@dev/invalid-value-message' as *;
+@use '../@invalid-value-message' as *;
 @use '../utilities/is-exist' as *;
 
 /// Миксин `wh()` позволяет в одну строку указать
