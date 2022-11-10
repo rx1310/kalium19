@@ -43,3 +43,15 @@ $prefixes-transition: webkit moz o !default;
 /// @see {mixin} prefixer
 /// @see {mixin} transition-delay
 $prefixes-transition-delay: webkit moz o !default;
+
+/// Список браузерных префиксов для CSS-свойства
+/// `transition-duration` и одноименного миксина.
+/// ---
+/// @name prefixes-transition-duration
+/// @group configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} transition-duration
+$prefixes-transition-duration: webkit moz o !default;

@@ -1,0 +1,42 @@
+@use '../../configs' as *;
+@use '../prefixer' as *;
+@use '../utilities/is-time' as *;
+
+/// Миксин `transition-duration()` позволяет сгенерировать
+/// свойство `transition-duration` с нужными браузерными
+/// префиксами.
+/// ---
+/// @name transition-duration
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include transition-duration(2s)
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 	  -webkit-transition-duration: 2s;
+/// 	  -moz-transition-duration: 2s;
+/// 	  -o-transition-duration: 2s;
+/// 	  transition-duration: 2s;
+/// 	}
+/// @param {Number} $duration [0s] - значения для CSS-свойства `transition-duration`
+@mixin transition-duration($duration: 0s) {
+
+	// Проверяем с помощью функции `is-time()`
+	// введенный параметр:
+	@if is-time($duration) {
+
+		// С помощью миксина `prefixer()` генерируем
+		// CSS-свойство `transition-duration()` с браузерными префиксами:
+		@include prefixer(
+			transition-duration,
+			$duration,
+			$prefixes-transition-duration
+		);
+
+	}
+
+}
