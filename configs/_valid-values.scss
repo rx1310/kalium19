@@ -17,3 +17,14 @@ $vvalues-wh: min max normal !default;
 /// @type List
 /// @see {mixin} user-select
 $vvalues-user-select: auto none text all contain !default;
+
+/// Список допустимых значений для
+/// миксина `transition-timing-function()`.
+/// ---
+/// @name vvalues-transition-timing-function
+/// @group configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} transition-timing-function
+$vvalues-transition-timing-function: ease ease-in ease-out ease-in-out linear step-start step-end !default;

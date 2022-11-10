@@ -1,0 +1,101 @@
+@use '../../configs' as *;
+@use '../prefixer' as *;
+@use '../utilities/is-exist' as *;
+@use '../utilities/string-contains' as *;
+@use '../@invalid-value-message' as *;
+
+/// Миксин `transition-timing-function()` позволяет сгенерировать
+/// свойство `transition-timing-function` с нужными браузерными
+/// префиксами.
+/// ---
+/// @name transition-timing-function
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include transition-timing-function(ease-in-out);
+/// 	}
+///
+/// 	.example-cubic-bezier {
+/// 		@include transition-timing-function(cubic-bezier(0.1, -0.6, 0.2, 0));
+/// 	}
+///
+/// 	.example-steps {
+/// 		@include transition-timing-function(steps(5, end));
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 	  -webkit-transition-timing-function: ease-in-out;
+/// 	  -moz-transition-timing-function: ease-in-out;
+/// 	  -o-transition-timing-function: ease-in-out;
+/// 	  transition-timing-function: ease-in-out;
+/// 	}
+///
+/// 	.example-cubic-bezier {
+/// 	  -webkit-transition-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
+/// 	  -moz-transition-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
+/// 	  -o-transition-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
+/// 	  transition-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
+/// 	}
+///
+/// 	.example-steps {
+/// 	  -webkit-transition-timing-function: steps(5, end);
+/// 	  -moz-transition-timing-function: steps(5, end);
+/// 	  -o-transition-timing-function: steps(5, end);
+/// 	  transition-timing-function: steps(5, end);
+/// 	}
+/// @param {String} $timing-function [ease] - значения для CSS-свойства `transition-timing-function`
+/// @require {function} is-exist
+/// @require {function} string-contains
+/// @require {mixin} prefixer
+@mixin transition-timing-function($timing-function: ease) {
+
+	// Проверяем, есть ли значение `$timing-function` в
+	// списке допустимых:
+	@if is-exist($vvalues-transition-timing-function, $timing-function) {
+
+		// Если да, то генерируем свойство с помощью
+		// миксина `prefixer()` с браузерными префиксами:
+		@include prefixer(
+			transition-timing-function,
+			$timing-function,
+			$prefixes-transition-timing-function
+		);
+
+	}
+
+	// Но если указывается в `$timing-function` есть `cubic-bezier`
+	// или `steps`, то для них генерим отдельно:
+	@else if
+		string-contains($timing-function, 'cubic-bezier') or
+		string-contains($timing-function, 'steps') {
+
+		@include prefixer(
+			transition-timing-function,
+			$timing-function,
+			$prefixes-transition-timing-function
+		);
+
+		// ? Почему для `cubic-bezier` и `steps` генерировать
+		// ? свойство отдельно?
+		// * Дело в том, что функция `is-exist()` проверяет точное
+		// * совпадение, в отличии от функции `string-contains()`.
+		// * И вот тут вырисовывается, что `cubic-bezier` и `steps`
+		// * могут принимать параметры, в отличии от остальных значений
+		// * CSS-свойства `transition-timing-function`.
+
+	}
+
+	// И наконец если ничего из `$vvalues-transition-timing-function`
+	// не найдено в `$timing-function`, то показываем ошибку:
+	@else {
+		@include invalid-value-message(
+			$vvalues-transition-timing-function,
+			transition-timing-function,
+			$timing-function
+		);
+	}
+
+}
