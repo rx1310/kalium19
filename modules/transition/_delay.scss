@@ -1,0 +1,42 @@
+@use '../../configs' as *;
+@use '../prefixer' as *;
+@use '../utilities/is-time' as *;
+
+/// Миксин `transition-delay()` позволяет сгенерировать
+/// свойство `transition-delay` с нужными браузерными
+/// префиксами.
+/// ---
+/// @name transition-delay
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include transition-delay(0.5s)
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 	  -webkit-transition-delay: 0.5s;
+/// 	  -moz-transition-delay: 0.5s;
+/// 	  -o-transition-delay: 0.5s;
+/// 	  transition-delay: 0.5s;
+/// 	}
+/// @param {Number} $delay [0s] - значения для CSS-свойства `transition-delay`
+@mixin transition-delay($delay: 0s) {
+
+	// Проверяем с помощью функции `is-time()`
+	// введенный параметр:
+	@if is-time($delay) {
+
+		// С помощью миксина `prefixer()` генерируем
+		// CSS-свойство `transition-delay()` с браузерными префиксами:
+		@include prefixer(
+			transition-delay,
+			$delay,
+			$prefixes-transition-delay
+		);
+
+	}
+
+}
