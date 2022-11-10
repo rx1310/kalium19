@@ -21,7 +21,7 @@
 /// 	  -o-transition-property: none;
 /// 	  transition-property: none;
 /// 	}
-/// @param {Number} $property [all] - значения для CSS-свойства `transition-property`
+/// @param {String} $property [all] - значения для CSS-свойства `transition-property`
 @mixin transition-property($property: all) {
 
 	// С помощью миксина `prefixer()` генерируем
