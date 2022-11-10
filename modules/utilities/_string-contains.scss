@@ -12,8 +12,8 @@
 /// 	@debug string-contains('foo bar baz', 'foo'); //=> true
 /// 	@debug string-contains('foo bar', 'baz'); //=> false
 /// 	@debug string-contains('foobar', 'oob'); //=> true
-/// @param {String} $string -
-/// @param {String} $substring -
+/// @param {String} $string - строка
+/// @param {String} $substring - искомая часть
 /// @return {Boolean} `true` или `false`
 @function string-contains($string, $substring) {
 	@return str-index($string, $substring) != null;

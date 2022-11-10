@@ -14,7 +14,7 @@
 /// 	@debug string-ends-with('foo bar', 'bar'); //=> true
 /// 	@debug string-ends-with('foobar', 'bar'); //=> true
 /// @param {String} $string - строка, в которой будет производиться поиск
-/// @param {String} $string -
+/// @param {String} $substring - искомая часть
 /// @return {Boolean} `true` или `false`
 @function string-ends-with($string, $substring) {
 
