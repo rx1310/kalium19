@@ -8,7 +8,6 @@
 /// название которого указывается в параметре `$block`.
 /// ---
 /// @name b
-/// @group BEM
 /// @access public
 /// @since 6.0.0
 /// @author Marcmintel
@@ -33,7 +32,6 @@
 /// оборачивается в блок миксином `b()`.
 /// ---
 /// @name e
-/// @group BEM
 /// @access public
 /// @since 6.0.0
 /// @author Marcmintel
@@ -92,7 +90,6 @@
 /// Миксин `m()` оборачивает стили в модификатор по БЕМу.
 /// ---
 /// @name m
-/// @group BEM
 /// @access public
 /// @since 6.0.0
 /// @author Marcmintel

@@ -1,7 +1,7 @@
 /// Список всех браузерных префиксов, которые я смог найти.
 /// ---
 /// @name prefixes-all
-/// @group configs
+/// @group Configs
 /// @access public
 /// @since 6.0.0
 /// @type List
@@ -12,7 +12,7 @@ $prefixes-all: webkit khtml moz ms o !default;
 /// `user-select` и одноименного миксина.
 /// ---
 /// @name prefixes-user-select
-/// @group configs
+/// @group Configs
 /// @access public
 /// @since 6.0.0
 /// @type List
@@ -24,7 +24,7 @@ $prefixes-user-select: webkit moz ms !default;
 /// `transition` и одноименного миксина.
 /// ---
 /// @name prefixes-transition
-/// @group configs
+/// @group Configs
 /// @access public
 /// @since 6.0.0
 /// @type List
@@ -36,7 +36,7 @@ $prefixes-transition: webkit moz o !default;
 /// `transition-delay` и одноименного миксина.
 /// ---
 /// @name prefixes-transition-delay
-/// @group configs
+/// @group Configs
 /// @access public
 /// @since 6.0.0
 /// @type List
@@ -48,7 +48,7 @@ $prefixes-transition-delay: webkit moz o !default;
 /// `transition-duration` и одноименного миксина.
 /// ---
 /// @name prefixes-transition-duration
-/// @group configs
+/// @group Configs
 /// @access public
 /// @since 6.0.0
 /// @type List
@@ -60,7 +60,7 @@ $prefixes-transition-duration: webkit moz o !default;
 /// `transition-property` и одноименного миксина.
 /// ---
 /// @name prefixes-transition-property
-/// @group configs
+/// @group Configs
 /// @access public
 /// @since 6.0.0
 /// @type List
@@ -72,7 +72,7 @@ $prefixes-transition-property: webkit moz o !default;
 /// `transition-timing-function` и одноименного миксина.
 /// ---
 /// @name prefixes-transition-timing-function
-/// @group configs
+/// @group Configs
 /// @access public
 /// @since 6.0.0
 /// @type List
@@ -84,7 +84,7 @@ $prefixes-transition-timing-function: webkit moz o !default;
 /// `transform` и одноименного миксина.
 /// ---
 /// @name prefixes-transform
-/// @group configs
+/// @group Configs
 /// @access public
 /// @since 6.0.0
 /// @type List
@@ -96,7 +96,7 @@ $prefixes-transform: webkit moz ms o !default;
 /// `transform-origin` и одноименного миксина.
 /// ---
 /// @name prefixes-transform-origin
-/// @group configs
+/// @group Configs
 /// @access public
 /// @since 6.0.0
 /// @type List
@@ -108,7 +108,7 @@ $prefixes-transform-origin: webkit moz ms o !default;
 /// `transform-style` и одноименного миксина.
 /// ---
 /// @name prefixes-transform-style
-/// @group configs
+/// @group Configs
 /// @access public
 /// @since 6.0.0
 /// @type List
@@ -120,7 +120,7 @@ $prefixes-transform-style: webkit moz !default;
 /// `text-size-adjust` и одноименного миксина.
 /// ---
 /// @name prefixes-text-size-adjust
-/// @group configs
+/// @group Configs
 /// @access public
 /// @since 6.0.0
 /// @type List
@@ -132,7 +132,7 @@ $prefixes-text-size-adjust: webkit moz ms !default;
 /// `tab-size` и одноименного миксина.
 /// ---
 /// @name prefixes-tab-size
-/// @group configs
+/// @group Configs
 /// @access public
 /// @since 6.0.0
 /// @type List

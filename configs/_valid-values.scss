@@ -1,7 +1,7 @@
 /// Список допустимых значений для миксина `wh()`.
 /// ---
 /// @name vvalues-wh
-/// @group configs
+/// @group Configs
 /// @access public
 /// @since 6.0.0
 /// @type List
@@ -11,7 +11,7 @@ $vvalues-wh: min max normal !default;
 /// Список допустимых значений для миксина `user-select()`.
 /// ---
 /// @name vvalues-user-select
-/// @group configs
+/// @group Configs
 /// @access public
 /// @since 6.0.0
 /// @type List
@@ -22,7 +22,7 @@ $vvalues-user-select: auto none text all contain !default;
 /// миксина `transition-timing-function()`.
 /// ---
 /// @name vvalues-transition-timing-function
-/// @group configs
+/// @group Configs
 /// @access public
 /// @since 6.0.0
 /// @type List
@@ -33,7 +33,7 @@ $vvalues-transition-timing-function: ease ease-in ease-out ease-in-out linear st
 /// миксина `transform-style()`.
 /// ---
 /// @name vvalues-transform-style
-/// @group configs
+/// @group Configs
 /// @access public
 /// @since 6.0.0
 /// @type List
@@ -44,7 +44,7 @@ $vvalues-transform-style: flat preserve-3d !default;
 /// миксина `text-shorten()`.
 /// ---
 /// @name vvalues-text-shorten
-/// @group configs
+/// @group Configs
 /// @access public
 /// @since 6.0.0
 /// @type List
@@ -55,7 +55,7 @@ $vvalues-text-shorten: 'только числа!', 'only numbers!';
 /// миксина `tab-size()`.
 /// ---
 /// @name vvalues-tab-size
-/// @group configs
+/// @group Configs
 /// @access public
 /// @since 6.0.0
 /// @type List

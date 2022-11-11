@@ -6,7 +6,7 @@
 /// компиляции Sass в CSS.
 /// ---
 /// @name strict-mode
-/// @group configs
+/// @group Configs
 /// @access public
 /// @since 6.0.0
 /// @example scss - Варианты использования
@@ -65,7 +65,7 @@ $strict-mode: 'error' !default;
 /// CSS-свойств для функции `set-initial()`.
 /// ---
 /// @name initials
-/// @group configs
+/// @group Configs
 /// @access public
 /// @since 6.0.0
 /// @type Map
@@ -402,7 +402,7 @@ $initials: (
 /// `e()` и `m()`.
 /// ---
 /// @name bem
-/// @group configs
+/// @group Configs
 /// @access public
 /// @since 6.0.0
 /// @type Map
@@ -413,3 +413,33 @@ $bem: (
 	modifier: "--"
 ) !default;
 
+/// Карта со всеми символами, которые
+/// необходимо закодировать.
+/// ---
+/// @name characters
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type Map
+/// @see {function} url-encode
+$characters: (
+	'!': '%21',
+	'#': '%23',
+	'$': '%24',
+	'&': '%26',
+	'\'': '%27',
+	'(': '%28',
+	')': '%29',
+	'*': '%2A',
+	'+': '%2B',
+	',': '%2C',
+	'/': '%2F',
+	':': '%3A',
+	';': '%3B',
+	'=': '%3D',
+	'?': '%3F',
+	'@': '%40',
+	'[': '%5B',
+	']': '%5D',
+	'"': '%22' // В случае, если результат заключен в двойные кавычки
+);

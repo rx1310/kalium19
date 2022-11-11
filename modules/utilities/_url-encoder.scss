@@ -1,39 +1,11 @@
+@use '../../configs' as*;
 @use 'string-replace' as *;
-
-/// Карта со всеми символами, которые
-/// необходимо закодировать.
-/// ---
-/// @name -characters
-/// @access private
-/// @since 6.0.0
-/// @type Map
-$-characters: (
-	'!': '%21',
-	'#': '%23',
-	'$': '%24',
-	'&': '%26',
-	'\'': '%27',
-	'(': '%28',
-	')': '%29',
-	'*': '%2A',
-	'+': '%2B',
-	',': '%2C',
-	'/': '%2F',
-	':': '%3A',
-	';': '%3B',
-	'=': '%3D',
-	'?': '%3F',
-	'@': '%40',
-	'[': '%5B',
-	']': '%5D',
-	'"': '%22' // В случае, если результат заключен в двойные кавычки
-);
 
 /// Функция `url-encode()` кодирует небезопасные
 /// для URL-адреса символы из `$url`
 /// ---
 /// @name url-encode
-/// @group utils:string
+/// @group Utils
 /// @access public
 /// @since 6.0.0
 /// @author Sindre Sorhus
@@ -48,7 +20,7 @@ $-characters: (
 
 	$ret: $url;
 
-	@each $replaceable, $replacement in $-characters {
+	@each $replaceable, $replacement in $characters {
 		$ret: string-replace($ret, $replaceable, $replacement);
 	}
 
