@@ -1,0 +1,85 @@
+@use '../../configs' as *;
+@use '../utilities/is-int' as *;
+@use '../prefixer' as *;
+@use '../@invalid-value-message' as *;
+
+/// Миксин `text-shorten()` позволяет сгенерировать
+/// CSS-класс, который ограничивает отображение
+/// строк текста.
+///
+/// В браузере после преодоления лимита строк
+/// пользователь увидит лишь троеточие ("...").
+/// ---
+/// @name text-shorten
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include text-shorten(3);
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 	  white-space: nowrap;
+/// 	  text-overflow: ellipsis;
+/// 	  overflow: hidden;
+/// 	}
+/// 	@supports (-webkit-line-clamp: 3) {
+/// 	  .example {
+/// 	    overflow: hidden;
+/// 	    text-overflow: ellipsis;
+/// 	    white-space: initial;
+/// 	    -webkit-line-clamp: 3;
+/// 	    -webkit-box-orient: vertical;
+/// 	    display: -webkit-box;
+/// 	    display: -moz-box;
+/// 	  }
+/// 	}
+/// @param {Number} $number-lines [1] - количество строк
+/// @require {function} is-int для проверки вводимых данных на соответствие типу `Number`
+@mixin text-shorten($number-lines: 1) {
+
+	// Проверяем, является ли значение `$number-lines`
+	// числом с помощью функции `is-int()`:
+	@if is-int($number-lines) {
+
+		// Если `true`, то пишем нужные стили:
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+
+		// Это условие, проверяющее совместимость CSS-свойства
+		// `-webkit-line-clamp` с браузером пользователя.
+		@supports (-webkit-line-clamp: $number-lines) {
+
+			overflow          : hidden;
+			text-overflow     : ellipsis;
+			white-space       : initial;
+
+			-webkit-line-clamp: $number-lines;
+			-webkit-box-orient: vertical;
+
+			@include prefixer(
+				display,
+				box,
+				webkit moz,
+				false,
+				true
+			);
+
+		}
+
+	}
+
+	// Если значение `$number-lines` не является
+	// числом, то просто отобразим ошибку:
+	@else {
+		@include invalid-value-message(
+			$vvalues-text-shorten,
+			'text-shorten()',
+			$number-lines
+		);
+	}
+
+}
