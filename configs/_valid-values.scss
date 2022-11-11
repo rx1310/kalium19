@@ -50,3 +50,14 @@ $vvalues-transform-style: flat preserve-3d !default;
 /// @type List
 /// @see {mixin} text-shorten
 $vvalues-text-shorten: 'только числа!', 'only numbers!';
+
+/// Список допустимых значений для
+/// миксина `tab-size()`.
+/// ---
+/// @name vvalues-tab-size
+/// @group configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} tab-size
+$vvalues-tab-size: 'только числа!', 'only numbers!';
