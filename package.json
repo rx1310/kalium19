@@ -50,7 +50,7 @@
 		"git:log-full": "git log --oneline --decorate --pretty=format:'- [`%h`](https://github.com/rx1310/kalium19/commit/%H) [@%an](https://github.com/%an): %s' | tee CHANGELOG.log"
 	},
 	"dependencies": {
-		"sass": "^1.56.0"
+		"sass": "^1.56.1"
 	},
 	"devDependencies": {
 		"editorconfig-checker": "^4.0.2",
