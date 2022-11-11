@@ -9,7 +9,6 @@
 /// @group configs
 /// @access public
 /// @since 6.0.0
-/// @type String | Boolean
 /// @example scss - Варианты использования
 /// 	$strict-mode: error //=> Прекращает компиляцию CSS при обнаружении ошибки
 /// 	$strict-mode: warn  //=> Компилирует CSS до конца, но без "проблемного" участка
@@ -59,6 +58,7 @@
 ///
 /// 	/* CSS */
 /// 	/* null */
+/// @type String | Boolean
 $strict-mode: 'error' !default;
 
 /// Список всех (вроде) значений по умолчанию

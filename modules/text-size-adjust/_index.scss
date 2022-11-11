@@ -1,0 +1,53 @@
+@use '../../configs' as *;
+@use '../prefixer' as *;
+
+/// Свойство `text-size-adjust` позволяет отменять или
+/// задавать увеличение шрифта на мобильных экранах.
+/// Такое увеличение используют мобильные браузеры для
+/// улучшения читаемости текста страниц, не адаптированных
+/// для мобильных экранов. Если страница адаптирована,
+/// это увеличение отключают.
+///
+/// Миксин `text-size-adjust()` генерирует одноименное
+/// CSS-свойство со всеми нужными браузерными префиксами.
+/// ---
+/// @name text-size-adjust
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include text-size-adjust(50%);
+/// 	}
+///
+/// 	.example-auto {
+/// 		@include text-size-adjust(auto);
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 	  -webkit-text-size-adjust: 50%;
+/// 	  -moz-text-size-adjust: 50%;
+/// 	  -ms-text-size-adjust: 50%;
+/// 	  text-size-adjust: 50%;
+/// 	}
+///
+/// 	.example-auto {
+/// 	  -webkit-text-size-adjust: auto;
+/// 	  -moz-text-size-adjust: auto;
+/// 	  -ms-text-size-adjust: auto;
+/// 	  text-size-adjust: auto;
+/// 	}
+/// @param {String} $params... - значения для CSS-свойства `transform`
+@mixin text-size-adjust($value: none) {
+
+	// С помощью миксина `prefixer()` сгенерируем
+	// CSS-свойство `text-size-adjust` со всеми
+	// необходимыми браузерными префиксами:
+	@include prefixer(
+		text-size-adjust,
+		$value,
+		$prefixes-text-size-adjust
+	);
+
+}

@@ -115,3 +115,15 @@ $prefixes-transform-origin: webkit moz ms o !default;
 /// @see {mixin} prefixer
 /// @see {mixin} transform-style
 $prefixes-transform-style: webkit moz !default;
+
+/// Список браузерных префиксов для CSS-свойства
+/// `text-size-adjust` и одноименного миксина.
+/// ---
+/// @name prefixes-text-size-adjust
+/// @group configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} text-size-adjust
+$prefixes-text-size-adjust: webkit moz ms !default;
