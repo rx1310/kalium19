@@ -28,3 +28,14 @@ $vvalues-user-select: auto none text all contain !default;
 /// @type List
 /// @see {mixin} transition-timing-function
 $vvalues-transition-timing-function: ease ease-in ease-out ease-in-out linear step-start step-end !default;
+
+/// Список допустимых значений для
+/// миксина `transform-style()`.
+/// ---
+/// @name vvalues-transform-style
+/// @group configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} transform-style
+$vvalues-transform-style: flat preserve-3d;
