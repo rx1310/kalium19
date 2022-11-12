@@ -61,3 +61,14 @@ $vvalues-text-shorten: 'только числа!', 'only numbers!';
 /// @type List
 /// @see {mixin} tab-size
 $vvalues-tab-size: 'только числа!', 'only numbers!';
+
+/// Список допустимых значений для
+/// миксина `scroll-behavior()`.
+/// ---
+/// @name vvalues-scroll-behavior
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} scroll-behavior
+$vvalues-scroll-behavior: auto smooth inherit initial unset;

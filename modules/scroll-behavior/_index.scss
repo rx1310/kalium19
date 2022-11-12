@@ -1,0 +1,57 @@
+@use '../utilities/is-exist' as *;
+@use '../@invalid-value-message' as *;
+@use '../../configs' as *;
+
+/// **Doka**: "При переходе по якорной ссылке
+/// браузер мгновенно прыгает к целевому блоку.
+/// То же самое происходит, если изменять положение
+/// полосы прокрутки при помощи JS. Чтобы изменить
+/// стандартное поведение можно использовать значение
+/// `smooth`. Оно сделает прокрутку плавной. Но в
+/// остальных ситуациях, например, при прокрутке
+/// пользователем колёсика мышки, свойство
+/// `scroll-behavior` не повлияет на поведение браузера."
+///
+/// Миксин `scroll-behavior()` позволяет добавить
+/// данное CSS-свойство с проверкой через media-запрос
+/// `prefers-reduced-motion` на случай, если пользователь
+/// отключил в системе всяческие анимации.
+/// ---
+/// @name scroll-behavior
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// @example css - Результат в CSS
+/// @param {String} $value [smooth] - значение свойства `scroll-behavior`
+/// @require {function} is-exist
+@mixin scroll-behavior($value: smooth) {
+
+	// С помощью функции `is-exist()` проверяем наличие
+	// значения из `$value` в `$vvalues-scroll-behavior`.
+	// Если `true`, то ...
+	@if is-exist($vvalues-scroll-behavior, $value) {
+
+		// ... генерируем свойство `scroll-behavior`
+		// с нужным значением из `$value`:
+		@media (prefers-reduced-motion: no-preference) {
+			scroll-behavior: $value;
+		}
+
+		// * Медиа-функция prefers-reduced-motion может
+		// * использоваться для определения того, запросил
+		// * ли пользователь, чтобы ОС минимизировала
+		// * количество анимации или движения, которые она
+		// * использует.
+
+	}
+
+	// Если функция `is-exist()` вернула `false,
+	// то просто отображаем сообщение о недопустимом
+	// параметре:
+	@else {
+		@include invalid-value-message($vvalues-scroll-behavior, scroll-behavior, $value);
+	}
+
+}
