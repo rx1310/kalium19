@@ -16,7 +16,7 @@ $vvalues-wh: min max normal !default;
 /// @since 6.0.0
 /// @type List
 /// @see {mixin} user-select
-$vvalues-user-select: auto none text all contain !default;
+$vvalues-user-select: auto none text all contain inherit initial unset revert revert-layer !default;
 
 /// Список допустимых значений для
 /// миксина `transition-timing-function()`.
@@ -27,7 +27,7 @@ $vvalues-user-select: auto none text all contain !default;
 /// @since 6.0.0
 /// @type List
 /// @see {mixin} transition-timing-function
-$vvalues-transition-timing-function: ease ease-in ease-out ease-in-out linear step-start step-end !default;
+$vvalues-transition-timing-function: ease ease-in ease-out ease-in-out linear step-start step-end inherit initial unset revert revert-layer !default;
 
 /// Список допустимых значений для
 /// миксина `transform-style()`.
@@ -38,7 +38,7 @@ $vvalues-transition-timing-function: ease ease-in ease-out ease-in-out linear st
 /// @since 6.0.0
 /// @type List
 /// @see {mixin} transform-style
-$vvalues-transform-style: flat preserve-3d !default;
+$vvalues-transform-style: flat preserve-3d inherit initial unset !default;
 
 /// Список допустимых значений для
 /// миксина `text-shorten()`.
@@ -49,7 +49,7 @@ $vvalues-transform-style: flat preserve-3d !default;
 /// @since 6.0.0
 /// @type List
 /// @see {mixin} text-shorten
-$vvalues-text-shorten: 'только числа!', 'only numbers!';
+$vvalues-text-shorten: 'только числа!', 'only numbers!' !default;
 
 /// Список допустимых значений для
 /// миксина `tab-size()`.
@@ -60,7 +60,7 @@ $vvalues-text-shorten: 'только числа!', 'only numbers!';
 /// @since 6.0.0
 /// @type List
 /// @see {mixin} tab-size
-$vvalues-tab-size: 'только числа!', 'only numbers!';
+$vvalues-tab-size: 'только числа!', 'only numbers!' !default;
 
 /// Список допустимых значений для
 /// миксина `scroll-behavior()`.
@@ -71,4 +71,4 @@ $vvalues-tab-size: 'только числа!', 'only numbers!';
 /// @since 6.0.0
 /// @type List
 /// @see {mixin} scroll-behavior
-$vvalues-scroll-behavior: auto smooth inherit initial unset;
+$vvalues-scroll-behavior: auto smooth inherit initial unset !default;
