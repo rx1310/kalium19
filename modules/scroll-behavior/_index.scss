@@ -23,7 +23,15 @@
 /// @author Haba Kudzaev (rx1310)
 /// @link https://rx1310.github.io/kalium19
 /// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include scroll-behavior(auto);
+/// 	}
 /// @example css - Результат в CSS
+/// 	@media (prefers-reduced-motion: no-preference) {
+/// 	  .example {
+/// 	    scroll-behavior: auto;
+/// 	  }
+/// 	}
 /// @param {String} $value [smooth] - значение свойства `scroll-behavior`
 /// @require {function} is-exist
 @mixin scroll-behavior($value: smooth) {
