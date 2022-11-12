@@ -1,0 +1,55 @@
+/// Миксин `selection()` позволяет сгенерировать
+/// псевдоэлемент `::selection` с поддержкой
+/// браузера Mozilla Firefox =<61.
+/// ---
+/// @name selection
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	@include selection() {
+/// 		color: gold;
+/// 		background: red;
+/// 	}
+///
+/// 	.example {
+/// 		@include selection(false) {
+/// 			color: gold;
+/// 			background: red;
+/// 		}
+/// 	}
+/// @example css - Результат в CSS
+/// 	::-moz-selection {
+/// 	  color: gold;
+/// 	  background: red;
+/// 	}
+///
+/// 	::selection {
+/// 	  color: gold;
+/// 	  background: red;
+/// 	}
+///
+/// 	.example::-moz-selection {
+/// 	  color: gold;
+/// 	  background: red;
+/// 	}
+/// 	.example::selection {
+/// 	  color: gold;
+/// 	  background: red;
+/// 	}
+/// @param {Boolean} $in-root [true] - указывает на генерацию псевдоэлемента в корне стилей
+/// @content Стили для псевдоэлемента `::selection`
+@mixin selection($in-root: true) {
+
+	@if $in-root {
+		::-moz-selection { @content; }
+		::selection { @content; }
+	} @else {
+		&::-moz-selection { @content; }
+		&::selection { @content; }
+	}
+
+}
+
+
