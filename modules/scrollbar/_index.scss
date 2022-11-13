@@ -1,0 +1,49 @@
+@use '../wh' as *;
+
+/// Миксин `scrollbar()` позволяет кастомизировать стили
+/// стандартного скроллбара (полосы прокрутки) в
+/// браузерах, где такая возможность существует.
+/// ---
+/// @name scrollbar
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	@include scrollbar(15px, red);
+/// @example css - Результат в CSS
+/// 	::-webkit-scrollbar {
+/// 	  width: 15px;
+/// 	  height: 15px;
+/// 	}
+///
+/// 	::-webkit-scrollbar-thumb {
+/// 	  background: red;
+/// 	}
+///
+/// 	::-webkit-scrollbar-track {
+/// 	  background: #ff8080;
+/// 	}
+///
+/// 	body {
+/// 	  scrollbar-face-color: red;
+/// 	  scrollbar-track-color: #ff8080;
+/// 	}
+/// @param {Number | String} $size - размер полосы прокрутки
+/// @param {String} $foreground-color - цвет полосы (`scrollbar-thumb`)
+/// @param {String} $background-color [mix($foreground-color, white,  50%)] - цвет фона (`scrollbar-track`)
+/// @param {Boolean} $body-styles [true] - стили для селектора `body`
+@mixin scrollbar($size, $foreground-color, $background-color: mix($foreground-color, white,  50%), $body-styles: true) {
+
+  ::-webkit-scrollbar       { @include wh($size);            }
+	::-webkit-scrollbar-thumb { background: $foreground-color; }
+	::-webkit-scrollbar-track { background: $background-color; }
+
+	@if $body-styles {
+		body {
+			scrollbar-face-color: $foreground-color;
+			scrollbar-track-color: $background-color;
+		}
+	}
+
+}
