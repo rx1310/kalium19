@@ -23,13 +23,13 @@
 /// @param {String} $value - значение CSS-свойства
 /// @param {List} $prefixes - список браузерных префиксов
 /// @param {Boolean} $is-save-initial [true] - сохранение исходного CSS-свойства без префикса
-/// @param {Boolean} $is-property-prefix [false] - добавление префикса не к свойству, а к значению
+/// @param {Boolean} $is-value-prefix [false] - добавление префикса не к свойству, а к значению
 @mixin prefixer(
 	$property,
 	$value,
 	$prefixes: (),
 	$is-save-initial: true,
-	$is-property-prefix: false) {
+	$is-value-prefix: false) {
 
 	// В случае, если в списке префиксов указано ключевое
 	// слово `all`, будут добавлены все браузерные префиксы.
@@ -37,7 +37,7 @@
 
 		// Отдельно, если необходимо добавить префиксы не
 		// свойствам, а значениям:
-		@if $is-property-prefix == true {
+		@if $is-value-prefix == true {
 
 			// Проходимся по списку циклом и добавляем префикс:
 			@each $prefix in $prefixes-all {
@@ -61,7 +61,7 @@
 
 	// А тут если выбираются префиксы самостоятельно.
 	@else {
-		@if $is-property-prefix == true {
+		@if $is-value-prefix == true {
 			@each $prefix in $prefixes {
 				#{$property}: -#{$prefix}-#{$value};
 			}

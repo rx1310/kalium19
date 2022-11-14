@@ -1,0 +1,97 @@
+@use '../../configs' as *;
+
+/// Миксин `prefixer-pack()` позволяет добавить
+/// браузерные префиксы не только одному конкретному
+/// CSS-свойству, а целому набору (пакету).
+/// ---
+/// @name prefixer-pack
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+///
+/// 		@include prefixer-pack((
+/// 			border-radius: 2px,
+/// 			box-shadow: none
+/// 		), webkit moz);
+///
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 	  -webkit-border-radius: 2px;
+/// 	  -moz-border-radius: 2px;
+/// 	  border-radius: 2px;
+/// 	  -webkit-box-shadow: none;
+/// 	  -moz-box-shadow: none;
+/// 	  box-shadow: none;
+/// 	}
+/// @param {Map} $styles - карта стилей, к свойствам или значениям которого нужно добавить браузерные префиксы
+/// @param {List} $prefixes [()] - список браузерных префиксов
+/// @param {Boolean} $is-save-initial [true] - сохранение исходного значения без префикса
+/// @param {Boolean} $is-value-prefix [false] - добавление префикса не к свойству, а к значению
+@mixin prefixer-pack(
+	$styles,
+	$prefixes: (),
+	$is-save-initial: true,
+	$is-value-prefix: false) {
+
+	// Циклом `@each` проходимся по `$styles`
+	// и "вычленяем" свойство и его значение:
+	@each $property, $value in $styles {
+
+		// Если в параметр `$prefixes` передано значение `all`
+		// то добавляем все префиксы из `$prefixes-all`:
+		@if $prefixes == "all" {
+
+			// Если требуется добавить браузерные префиксы...
+			@if $is-value-prefix == true {
+
+				// ... не к свойствам, а к их значениям:
+				@each $prefix in $prefixes-all {
+					#{$property}: -#{$prefix}-#{$value};
+				}
+
+			} @else {
+
+				// ... к свойствам, а не к их значениям:
+				@each $prefix in $prefixes-all {
+					-#{$prefix}-#{$property}: #{$value};
+				}
+
+			}
+
+		}
+
+		// Если указан список браузерных префиксов:
+		@else {
+
+			// Если требуется добавить браузерные префиксы...
+			@if $is-value-prefix == true {
+
+				// ... не к свойствам, а к их значениям:
+				@each $prefix in $prefixes {
+					#{$property}: #{'-' + $prefix + '-' + $value};
+				}
+
+			} @else {
+
+				// ... к свойствам, а не к их значениям:
+				@each $prefix in $prefixes {
+					#{'-' + $prefix + '-' + $property}: $value;
+				}
+
+			}
+
+		}
+
+		// Если надо сохранить исходное значение
+		// без браузерного префикса:
+		@if $is-save-initial == true {
+			#{$property}: $value;
+		}
+
+	}
+
+}
