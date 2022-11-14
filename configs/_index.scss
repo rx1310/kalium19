@@ -443,3 +443,21 @@ $characters: (
 	']': '%5D',
 	'"': '%22' // В случае, если результат заключен в двойные кавычки
 );
+
+/// Карта со всеми брейкпоинтами для
+/// миксина `respond-to()` (+ его алиасы).
+/// ---
+/// @name breakpoints
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type Map
+/// @see {function} respond-to
+$breakpoints: (
+	xs: (min-width: 0),
+	sm: (min-width: 576px),
+	md: (min-width: 768px),
+	lg: (min-width: 992px),
+	xl: (min-width: 1200px),
+	xxl: (min-width: 1400px)
+) !default;
