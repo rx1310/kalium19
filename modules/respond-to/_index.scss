@@ -2,7 +2,8 @@
 @use '../utilities/map-deep-get' as *;
 @use '../@invalid-value-message' as *;
 
-/// Миксин `respond-to()` позволяет
+/// Миксин `respond-to()` позволяет проще писать
+/// медиа-выражения.
 /// ---
 /// @name respond-to
 /// @access public
