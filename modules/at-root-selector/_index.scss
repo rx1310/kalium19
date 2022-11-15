@@ -1,0 +1,16 @@
+/// Миксин `at-root-selector()` позволяет
+/// добавить к корневому селектору дополнительный.
+/// ---
+/// @name at-root-selector
+/// @access public
+/// @since 6.0.0
+/// @author cimmanon
+/// @link https://stackoverflow.com/users/1652962/cimmanon
+/// @example scss - Пример использования в Sass (SCSS)
+/// @example css - Результат в CSS
+/// @param {String} $selector - селектор, который будет добавлен к родительскому селектору
+@mixin at-root-selector($selector) {
+	@at-root #{if(not &, $selector, selector-append(&, $selector))} {
+		@content;
+	}
+}
