@@ -1,0 +1,31 @@
+@use 'index' as *;
+
+/// Миксин `position-fixed()` позволяет ускорить написание
+/// конструкции для `position: fixed`, используя миксин
+/// `position()`.
+/// ---
+/// @name position-fixed
+/// @alias position
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include position-fixed(0, 0, null, 0);
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 	  position: fixed;
+/// 	  top: 0;
+/// 	  right: 0;
+/// 	  left: 0;
+/// 	}
+/// @param {Number} $top [null]
+/// @param {Number} $right [null]
+/// @param {Number} $bottom [null]
+/// @param {Number} $left [null]
+/// @require {mixin} position
+@mixin position-fixed($top: null, $right: null, $bottom: null, $left: null) {
+	@include position(fixed, $top: $top, $right: $right, $bottom: $bottom, $left: $left);
+}
