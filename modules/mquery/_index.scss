@@ -1,0 +1,46 @@
+/// Помощник медиа-запросов для объявления
+/// медиа-запросов по ширине и, необязательно, по соотношению.
+/// ---
+/// @name mquery
+/// @access public
+/// @since 6.0.0
+/// @author Gilles Bertaux
+/// @link https://github.com/gillesbertaux/andy
+/// @example scss Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include mquery(350px, 2) {
+/// 			width: 100%;
+/// 		}
+/// 	}
+/// 	.example-2 {
+/// 		@include mquery(450px) {
+/// 			width: 100%;
+/// 		}
+/// 	}
+/// @example css Результат в CSS
+/// 	@media only screen and (max-width: 350px) and (min--moz-device-pixel-ratio: 2), only screen and (max-width: 350px) and (-webkit-min-device-pixel-ratio: 2), only screen and (max-width: 350px) and (min-device-pixel-ratio: 2) {
+/// 	  .example {
+/// 	    width: 100%;
+/// 	  }
+/// 	}
+/// 	@media only screen and (max-width: 450px) {
+/// 	  .example-2 {
+/// 	    width: 100%;
+/// 	  }
+/// 	}
+/// @param {Number} $width - максимальная ширина вьюпорта
+/// @param {Number | Boolean} $ratio [false] - минимальное соотношение пикселей устройства
+@mixin mquery($width, $ratio: false) {
+	@if $ratio {
+		@media
+			only screen and (max-width: $width) and  (min--moz-device-pixel-ratio: $ratio),
+			only screen and (max-width: $width) and  (-webkit-min-device-pixel-ratio: $ratio),
+			only screen and (max-width: $width) and  (min-device-pixel-ratio: $ratio) {
+			@content;
+		}
+	} @else {
+		@media only screen and (max-width: $width) {
+			@content;
+		}
+	}
+}
