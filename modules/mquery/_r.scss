@@ -1,0 +1,31 @@
+/// Помощник по медиа-запросам для объявления медиа-запросов
+/// по соотношению пикселей устройства.
+/// ---
+/// @name mquery-r
+/// @access public
+/// @since 6.0.0
+/// @author Gilles Bertaux
+/// @link https://github.com/gillesbertaux/andy
+/// @example scss Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include mquery-r(350px) {
+/// 			width: 100%;
+/// 		}
+/// 	}
+/// @example css Результат в CSS
+/// 	@media only screen and (-webkit-min-device-pixel-ratio: 350px), only screen and (min--moz-device-pixel-ratio: 350px), only screen and (-o-min-device-pixel-ratio: 350px), only screen and (min-device-pixel-ratio: 350px) {
+/// 	  .example {
+/// 	    width: 100%;
+/// 	  }
+/// 	}
+/// @param {Number} $width - максимальная ширина вьюпорта
+/// @param {Number | Boolean} $ratio [false] - минимальное соотношение пикселей устройства
+@mixin mquery-r($ratio) {
+	@media
+		only screen and (-webkit-min-device-pixel-ratio: $ratio),
+		only screen and (min--moz-device-pixel-ratio: $ratio),
+		only screen and (-o-min-device-pixel-ratio: $ratio),
+		only screen and (min-device-pixel-ratio: $ratio) {
+		@content;
+	}
+}
