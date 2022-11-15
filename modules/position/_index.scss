@@ -1,0 +1,79 @@
+@use '../../configs' as *;
+@use '../@invalid-value-message' as *;
+@use '../prefixer' as *;
+@use '../utilities/is-exist' as *;
+@use '../utilities/is-int' as *;
+@use '../utilities/string-contains' as *;
+
+/// Миксин `position()` позволяет ускорить написание
+/// стилей для позиционирования.
+/// ---
+/// @name position
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include position(relative, 0, null, null, 0);
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 	  position: relative;
+/// 	  top: 0;
+/// 	  left: 0;
+/// 	}
+/// @param {String} $position - положение элемента
+/// @param {Number} $top [null]
+/// @param {Number} $right [null]
+/// @param {Number} $bottom [null]
+/// @param {Number} $left [null]
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+
+	// Проверяем с помощью функции `is-exist()`
+	// является ли значение `$position` допустимым
+	// из списка `$vvalues-position`.
+
+	// Если да, то генерируем CSS-свойство
+	// `position` с заданным значением:
+	@if is-exist($vvalues-position, $position) {
+
+		// А еще, если `$position` равен `sticky`, то
+		// добавляем браузерный префикс Safari для значения:
+		@if string-contains($position, 'sticky') {
+			@include prefixer(
+				position,
+				$position,
+				webkit,
+				true,
+				true
+			);
+		}
+
+		// А если нет, то нет :)
+		@else {
+			position: $position;
+		}
+
+		// Также проверяем на тип данные из параметров
+		// `$top`, `$right`, `$bottom` и `$left`:
+		@if is-int($top, true, true)
+			or is-int($right, true, true)
+			or is-int($bottom, true, true)
+			or is-int($left, true, true) {
+
+			top     : $top;
+			right   : $right;
+			bottom  : $bottom;
+			left    : $left;
+
+		}
+
+	}
+
+	// Если нет, то отображаем ошибку:
+	@else {
+		@include invalid-value-message($vvalues-position, position, $position);
+	}
+
+}

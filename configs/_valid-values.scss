@@ -72,3 +72,14 @@ $vvalues-tab-size: 'только числа!', 'only numbers!' !default;
 /// @type List
 /// @see {mixin} scroll-behavior
 $vvalues-scroll-behavior: auto smooth inherit initial unset !default;
+
+/// Список допустимых значений для
+/// миксина `position()`.
+/// ---
+/// @name vvalues-position
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} position
+$vvalues-position: static relative absolute fixed sticky inherit initial unset revert revert-layer !default;
