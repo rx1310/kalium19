@@ -1,0 +1,45 @@
+@use '../../configs' as *;
+@use '../@invalid-value-message' as *;
+@use '../prefixer' as *;
+@use '../utilities/is-exist' as *;
+
+/// Миксин `object-fit()` позволяет сгенерировать
+/// CSS-свойство `object-fit` с браузерными префиксами.
+/// ---
+/// @name object-fit
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include object-fit(fill)
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 	  -o-object-fit: fill;
+/// 	  object-fit: fill;
+/// 	}
+/// @param {String} $value [fill] - значение CSS-свойства `object-fit`
+@mixin object-fit($value: fill) {
+
+	// С помощью функции `is-exist()` проверяем
+	// на допустимость знчения из `$value`:
+	@if is-exist($vvalues-object-fit, $value) {
+
+		// Если есть соответствие, то с помощью
+		// миксина `prefixer()` добавляем браузерные префиксы:
+		@include prefixer(
+			object-fit,
+			 $value,
+			 $prefixes-object-fit
+		);
+
+	}
+
+	// Если нет соответствий, то выдаем ошибку:
+	@else {
+		@include invalid-value-message($vvalues-object-fit, object-fit, $value);
+	}
+
+}

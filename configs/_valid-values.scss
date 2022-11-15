@@ -94,3 +94,14 @@ $vvalues-position: static relative absolute fixed sticky inherit initial unset r
 /// @type List
 /// @see {mixin} position-sticky
 $vvalues-position-sticky: top t 8 right r 6 bottom b 2 left l 4;
+
+/// Список допустимых значений для
+/// миксина `object-fit()`.
+/// ---
+/// @name vvalues-object-fit
+/// @group Configs
+/// @access private
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} object-fit
+$vvalues-object-fit: contain cover fill none scale-down inherit initial unset revert revert-layer !default;
