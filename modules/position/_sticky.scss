@@ -1,0 +1,83 @@
+@use 'index' as *;
+
+/// Миксин `position-sticky()` позволяет ускорить написание
+/// конструкции для `position: sticky`, используя миксин
+/// `position()`.
+/// ---
+/// @name position-sticky
+/// @alias position
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include position-sticky(top, 2);
+/// 	}
+///
+/// 	.example-short {
+/// 		@include position-sticky(r, 2);
+/// 	}
+///
+/// 	.example-numpad-style {
+/// 		@include position-sticky(4, 2);
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 	  position: -webkit-sticky;
+/// 	  position: sticky;
+/// 	  top: 2;
+/// 	}
+///
+/// 	.example-short {
+/// 	  position: -webkit-sticky;
+/// 	  position: sticky;
+/// 	  right: 2;
+/// 	}
+///
+/// 	.example-numpad-style {
+/// 	  position: -webkit-sticky;
+/// 	  position: sticky;
+/// 	  left: 2;
+/// 	}
+/// @param {String | Number} $side ["top"] - сторона, к которой будет прилипать элемент
+/// @param {Number} $offset [0] - отступ от стенки
+/// @require {mixin} position
+@mixin position-sticky($side: "top", $offset: 0) {
+
+	// Если в первом параметре есть
+	// `top`, `t` или `8`, то:
+	@if $side == "top"
+		or $side == "t"
+		or $side == 8 {
+		@include position(sticky, $offset);
+	}
+
+	// Если в первом параметре есть
+	// `right`, `r` или `6`, то:
+	@else if
+		$side == "right"
+		or $side == "r"
+		or $side == 6 {
+		@include position(sticky, null, $offset);
+	}
+
+	// Если в первом параметре есть
+	// `bottom`, `b` или `2`, то:
+	@else if
+		$side == "bottom"
+		or $side == "b"
+		or $side == 2 {
+		@include position(sticky, null, null, $offset);
+	}
+
+	// Если в первом параметре есть
+	// `left`, `l` или `4`, то:
+	@else if
+		$side == "left"
+		or $side == "l"
+		or $side == 4 {
+		@include position(sticky, null, null, null, $offset);
+	}
+
+}
