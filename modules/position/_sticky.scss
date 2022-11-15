@@ -1,4 +1,7 @@
 @use 'index' as *;
+@use '../@invalid-value-message' as *;
+@use '../../configs' as *;
+@use '../utilities/is-exist' as *;
 
 /// Миксин `position-sticky()` позволяет ускорить написание
 /// конструкции для `position: sticky`, используя миксин
@@ -45,39 +48,47 @@
 /// @require {mixin} position
 @mixin position-sticky($side: "top", $offset: 0) {
 
-	// Если в первом параметре есть
-	// `top`, `t` или `8`, то:
-	@if $side == "top"
-		or $side == "t"
-		or $side == 8 {
-		@include position(sticky, $offset);
+	@if is-exist($vvalues-position-sticky, $side) {
+
+		// Если в первом параметре есть
+		// `top`, `t` или `8`, то:
+		@if $side == "top"
+			or $side == "t"
+			or $side == 8 {
+			@include position(sticky, $offset);
+		}
+
+		// Если в первом параметре есть
+		// `right`, `r` или `6`, то:
+		@else if
+			$side == "right"
+			or $side == "r"
+			or $side == 6 {
+			@include position(sticky, null, $offset);
+		}
+
+		// Если в первом параметре есть
+		// `bottom`, `b` или `2`, то:
+		@else if
+			$side == "bottom"
+			or $side == "b"
+			or $side == 2 {
+			@include position(sticky, null, null, $offset);
+		}
+
+		// Если в первом параметре есть
+		// `left`, `l` или `4`, то:
+		@else if
+			$side == "left"
+			or $side == "l"
+			or $side == 4 {
+			@include position(sticky, null, null, null, $offset);
+		}
+
 	}
 
-	// Если в первом параметре есть
-	// `right`, `r` или `6`, то:
-	@else if
-		$side == "right"
-		or $side == "r"
-		or $side == 6 {
-		@include position(sticky, null, $offset);
-	}
-
-	// Если в первом параметре есть
-	// `bottom`, `b` или `2`, то:
-	@else if
-		$side == "bottom"
-		or $side == "b"
-		or $side == 2 {
-		@include position(sticky, null, null, $offset);
-	}
-
-	// Если в первом параметре есть
-	// `left`, `l` или `4`, то:
-	@else if
-		$side == "left"
-		or $side == "l"
-		or $side == 4 {
-		@include position(sticky, null, null, null, $offset);
+	@else {
+		@include invalid-value-message($vvalues-position-sticky, position-sticky, $side);
 	}
 
 }

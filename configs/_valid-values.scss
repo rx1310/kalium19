@@ -83,3 +83,14 @@ $vvalues-scroll-behavior: auto smooth inherit initial unset !default;
 /// @type List
 /// @see {mixin} position
 $vvalues-position: static relative absolute fixed sticky inherit initial unset revert revert-layer !default;
+
+/// Список допустимых значений для
+/// миксина `position-sticky()`.
+/// ---
+/// @name vvalues-position-sticky
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} position-sticky
+$vvalues-position-sticky: top t 8 right r 6 bottom b 2 left l 4 !default;
