@@ -1,0 +1,31 @@
+@use '../utilities/set-initial' as *;
+
+/// Миксин `initial()` позволяет сгенерировать
+/// CSS-свойство со значениями по умолчанию.
+/// ---
+/// @name initial
+/// @access public
+/// @since 6.0.0
+/// @author takamoso
+/// @link https://github.com/takamoso
+/// @example scss Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include initial(align-content, animation);
+/// 	}
+/// @example css Результат в CSS
+/// 	.example {
+/// 	  align-content: normal;
+/// 	  animation: none 0s ease 0s 1 normal none running;
+/// 	}
+/// @param {List} $properties - CSS-свойства, значения которых будут сброшены
+/// @require {function} set-initial
+@mixin initial($properties...) {
+
+	// Проходимся циклом по списку свойств
+	// и присваиваем каждому CSS-свойству его
+	// значение по умолчанию.
+  @each $property in $properties {
+    #{$property}: set-initial($property);
+  }
+
+}
