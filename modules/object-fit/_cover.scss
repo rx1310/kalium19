@@ -1,10 +1,10 @@
 @use 'index' as *;
 
-/// Миксин `object-fit-contain()` позволяет сгенерировать
+/// Миксин `object-fit-cover()` позволяет сгенерировать
 /// CSS-свойство `object-fit` с браузерными префиксами и
-/// значением `object-fit: contain`.
+/// значением `object-fit: cover`.
 /// ---
-/// @name object-fit-contain
+/// @name object-fit-cover
 /// @alias object-fit
 /// @access public
 /// @since 6.0.0
@@ -12,14 +12,14 @@
 /// @link https://rx1310.github.io/kalium19
 /// @example scss - Пример использования в Sass (SCSS)
 /// 	.example {
-/// 		@include object-fit-contain();
+/// 		@include object-fit-cover();
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  -o-object-fit: contain;
-/// 	  object-fit: contain;
+/// 	  -o-object-fit: cover;
+/// 	  object-fit: cover;
 /// 	}
 /// @require {mixin} object-fit
-@mixin object-fit-contain {
-	@include object-fit(contain);
+@mixin object-fit-cover {
+	@include object-fit(cover);
 }
