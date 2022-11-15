@@ -1,0 +1,25 @@
+@use 'index' as *;
+
+/// Миксин `object-fit-containr()` позволяет сгенерировать
+/// CSS-свойство `object-fit` с браузерными префиксами и
+/// значением `object-fit: contain`.
+/// ---
+/// @name object-fit-contain
+/// @alias object-fit
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include object-fit-contain();
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 	  -o-object-fit: contain;
+/// 	  object-fit: contain;
+/// 	}
+/// @require {mixin} object-fit
+@mixin object-fit-contain {
+	@include object-fit(contain);
+}
