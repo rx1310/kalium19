@@ -11,7 +11,16 @@
 /// @author Haba Kudzaev (rx1310)
 /// @link https://rx1310.github.io/kalium19
 /// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include position-absolute(0, 0, null, 0);
+/// 	}
 /// @example css - Результат в CSS
+/// 	.example {
+/// 	  position: absolute;
+/// 	  top: 0;
+/// 	  right: 0;
+/// 	  left: 0;
+/// 	}
 /// @param {Number} $top [null]
 /// @param {Number} $right [null]
 /// @param {Number} $bottom [null]
