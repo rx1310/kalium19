@@ -44,7 +44,7 @@
 			@include prefixer(
 				position,
 				$position,
-				webkit,
+				$prefixes-position-sticky,
 				true,
 				true
 			);

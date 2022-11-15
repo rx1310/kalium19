@@ -139,3 +139,15 @@ $prefixes-text-size-adjust: webkit moz ms !default;
 /// @see {mixin} prefixer
 /// @see {mixin} tab-size
 $prefixes-tab-size: moz o !default;
+
+/// Список браузерных префиксов для значения
+///  CSS-свойства `sticky`.
+/// ---
+/// @name prefixes-position-sticky
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} position-sticky
+$prefixes-position-sticky: webkit !default;
