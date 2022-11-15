@@ -1,0 +1,95 @@
+@use '../../configs' as *;
+@use '../utilities/map-deep-get' as *;
+
+/// Миксин `keyframes()` позволяет сгенерировать
+/// правило `@keyframes` сразу с поддержкой
+/// нескольких браузеров, для которых требуется
+/// префикс.
+/// ---
+/// @name keyframes
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	@include keyframes(example) {
+/// 		from {
+/// 			transform: translateX(0%);
+/// 		}
+/// 		to {
+/// 			transform: translateX(100%);
+/// 		}
+/// 	};
+/// @example css - Результат в CSS
+/// 	@-webkit-keyframes example {
+/// 	  from {
+/// 	    transform: translateX(0%);
+/// 	  }
+/// 	  to {
+/// 	    transform: translateX(100%);
+/// 	  }
+/// 	}
+/// 	@-moz-keyframes example {
+/// 	  from {
+/// 	    transform: translateX(0%);
+/// 	  }
+/// 	  to {
+/// 	    transform: translateX(100%);
+/// 	  }
+/// 	}
+/// 	@-ms-keyframes example {
+/// 	  from {
+/// 	    transform: translateX(0%);
+/// 	  }
+/// 	  to {
+/// 	    transform: translateX(100%);
+/// 	  }
+/// 	}
+/// 	@-o-keyframes example {
+/// 	  from {
+/// 	    transform: translateX(0%);
+/// 	  }
+/// 	  to {
+/// 	    transform: translateX(100%);
+/// 	  }
+/// 	}
+/// 	@keyframes example {
+/// 	  from {
+/// 	    transform: translateX(0%);
+/// 	  }
+/// 	  to {
+/// 	    transform: translateX(100%);
+/// 	  }
+/// 	}
+/// @param {String} $custom-ident - идентификатор (имя) правила
+@mixin keyframes($custom-ident) {
+
+	@if map-deep-get($keyframes, webkit) {
+		@-webkit-keyframes #{$custom-ident} {
+			@content;
+		}
+	}
+
+	@if map-deep-get($keyframes, moz) {
+		@-moz-keyframes #{$custom-ident} {
+			@content;
+		}
+	}
+
+	@if map-deep-get($keyframes, ms) {
+		@-ms-keyframes #{$custom-ident} {
+			@content;
+		}
+	}
+
+	@if map-deep-get($keyframes, o) {
+		@-o-keyframes #{$custom-ident} {
+			@content;
+		}
+	}
+
+	@keyframes #{$custom-ident} {
+		@content;
+	}
+
+}

@@ -483,3 +483,23 @@ $opacity: (
 	ie5: true,
 	ie8: true
 ) !default;
+
+/// Карта c параметрами браузерной
+/// совместимости миксина `keyframes()`.
+/// ---
+/// @name keyframes
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type Map
+/// @see {mixin} keyframes
+/// @prop {Boolean} keyframes.webkit [true] - префикс для совместимости с Chrome до версии 43, Opera до версии 30, Safari до версии 9
+/// @prop {Boolean} keyframes.moz [true] - префикс для совместимости с Firefox до версии 16
+/// @prop {Boolean} keyframes.ms [true] - префикс для совместимости с Internet Explorer до версии 10
+/// @prop {Boolean} keyframes.o [true] - префикс для совместимости с Opera до версии 12.10
+$keyframes: (
+	webkit: true,
+	moz: true,
+	ms: true,
+	o: true
+) !default;
