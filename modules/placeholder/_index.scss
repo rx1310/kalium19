@@ -21,19 +21,19 @@
 /// 	input[type=search]::-ms-input-placeholder {
 /// 	  color: red;
 /// 	}
-/// 	
+///
 /// 	input[type=search]::-webkit-input-placeholder {
 /// 	  color: red;
 /// 	}
-/// 	
+///
 /// 	input[type=search]::-moz-placeholder {
 /// 	  color: red;
 /// 	}
-/// 	
+///
 /// 	input[type=search]:-ms-input-placeholder {
 /// 	  color: red;
 /// 	}
-/// 	
+///
 /// 	input[type=search]:-moz-placeholder {
 /// 	  color: red;
 /// 	}
@@ -43,12 +43,12 @@
 @mixin placeholder($with-pseudo-class: true) {
 
 	@each $pseudo-element in $prefixes-placeholder-pseudo-element {
-		@include at-root-selector($pseudo-element) { @content; }
+		@include at-root-selector($pseudo-element + '-placeholder') { @content; }
 	}
 
 	@if $with-pseudo-class == true {
 		@each $pseudo-class in $prefixes-placeholder-pseudo-class {
-			@include at-root-selector($pseudo-class) { @content; }
+			@include at-root-selector($pseudo-class + '-placeholder') { @content; }
 		}
 	}
 

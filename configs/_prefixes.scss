@@ -162,7 +162,7 @@ $prefixes-position-sticky: webkit !default;
 /// @type List
 /// @see {mixin} prefixer
 /// @see {mixin} placeholder
-$prefixes-placeholder-pseudo-class: ':-ms-input-placeholder' ':-moz-placeholder' !default;
+$prefixes-placeholder-pseudo-class: ':-ms-input' ':-moz' !default;
 
 /// Список браузерных префиксов для псевдоэлемента
 /// `placeholder` и одноименного миксина.
@@ -174,4 +174,4 @@ $prefixes-placeholder-pseudo-class: ':-ms-input-placeholder' ':-moz-placeholder'
 /// @type List
 /// @see {mixin} prefixer
 /// @see {mixin} placeholder
-$prefixes-placeholder-pseudo-element: '::-ms-input-placeholder' '::-webkit-input-placeholder' '::-moz-placeholder' !default;
+$prefixes-placeholder-pseudo-element: '::-ms-input' '::-webkit-input' '::-moz' !default;
