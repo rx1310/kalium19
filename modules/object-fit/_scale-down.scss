@@ -1,0 +1,25 @@
+@use 'index' as *;
+
+/// Миксин `object-fit-scale-down()` позволяет сгенерировать
+/// CSS-свойство `object-fit` с браузерными префиксами и
+/// значением `object-fit: scale-down`.
+/// ---
+/// @name object-fit-scale-down
+/// @alias object-fit
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include object-fit-scale-down();
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 	  -o-object-fit: scale-down;
+/// 	  object-fit: scale-down;
+/// 	}
+/// @require {mixin} object-fit
+@mixin object-fit-scale-down {
+	@include object-fit(scale-down);
+}
