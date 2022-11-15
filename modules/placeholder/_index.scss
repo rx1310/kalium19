@@ -1,0 +1,62 @@
+@use '../../configs' as *;
+@use '../at-root-selector' as *;
+
+/// Миксин `placeholder()` позволяет стилизовать
+/// placeholder input-элементов с поддержкой
+/// разных браузеров (просто добавляются
+/// браузерные префиксы).
+/// ---
+/// @name placeholder
+/// @access public
+/// @since 6.0.0
+/// @author cimmanon
+/// @link https://stackoverflow.com/users/1652962/cimmanon
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	input[type="search"] {
+/// 		@include placeholder {
+/// 			color: red
+/// 		};
+/// 	}
+/// @example css - Результат в CSS
+/// 	input[type=search]::-ms-input-placeholder {
+/// 	  color: red;
+/// 	}
+/// 	
+/// 	input[type=search]::-webkit-input-placeholder {
+/// 	  color: red;
+/// 	}
+/// 	
+/// 	input[type=search]::-moz-placeholder {
+/// 	  color: red;
+/// 	}
+/// 	
+/// 	input[type=search]:-ms-input-placeholder {
+/// 	  color: red;
+/// 	}
+/// 	
+/// 	input[type=search]:-moz-placeholder {
+/// 	  color: red;
+/// 	}
+/// @param {Boolean} $with-pseudo-class [true] - генерация также псевдо-классов
+/// @require {mixin} at-root-selector
+/// @content Стили placeholder'а
+@mixin placeholder($with-pseudo-class: true) {
+
+	@each $pseudo-element in $prefixes-placeholder-pseudo-element {
+		@include at-root-selector($pseudo-element) { @content; }
+	}
+
+	@if $with-pseudo-class == true {
+		@each $pseudo-class in $prefixes-placeholder-pseudo-class {
+			@include at-root-selector($pseudo-class) { @content; }
+		}
+	}
+
+}
+
+// ? Миксин изначально был понятен, но я сильно переделал
+// ? работу автора и сейчас в 05:42 я вообще не
+// ? сильно понимаю что происходит и для чего это
+// ? вссё пишется, живется, используется, трат.. не туда
+// ? я пошел.
+// ! Надо поспать!

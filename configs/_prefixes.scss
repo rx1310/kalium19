@@ -151,3 +151,27 @@ $prefixes-tab-size: moz o !default;
 /// @see {mixin} prefixer
 /// @see {mixin} position-sticky
 $prefixes-position-sticky: webkit !default;
+
+/// Список браузерных префиксов для псевдокласса
+/// `placeholder` и одноименного миксина.
+/// ---
+/// @name prefixes-placeholder-pseudo-class
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} placeholder
+$prefixes-placeholder-pseudo-class: ':-ms-input-placeholder' ':-moz-placeholder' !default;
+
+/// Список браузерных префиксов для псевдоэлемента
+/// `placeholder` и одноименного миксина.
+/// ---
+/// @name prefixes-placeholder-pseudo-element
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} placeholder
+$prefixes-placeholder-pseudo-element: '::-ms-input-placeholder' '::-webkit-input-placeholder' '::-moz-placeholder' !default;
