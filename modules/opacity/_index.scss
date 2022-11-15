@@ -1,0 +1,40 @@
+@use '../../configs' as *;
+@use '../prefixer' as *;
+@use '../utilities/map-deep-get' as *;
+
+/// Миксин `opacity()` помогает сгенерировать
+/// CSS-свойство `opacity` со всеми нужными
+/// браузерными префиксами.
+/// ---
+/// @name opacity
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// @example css - Результат в CSS
+/// @param {Number | String} $opacity-degree - значение CSS-свойства `opacity`
+@mixin opacity($opacity-degree) {
+
+	// Значение для браузера IE
+	$_opacity-degree-ie: $opacity-degree * 100;
+
+	// С помощью миксина `prefixer()` добавляем
+	// нужные браузерные префиксы:
+	@include prefixer(
+		opacity,
+		$opacity-degree,
+		$prefixes-opacity
+	);
+
+	@if map-deep-get($opacity, ie5) == true {
+		/* for IE 5-7 */
+		filter: alpha(opacity=$_opacity-degree-ie);
+	}
+
+	@if map-deep-get($opacity, ie8) == true {
+		/* for IE 8 */
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$_opacity-degree-ie})";
+	}
+
+}

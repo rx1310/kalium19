@@ -175,3 +175,15 @@ $prefixes-placeholder-pseudo-class: ':-ms-input' ':-moz' !default;
 /// @see {mixin} prefixer
 /// @see {mixin} placeholder
 $prefixes-placeholder-pseudo-element: '::-ms-input' '::-webkit-input' '::-moz' !default;
+
+/// Список браузерных префиксов для CSS-свойства
+/// `opacity` и одноименного миксина.
+/// ---
+/// @name prefixes-opacity
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} opacity
+$prefixes-opacity: moz khtml !default;

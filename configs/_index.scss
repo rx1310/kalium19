@@ -452,7 +452,13 @@ $characters: (
 /// @access public
 /// @since 6.0.0
 /// @type Map
-/// @see {function} respond-to
+/// @see {mixin} respond-to
+/// @prop {String} breakpoints.xs [(min-width: 0)] - мин. брейкпоинт для размера вьюпорта от нуля
+/// @prop {String} breakpoints.sm [(min-width: 576px)] - мин. брейкпоинт для размера вьюпорта от `576px`
+/// @prop {String} breakpoints.md [(min-width: 768px)] - мин. брейкпоинт для размера вьюпорта от `768px`
+/// @prop {String} breakpoints.lg [(min-width: 992px)] - мин. брейкпоинт для размера вьюпорта от `992px`
+/// @prop {String} breakpoints.xl [(min-width: 1200px)] - мин. брейкпоинт для размера вьюпорта от `1200px`
+/// @prop {String} breakpoints.xxl [(min-width: 1400px)] - мин. брейкпоинт для размера вьюпорта от `1400px`
 $breakpoints: (
 	xs: (min-width: 0),
 	sm: (min-width: 576px),
@@ -460,4 +466,20 @@ $breakpoints: (
 	lg: (min-width: 992px),
 	xl: (min-width: 1200px),
 	xxl: (min-width: 1400px)
+) !default;
+
+/// Карта c параметрами браузерной
+/// совместимости миксина `opacity()`.
+/// ---
+/// @name opacity
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type Map
+/// @see {mixin} opacity
+/// @prop {Boolean} opacity.ie5 [true] - поддержка браузера Microsoft Internet Explorer 5-7
+/// @prop {Boolean} opacity.ie8 [true] - поддержка браузера Microsoft Internet Explorer 8
+$opacity: (
+	ie5: true,
+	ie8: true
 ) !default;
