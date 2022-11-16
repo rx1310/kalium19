@@ -1,0 +1,104 @@
+@use '../../configs' as *;
+@use '../utilities/contains' as *;
+@use '../utilities/is-exist' as *;
+@use '../@invalid-value-message' as *;
+
+/// Миксин `font-face()` позволяет проще
+/// добавлять шрифты в CSS.
+/// ---
+/// @name font-face
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	@include font-face(
+/// 		"../assets/fonts/Roboto",
+/// 		"Roboto",
+/// 		"roboto",
+/// 		600,
+/// 		normal,
+/// 		ttf woff woff2
+/// 	);
+/// @example css - Результат в CSS
+/// 	@font-face {
+/// 	  font-family: "Roboto";
+/// 	  font-weight: 600;
+/// 	  font-style: normal;
+/// 	  /* Woff font */
+/// 	  src: url("../assets/fonts/Roboto/roboto.woff") format("woff");
+/// 	  /* Woff2 font */
+/// 	  src: url("../assets/fonts/Roboto/roboto.woff2") format("woff2");
+/// 	  /* TrueType font */
+/// 	  src: url("../assets/fonts/Roboto/roboto.ttf") format("truetype");
+/// 	}
+/// @param {String} $fonts-folder-path - папка, в которой содержатся файлы шрифтов
+/// @param {String} $font-family-name - название семейства шрифтов
+/// @param {String} $font-file-name - название файла шрифтов
+/// @param {String} $font-weight [normal] - начертание шрифта
+/// @param {String} $font-style [normal] - стиль шрифта
+/// @param {List} $font-file-extensions [$vvalues-font-file-extensions] - список форматов файла шрифта
+@mixin font-face(
+	$fonts-folder-path,
+	$font-family-name,
+	$font-file-name,
+	$font-weight: normal,
+	$font-style: normal,
+	$font-file-extensions: $vvalues-font-file-extensions) {
+
+	/* Example CSS:
+	 * 1. body {
+	 * 2. 	font-family: "#{$font-family-name}", sans-serif;
+	 * 3. }
+	 */
+	@font-face {
+
+		font-family: quote($font-family-name);
+
+		// Проверяем на правильное заполнение параметра
+		// `$font-weight`.
+		@if is-exist($vvalues-font-weight, $font-weight) {
+			font-weight: $font-weight;
+		} @else {
+			@include invalid-value-message($vvalues-font-weight, font-weight, $font-weight)
+		}
+
+		// Проверяем на правильное заполнение параметра
+		// `$font-style`.
+		@if is-exist($vvalues-font-style, $font-style) {
+			font-style: $font-style;
+		} @else {
+			@include invalid-value-message($vvalues-font-style, font-style, $font-style)
+		}
+
+		// А тут мы просто добавляем шрифты по
+		// расширениям, которые указаны в параметре
+		// (списке) `$font-file-extensions`:
+		@if (contains($font-file-extensions, eot)) {
+			/* EOT font type */
+			src: url($fonts-folder-path + '/' + $font-file-name + '.eot')
+		} @if (contains($font-file-extensions, 'eot?#iefix')) {
+			/* EOT font type (Embedded OpenType) */
+			src: url($fonts-folder-path + '/' + $font-file-name + '.eot?#iefix') format('embedded-opentype');
+		} @if (contains($font-file-extensions, woff)) {
+			/* Woff font */
+			src: url($fonts-folder-path + '/' + $font-file-name + '.woff') format('woff');
+		} @if (contains($font-file-extensions, woff2)) {
+			/* Woff2 font */
+			src: url($fonts-folder-path + '/' + $font-file-name + '.woff2') format('woff2');
+		} @if (contains($font-file-extensions, ttf)) {
+			/* TrueType font */
+			src: url($fonts-folder-path + '/' + $font-file-name + '.ttf') format('truetype');
+		} @if (contains($font-file-extensions, otf)) {
+			/* OpenType Font */
+			src: url($fonts-folder-path + '/' + $font-file-name + '.otf') format('opentype');
+		} @if (contains($font-file-extensions, svg)) {
+			/* SVG-font type */
+			src: url($fonts-folder-path + '/' + $font-file-name + '.svg##{$font-family-name}') format('svg');
+		} @if is-exist($vvalues-font-file-extensions, $font-file-extensions) == false {
+			@include invalid-value-message($vvalues-font-file-extensions, 'font-face()', $font-file-extensions);
+		}
+
+	}
+
+}
