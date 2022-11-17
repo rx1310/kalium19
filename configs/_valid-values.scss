@@ -149,3 +149,14 @@ $vvalues-font-file-extensions: "eot?#iefix" eot woff woff2 ttf otf svg !default;
 /// @type List
 /// @see {mixin} flex-direction
 $vvalues-flex-direction: row row-reverse column column-reverse inherit initial unset !default;
+
+/// Список допустимых значений для
+/// миксина `flexbox()`.
+/// ---
+/// @name vvalues-flexbox
+/// @group Configs
+/// @access private
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} flexbox
+$vvalues-flexbox: block inline;

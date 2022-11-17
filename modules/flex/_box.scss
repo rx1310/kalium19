@@ -1,0 +1,48 @@
+@use '../../configs' as *;
+@use '../@invalid-value-message' as *;
+@use '../prefixer' as *;
+
+/// Миксин `flexbox()` позволяет добавить
+/// CSS-свойство `display` со значением
+/// `flex` со всеми нужными браузерными префиксами.
+/// ---
+/// @name flexbox
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// @example css - Результат в CSS
+/// @param {String} $value [block] - тип контейнера
+@mixin flexbox($value: block) {
+
+	// Если значение параметра `$value` равно
+	// `block`, то генерируем `display: flex`:
+	@if $value == block {
+
+		// С помощью миксина `prefixer()` генерируем
+		// свойства с нужными браузерными префиксами:
+		@include prefixer(display, flex, $prefixes-display-flex, true, true);
+		@include prefixer(display, box, $prefixes-display-box, false, true);
+
+	}
+
+	// Если значение параметра `$value` равно
+	// `inline`, то генерируем `display: inline-flex`:
+	@else if $value == inline {
+
+		// С помощью миксина `prefixer()` генерируем
+		// свойства с нужными браузерными префиксами:
+		@include prefixer(display, inline-flex, $prefixes-display-inline-flex, true, true);
+		@include prefixer(display, inline-box, $prefixes-display-inline-box, false, true);
+
+	}
+
+	// Если значение параметра `$value` не
+	// соответствует `block` или `inline`, то
+	// выводим ошибку:
+	@else {
+		@include invalid-value-message($vvalues-flexbox, 'flexbox()', $value);
+	}
+
+}

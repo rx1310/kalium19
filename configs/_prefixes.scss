@@ -223,3 +223,51 @@ $prefixes-flex-basis: webkit !default;
 /// @see {mixin} prefixer
 /// @see {mixin} flex-direction
 $prefixes-flex-direction: webkit !default;
+
+/// Список браузерных префиксов для значения
+/// `flex` CSS-свойства `display`.
+/// ---
+/// @name prefixes-display-flex
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} flexbox
+$prefixes-display-flex: webkit !default;
+
+/// Список браузерных префиксов для значения
+/// `inline-flex` CSS-свойства `display`.
+/// ---
+/// @name prefixes-display-inline-flex
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} flexbox
+$prefixes-display-inline-flex: webkit !default;
+
+/// Список браузерных префиксов для значения
+/// `box` CSS-свойства `display`.
+/// ---
+/// @name prefixes-display-box
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} flexbox
+$prefixes-display-box: webkit moz !default;
+
+/// Список браузерных префиксов для значения
+/// `inline-box` CSS-свойства `display`.
+/// ---
+/// @name prefixes-display-inline-box
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} flexbox
+$prefixes-display-inline-box: webkit moz !default;
