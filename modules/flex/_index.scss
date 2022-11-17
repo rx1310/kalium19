@@ -1,0 +1,41 @@
+@use '../../configs' as *;
+@use '../prefixer' as *;
+@use '../utilities/is-list' as *;
+
+/// Миксин `flex()` позволяет сгенерировать
+/// CSS-свойство `flex` со всеми необходимыми
+/// браузерными префиксами.
+/// @name flex
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include flex();
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 	  -webkit-box: 1;
+/// 	  -moz-box: 1;
+/// 	  -webkit-flex: 1 0 auto;
+/// 	  -ms-flex: 1 0 auto;
+/// 	  flex: 1 0 auto;
+/// 	}
+/// @param {Number} $grow [1] - сколько пространства может занимать flex внутри контейнера
+/// @param {Number} $shrink [0] - коэффициент сжатия флексов в контейнере и задаёт, насколько элемент будет уменьшаться по отношению к другим флексам, чтобы разместить все элементы в одну строку
+/// @param {Number | String} $basis [auto] - размер элемента в px, mm, pt или в процентах вдоль главной оси
+@mixin flex($grow: 1, $shrink: 0, $basis: auto) {
+
+	// Установите переменную, которая будет
+	// использоваться свойствами `box-flex`:
+	$_box-flex: $grow;
+
+	@if is-list(grow) {
+		$_box-flex: nth($grow, 1);
+	}
+
+	@include prefixer(box, $_box-flex, $prefixes-box, false);
+	@include prefixer(flex, $grow $shrink $basis, $prefixes-flex);
+
+}
