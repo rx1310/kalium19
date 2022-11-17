@@ -199,3 +199,15 @@ $prefixes-opacity: moz khtml !default;
 /// @see {mixin} prefixer
 /// @see {mixin} object-fit
 $prefixes-object-fit: o !default;
+
+/// Список браузерных префиксов для CSS-свойства
+/// `flex-basis` и одноименного миксина.
+/// ---
+/// @name prefixes-flex-basis
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} flex-basis
+$prefixes-flex-basis: webkit !default;

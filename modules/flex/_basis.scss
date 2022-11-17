@@ -1,0 +1,33 @@
+@use '../../configs' as *;
+@use '../prefixer' as *;
+
+/// Миксин `flex()` позволяет сгенерировать
+/// CSS-свойство с браузерными префиксами.
+/// ---
+/// @name flex-basis
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include flex-basis(15%);
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 	  -webkit-flex-basis: 15%;
+/// 	  flex-basis: 15%;
+/// 	}
+/// @param {String | Number} $size [auto] - размер элемента в `px`, `mm`, `pt` или в процентах вдоль главной оси.
+@mixin flex-basis($size: auto) {
+
+	// С помощью миксина `prefixer()` генерируем
+	// CSS-свойство `flex-basis` со всеми нужными
+	// браузерными префиксами:
+	@include prefixer(
+		flex-basis,
+		$size,
+		$prefixes-flex-basis
+	);
+
+}

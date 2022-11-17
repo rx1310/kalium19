@@ -4,6 +4,12 @@
 
 @forward 'modules/at-root-selector';
 @forward 'modules/bem';
+@forward 'modules/font-face';
+@forward 'modules/image-2x';
+@forward 'modules/initial';
+@forward 'modules/keyframes';
+@forward 'modules/mquery';
+@forward 'modules/mquery/r';
 @forward 'modules/object-fit';
 @forward 'modules/object-fit/contain';
 @forward 'modules/object-fit/cover';
@@ -36,12 +42,8 @@
 @forward 'modules/user-select';
 @forward 'modules/visually-hidden';
 @forward 'modules/wh';
-@forward 'modules/mquery';
-@forward 'modules/mquery/r';
-@forward 'modules/keyframes';
-@forward 'modules/initial';
-@forward 'modules/image-2x';
-@forward 'modules/font-face';
+
+@forward 'modules/flex/basis';
 
 @forward 'modules/utilities/color-shade';
 @forward 'modules/utilities/color-tint';
