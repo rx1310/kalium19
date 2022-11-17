@@ -12,13 +12,25 @@
 /// @author Haba Kudzaev (rx1310)
 /// @link https://rx1310.github.io/kalium19
 /// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include flexbox();
+/// 	}
 /// @example css - Результат в CSS
+/// 	.example {
+/// 	  display: -ms-flexbox;
+/// 	  display: -webkit-flex;
+/// 	  display: flex;
+/// 	  display: -webkit-box;
+/// 	  display: -moz-box;
+/// 	}
 /// @param {String} $value [block] - тип контейнера
 @mixin flexbox($value: block) {
 
 	// Если значение параметра `$value` равно
 	// `block`, то генерируем `display: flex`:
 	@if $value == block {
+
+		display: -ms-flexbox;
 
 		// С помощью миксина `prefixer()` генерируем
 		// свойства с нужными браузерными префиксами:
@@ -30,6 +42,8 @@
 	// Если значение параметра `$value` равно
 	// `inline`, то генерируем `display: inline-flex`:
 	@else if $value == inline {
+
+		display: -ms-inline-flexbox;
 
 		// С помощью миксина `prefixer()` генерируем
 		// свойства с нужными браузерными префиксами:
