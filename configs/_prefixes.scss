@@ -211,3 +211,15 @@ $prefixes-object-fit: o !default;
 /// @see {mixin} prefixer
 /// @see {mixin} flex-basis
 $prefixes-flex-basis: webkit !default;
+
+/// Список браузерных префиксов для CSS-свойства
+/// `flex-direction` и одноименного миксина.
+/// ---
+/// @name prefixes-flex-direction
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} flex-direction
+$prefixes-flex-direction: webkit !default;

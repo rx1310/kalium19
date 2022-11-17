@@ -138,3 +138,14 @@ $vvalues-font-style: normal italic oblique inherit initial revert revert-layer u
 /// @type List
 /// @see {mixin} font-face
 $vvalues-font-file-extensions: "eot?#iefix" eot woff woff2 ttf otf svg !default;
+
+/// Список допустимых значений для
+/// CSS-свойства `flex-direction`.
+/// ---
+/// @name vvalues-flex-direction
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} flex-direction
+$vvalues-flex-direction: row row-reverse column column-reverse inherit initial unset !default;
