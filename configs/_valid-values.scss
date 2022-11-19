@@ -281,3 +281,14 @@ $vvalues-column-count: '<number>' auto inherit initial unset;
 /// @type List
 /// @see {mixin} column-fill
 $vvalues-column-fill: auto balance balance-all inherit initial unset !default;
+
+/// Список допустимых значений для
+/// миксина `column-gap()`.
+/// ---
+/// @name vvalues-column-gap
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} column-gap
+$vvalues-column-gap: '<length>' '<percentage>' normal inherit initial revert unset !default;

@@ -427,3 +427,15 @@ $prefixes-column-count: webkit moz !default;
 /// @see {mixin} prefixer
 /// @see {mixin} column-fill
 $prefixes-column-fill: webkit moz !default;
+
+/// Список браузерных префиксов для
+/// CSS-свойства `column-gap`.
+/// ---
+/// @name prefixes-column-gap
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} column-gap
+$prefixes-column-gap: webkit moz !default;
