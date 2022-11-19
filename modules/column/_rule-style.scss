@@ -1,0 +1,52 @@
+@use '../../configs' as *;
+@use '../prefixer' as *;
+@use '../utilities/is-exist' as *;
+@use '../@invalid-value-message' as *;
+
+/// Миксин `column-rule-style()` позволяет сгенерировать
+/// CSS-свойство `column-rule-style` с браузерными префиксами.
+/// ---
+/// @name column-rule-style
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include column-rule-style(hidden);
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 		-webkit-column-rule-style: hidden;
+/// 		-moz-column-rule-style: hidden;
+/// 		column-rule-style: hidden;
+/// 	}
+/// @param {String} $value [none] - значение свойства `column-rule-style`
+@mixin column-rule-style($value: none) {
+
+	// С помощью функции `is-exist()` проверяем,
+	// есть ли значение параметра `$value`
+	// в списке `$vvalues-column-rule-style`:
+	@if is-exist($vvalues-column-rule-style, $value) {
+
+		// С помощью миксина `prefixer()` генерируем
+		// CSS-свойство `column-rule-style` со всеми нужными
+		// браузерными префиксами:
+		@include prefixer(
+			column-rule-style,
+			$value,
+			$prefixes-column-rule-style
+		);
+
+	}
+
+	// Если нет, то отображаем сообщение об ошибке:
+	@else {
+		@include invalid-value-message(
+			$vvalues-column-rule-style,
+			column-rule-style,
+			$value
+		);
+	}
+
+}

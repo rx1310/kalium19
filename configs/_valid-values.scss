@@ -292,3 +292,14 @@ $vvalues-column-fill: auto balance balance-all inherit initial unset !default;
 /// @type List
 /// @see {mixin} column-gap
 $vvalues-column-gap: '<length>' '<percentage>' normal inherit initial revert unset !default;
+
+/// Список допустимых значений для
+/// миксина `column-rule-style()`.
+/// ---
+/// @name vvalues-column-rule-style
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} column-rule-style
+$vvalues-column-rule-style: none hidden dotted dashed solid double groove ridge inset outset inherit initial unset !default;
