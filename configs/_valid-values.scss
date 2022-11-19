@@ -215,3 +215,14 @@ $vvalues-justify-content: center start end flex-start flex-end left right baseli
 /// @type List
 /// @see {mixin} flex-grow
 $vvalues-flex-grow: '<number>' inherit initial unset;
+
+/// Список допустимых значений для
+/// миксина `flex-flow()`.
+/// ---
+/// @name vvalues-flex-flow
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} flex-flow
+$vvalues-flex-flow: row row-reverse column column-reverse nowrap wrap wrap-reverse 'row nowrap' 'column wrap' 'column-reverse wrap-reverse' inherit initial unset !default;

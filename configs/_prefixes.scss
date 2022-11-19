@@ -355,3 +355,15 @@ $prefixes-order: webkit !default;
 /// @see {mixin} prefixer
 /// @see {mixin} justify-content
 $prefixes-justify-content: webkit !default;
+
+/// Список браузерных префиксов для
+/// CSS-свойства `flex-flow`.
+/// ---
+/// @name prefixes-flex-flow
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} flex-flow
+$prefixes-flex-flow: webkit !default;
