@@ -1,0 +1,44 @@
+@use '../../configs' as *;
+@use '../prefixer' as *;
+@use '../utilities/is-exist' as *;
+@use '../utilities/is-int' as *;
+@use '../@invalid-value-message' as *;
+
+/// Миксин `column-count()` позволяет сгенерировать
+/// CSS-свойство `column-count` со всеми нужными
+/// браузерными префиксами и добавляет проверку вводимого
+/// значения, чтобы не было ошибок.
+/// ---
+/// @name column-count
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include column-count(1);
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 		-webkit-column-count: 1;
+/// 		-moz-column-count: 1;
+/// 		column-count: 1;
+/// 	}
+/// @param {String} $value [auto] - значение свойства `column-count`
+@mixin column-count($value: auto) {
+
+	// Если значение `$value` является числом или соответствует
+	// списку `$vvalues-column-count`, то генерируем
+	// CSS-свойство `column-count` со всеми нужными
+	// браузерными префиксами:
+	@if is-int($value, false) or is-exist($vvalues-column-count, $value) {
+		@include prefixer(column-count, $value, $prefixes-column-count);
+	}
+
+	// Если соответствие не найдено, то
+	// выводим ошибку:
+	@else {
+		@include invalid-value-message($vvalues-column-count, column-count, $value);
+	}
+
+}

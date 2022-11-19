@@ -2,19 +2,20 @@
 
 @forward 'configs';
 
+@forward 'modules/align/content';
+@forward 'modules/align/items';
+@forward 'modules/align/self';
 @forward 'modules/at-root-selector';
 @forward 'modules/bem';
-@forward 'modules/align/self';
-@forward 'modules/align/items';
-@forward 'modules/align/content';
+@forward 'modules/column/count';
 @forward 'modules/flex';
 @forward 'modules/flex/basis';
 @forward 'modules/flex/box';
 @forward 'modules/flex/direction';
+@forward 'modules/flex/flow';
+@forward 'modules/flex/grow';
 @forward 'modules/flex/shrink';
 @forward 'modules/flex/wrap';
-@forward 'modules/flex/grow';
-@forward 'modules/flex/flow';
 @forward 'modules/font-face';
 @forward 'modules/image-2x';
 @forward 'modules/initial';
