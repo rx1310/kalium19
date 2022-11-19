@@ -307,3 +307,15 @@ $prefixes-flex: webkit ms !default;
 /// @see {mixin} prefixer
 /// @see {mixin} flex-wrap
 $prefixes-flex-wrap: webkit !default;
+
+/// Список браузерных префиксов для
+/// CSS-свойства `flex-shrink`.
+/// ---
+/// @name prefixes-flex-shrink
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} flex-shrink
+$prefixes-flex-shrink: webkit !default;

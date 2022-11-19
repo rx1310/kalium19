@@ -161,7 +161,6 @@ $vvalues-flex-direction: row row-reverse column column-reverse inherit initial u
 /// @see {mixin} flexbox
 $vvalues-flexbox: block inline;
 
-
 /// Список допустимых значений для
 /// миксина `flex-wrap()`.
 /// ---
@@ -172,3 +171,14 @@ $vvalues-flexbox: block inline;
 /// @type List
 /// @see {mixin} flex-wrap
 $vvalues-flex-wrap: nowrap wrap wrap-reverse inherit initial unset !default;
+
+/// Список допустимых значений для
+/// миксина `flex-shrink()`.
+/// ---
+/// @name vvalues-flex-shrink
+/// @group Configs
+/// @access private
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} flex-shrink
+$vvalues-flex-shrink: '<number>' inherit initial unset !default;

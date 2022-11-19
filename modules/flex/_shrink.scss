@@ -1,0 +1,43 @@
+@use '../../configs' as *;
+@use '../prefixer' as *;
+@use '../utilities/is-exist' as *;
+@use '../utilities/is-int' as *;
+@use '../@invalid-value-message' as *;
+
+/// Миксин `flex-shrink()` позволяет сгенерировать
+/// CSS-свойство `flex-shrink` со всеми нужными
+/// браузерными префиксами и добавляет проверку вводимого
+/// значения, чтобы не было ошибок.
+/// ---
+/// @name flex-shrink
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include flex-shrink(1);
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 	  -webkit-flex-shrink: 1;
+/// 	  flex-shrink: 1;
+/// 	}
+/// @param {String} $value [1] - значение свойства `flex-shrink`
+@mixin flex-shrink($value: 1) {
+
+	// Если значение `$value` является числом или соответствует
+	// списку `$vvalues-flex-shrink`, то генерируем
+	// CSS-свойство `flex-shrink` со всеми нужными
+	// браузерными префиксами:
+	@if is-int($value, false) or is-exist($vvalues-flex-shrink, $value) {
+		@include prefixer(flex-shrink, $value, $prefixes-flex-shrink);
+	}
+
+	// Если соответствие не найдено, то
+	// выводим ошибку:
+	@else {
+		@include invalid-value-message($vvalues-flex-shrink, flex-shrink, $value);
+	}
+
+}
