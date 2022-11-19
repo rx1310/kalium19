@@ -321,6 +321,18 @@ $prefixes-flex-wrap: webkit !default;
 $prefixes-flex-shrink: webkit !default;
 
 /// Список браузерных префиксов для
+/// CSS-свойства `flex-grow`.
+/// ---
+/// @name prefixes-flex-grow
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} flex-grow
+$prefixes-flex-grow: webkit !default;
+
+/// Список браузерных префиксов для
 /// CSS-свойства `order`.
 /// ---
 /// @name prefixes-order

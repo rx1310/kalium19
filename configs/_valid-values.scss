@@ -204,3 +204,14 @@ $vvalues-order: '<number>' inherit initial unset;
 /// @type List
 /// @see {mixin} justify-content
 $vvalues-justify-content: center start end flex-start flex-end left right baseline 'first baseline' 'last baseline' space-between space-around space-evenly stretch 'safe center' 'unsafe center' inherit initial unset !default;
+
+/// Список допустимых значений для
+/// миксина `flex-grow()`.
+/// ---
+/// @name vvalues-flex-grow
+/// @group Configs
+/// @access private
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} flex-grow
+$vvalues-flex-grow: '<number>' inherit initial unset;
