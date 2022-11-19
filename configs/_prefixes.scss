@@ -331,3 +331,15 @@ $prefixes-flex-shrink: webkit !default;
 /// @see {mixin} prefixer
 /// @see {mixin} order
 $prefixes-order: webkit !default;
+
+/// Список браузерных префиксов для
+/// CSS-свойства `justify-content`.
+/// ---
+/// @name prefixes-justify-content
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} justify-content
+$prefixes-justify-content: webkit !default;

@@ -193,3 +193,14 @@ $vvalues-flex-shrink: '<number>' inherit initial unset;
 /// @type List
 /// @see {mixin} order
 $vvalues-order: '<number>' inherit initial unset;
+
+/// Список допустимых значений для
+/// миксина `justify-content()`.
+/// ---
+/// @name vvalues-justify-content
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} justify-content
+$vvalues-justify-content: center start end flex-start flex-end left right baseline 'first baseline' 'last baseline' space-between space-around space-evenly stretch 'safe center' 'unsafe center' inherit initial unset !default;

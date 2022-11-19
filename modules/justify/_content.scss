@@ -1,0 +1,61 @@
+@use '../../configs' as *;
+@use '../prefixer' as *;
+@use '../utilities/is-exist' as *;
+@use '../@invalid-value-message' as *;
+
+/// Миксин `justify-content()` позволяет сгенерировать
+/// CSS-свойство `justify-content` со всеми нужными
+/// браузерными префиксами и добавляет проверку вводимого
+/// значения, чтобы не было ошибок.
+/// ---
+/// @name justify-content
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include justify-content(space-between);
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 	  -webkit-justify-content: space-between;
+/// 	  justify-content: space-between;
+/// 	}
+/// @param {} $
+@mixin justify-content($value: flex-start) {
+
+	// С помощью функции `is-exist()` проверяем
+	// соответсвие значения `$value` значениям
+	// из списка `$vvalues-justify-content`:
+	@if is-exist($vvalues-justify-content, $value) {
+
+		// Если соответствие найдено, то с помощью
+		// миксина `prefixer()` генерируем CSS-свойство
+		// `justify-content` со всеми нужными браузерными префиксами:
+		@include prefixer(justify-content, $value, $prefixes-justify-content);
+
+	}
+
+	// Если нет соответствий, то выводим ошибку:
+	@else {
+
+		$_message-warn: "🟧 Обратите внимание на то, что свойства 'first baseline', 'last baseline', 'safe center' и 'unsafe center' нужно указывать в кавычках!";
+
+		@include invalid-value-message($vvalues-justify-content, justify-content, $value);
+
+		// Отдельно выводим предупреждение о свойствах,
+		// в названии которых встречаются несколько
+		// слов, не соединенных тире или знаком нижнего
+		// подчеркивания. Такие свойства нужно указывать в кавычках,
+		// ибо компилятор Sass посчитает что это список.
+		//
+		// <= `@include justify-content("first baseline");`
+		// => `justify-content: first baseline;`
+
+		@debug $_message-warn;
+		/* #{$_message-warn} */
+
+	}
+
+}

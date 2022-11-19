@@ -4,9 +4,16 @@
 
 @forward 'modules/at-root-selector';
 @forward 'modules/bem';
+@forward 'modules/flex';
+@forward 'modules/flex/basis';
+@forward 'modules/flex/box';
+@forward 'modules/flex/direction';
+@forward 'modules/flex/shrink';
+@forward 'modules/flex/wrap';
 @forward 'modules/font-face';
 @forward 'modules/image-2x';
 @forward 'modules/initial';
+@forward 'modules/justify/content';
 @forward 'modules/keyframes';
 @forward 'modules/mquery';
 @forward 'modules/mquery/r';
@@ -15,6 +22,7 @@
 @forward 'modules/object-fit/cover';
 @forward 'modules/object-fit/scale-down';
 @forward 'modules/opacity';
+@forward 'modules/order';
 @forward 'modules/placeholder';
 @forward 'modules/position';
 @forward 'modules/position/absolute';
@@ -42,14 +50,6 @@
 @forward 'modules/user-select';
 @forward 'modules/visually-hidden';
 @forward 'modules/wh';
-
-@forward 'modules/flex';
-@forward 'modules/flex/box';
-@forward 'modules/flex/basis';
-@forward 'modules/flex/direction';
-@forward 'modules/flex/wrap';
-@forward 'modules/flex/shrink';
-@forward 'modules/order';
 
 @forward 'modules/utilities/color-shade';
 @forward 'modules/utilities/color-tint';
