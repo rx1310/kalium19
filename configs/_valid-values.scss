@@ -325,3 +325,14 @@ $vvalues-column-rule-width: '<length>' thin medium thick inherit initial revert 
 /// @type List
 /// @see {mixin} column-span
 $vvalues-column-span: none all inherit initial revert revert-layer unset !default;
+
+/// Список допустимых значений для
+/// миксина `column-width()`.
+/// ---
+/// @name vvalues-column-width
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} column-width
+$vvalues-column-width: '<length>' auto inherit initial revert revert-layer unset !default;

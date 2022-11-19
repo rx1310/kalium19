@@ -499,3 +499,15 @@ $prefixes-column-rule-width: webkit moz !default;
 /// @see {mixin} prefixer
 /// @see {mixin} column-span
 $prefixes-column-span: webkit !default;
+
+/// Список браузерных префиксов для
+/// CSS-свойства `column-width`.
+/// ---
+/// @name prefixes-column-width
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} column-width
+$prefixes-column-width: webkit moz !default;

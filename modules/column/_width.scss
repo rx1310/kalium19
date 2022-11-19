@@ -1,0 +1,44 @@
+@use '../../configs' as *;
+@use '../prefixer' as *;
+@use '../utilities/is-exist' as *;
+@use '../utilities/is-int' as *;
+@use '../@invalid-value-message' as *;
+
+/// Миксин `column-width()` позволяет сгенерировать
+/// CSS-свойство `column-width` со всеми нужными
+/// браузерными префиксами и добавляет проверку вводимого
+/// значения, чтобы не было ошибок.
+/// ---
+/// @name column-width
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include column-width(200px);
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 		-webkit-column-width: 200px;
+/// 		-moz-column-width: 200px;
+/// 		column-width: 200px;
+/// 	}
+/// @param {String} $value [auto] - значение свойства `column-width`
+@mixin column-width($value: auto) {
+
+	// Если значение `$value` является числом или соответствует
+	// списку `$vvalues-column-width`, то генерируем
+	// CSS-свойство `column-width` со всеми нужными
+	// браузерными префиксами:
+	@if is-int($value, false) or is-exist($vvalues-column-width, $value) {
+		@include prefixer(column-width, $value, $prefixes-column-width);
+	}
+
+	// Если соответствие не найдено, то
+	// выводим ошибку:
+	@else {
+		@include invalid-value-message($vvalues-column-width, column-width, $value);
+	}
+
+}
