@@ -451,3 +451,15 @@ $prefixes-column-gap: webkit moz !default;
 /// @see {mixin} prefixer
 /// @see {mixin} column-rule
 $prefixes-column-rule: webkit moz !default;
+
+/// Список браузерных префиксов для
+/// CSS-свойства `column-rule-color`.
+/// ---
+/// @name prefixes-column-rule-color
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} column-rule-color
+$prefixes-column-rule-color: webkit moz !default;

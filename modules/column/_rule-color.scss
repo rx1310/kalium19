@@ -1,0 +1,35 @@
+@use '../../configs' as *;
+@use '../prefixer' as *;
+
+/// Миксин `column-rule-color()` позволяет сгенерировать
+/// CSS-свойство `column-rule-color` со всеми нужными
+/// браузерными префиксами.
+/// ---
+/// @name column-rule-color
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include column-rule-color(rgb(192, 56, 78));
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 		-webkit-column-rule-color: rgb(192, 56, 78);
+/// 		-moz-column-rule-color: rgb(192, 56, 78);
+/// 		column-rule-color: rgb(192, 56, 78);
+/// 	}
+/// @param {String | Number} $color - значения свойства `column-rule-color`
+@mixin column-rule-color($color) {
+
+	// С помощью миксина `prefixer()` генерируем
+	// CSS-свойство `column-rule-color` со всеми нужными
+	// браузерными префиксами:
+	@include prefixer(
+		column-rule-color,
+		$color,
+		$prefixes-column-rule-color
+	);
+
+}
