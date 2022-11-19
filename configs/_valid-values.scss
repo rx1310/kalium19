@@ -166,7 +166,7 @@ $vvalues-flexbox: block inline;
 /// ---
 /// @name vvalues-flex-wrap
 /// @group Configs
-/// @access private
+/// @access public
 /// @since 6.0.0
 /// @type List
 /// @see {mixin} flex-wrap
@@ -181,4 +181,15 @@ $vvalues-flex-wrap: nowrap wrap wrap-reverse inherit initial unset !default;
 /// @since 6.0.0
 /// @type List
 /// @see {mixin} flex-shrink
-$vvalues-flex-shrink: '<number>' inherit initial unset !default;
+$vvalues-flex-shrink: '<number>' inherit initial unset;
+
+/// Список допустимых значений для
+/// миксина `order()`.
+/// ---
+/// @name vvalues-order
+/// @group Configs
+/// @access private
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} order
+$vvalues-order: '<number>' inherit initial unset;

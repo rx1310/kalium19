@@ -1,0 +1,43 @@
+@use '../../configs' as *;
+@use '../prefixer' as *;
+@use '../utilities/is-exist' as *;
+@use '../utilities/is-int' as *;
+@use '../@invalid-value-message' as *;
+
+/// Миксин `order()` позволяет сгенерировать
+/// CSS-свойство `order` со всеми нужными
+/// браузерными префиксами и добавляет проверку вводимого
+/// значения, чтобы не было ошибок.
+/// ---
+/// @name order
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include order(-1);
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 	  -webkit-order: -1;
+/// 	  order: -1;
+/// 	}
+/// @param {String} $value [0] - значение свойства `order`
+@mixin order($value: 0) {
+
+	// Если значение `$value` является числом или соответствует
+	// списку `$vvalues-order`, то генерируем
+	// CSS-свойство `order` со всеми нужными
+	// браузерными префиксами:
+	@if is-int($value, false) or is-exist($vvalues-order, $value) {
+		@include prefixer(order, $value, $prefixes-order);
+	}
+
+	// Если соответствие не найдено, то
+	// выводим ошибку:
+	@else {
+		@include invalid-value-message($vvalues-order, order, $value);
+	}
+
+}
