@@ -160,3 +160,15 @@ $vvalues-flex-direction: row row-reverse column column-reverse inherit initial u
 /// @type List
 /// @see {mixin} flexbox
 $vvalues-flexbox: block inline;
+
+
+/// Список допустимых значений для
+/// миксина `flex-wrap()`.
+/// ---
+/// @name vvalues-flex-wrap
+/// @group Configs
+/// @access private
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} flex-wrap
+$vvalues-flex-wrap: nowrap wrap wrap-reverse inherit initial unset !default;

@@ -295,3 +295,15 @@ $prefixes-box: webkit moz !default;
 /// @see {mixin} prefixer
 /// @see {mixin} flex
 $prefixes-flex: webkit ms !default;
+
+/// Список браузерных префиксов для
+/// CSS-свойства `flex-wrap`.
+/// ---
+/// @name prefixes-flex-wrap
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} flex-wrap
+$prefixes-flex-wrap: webkit !default;
