@@ -270,3 +270,14 @@ $vvalues-align-content: center start end flex-start flex-end normal baseline 'fi
 /// @type List
 /// @see {mixin} column-count
 $vvalues-column-count: '<number>' auto inherit initial unset;
+
+/// Список допустимых значений для
+/// миксина `column-fill()`.
+/// ---
+/// @name vvalues-column-fill
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} column-fill
+$vvalues-column-fill: auto balance balance-all inherit initial unset !default;

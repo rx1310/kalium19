@@ -415,3 +415,15 @@ $prefixes-align-content: webkit !default;
 /// @see {mixin} prefixer
 /// @see {mixin} column-count
 $prefixes-column-count: webkit moz !default;
+
+/// Список браузерных префиксов для
+/// CSS-свойства `column-fill`.
+/// ---
+/// @name prefixes-column-fill
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} column-fill
+$prefixes-column-fill: webkit moz !default;

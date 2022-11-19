@@ -1,0 +1,54 @@
+@use '../../configs' as *;
+@use '../prefixer' as *;
+@use '../utilities/is-exist' as *;
+@use '../@invalid-value-message' as *;
+
+/// Миксин `column-fill()` позволяет сгенерировать
+/// CSS-свойство `column-fill` с браузерными
+/// префиксами и добавляет проверку вводимого
+/// значения, чтобы не было ошибок.
+/// ---
+/// @name column-fill
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include column-fill(auto);
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 		-webkit-column-fill: auto;
+/// 		-moz-column-fill: auto;
+/// 		column-fill: auto;
+/// 	}
+/// @param {String} $value [balance] - значение CSS-свойства `column-fill`
+@mixin column-fill($value: balance) {
+
+	// С помощью функции `is-exist()` проверяем,
+	// есть ли значение параметра `$value`
+	// в списке `$vvalues-column-fill`:
+	@if is-exist($vvalues-column-fill, $value) {
+
+		// С помощью миксина `prefixer()` генерируем
+		// CSS-свойство `column-fill` со всеми нужными
+		// браузерными префиксами:
+		@include prefixer(
+			column-fill,
+			$value,
+			$prefixes-column-fill
+		);
+
+	}
+
+	// Если нет, то отображаем сообщение об ошибке:
+	@else {
+		@include invalid-value-message(
+			$vvalues-column-fill,
+			column-fill,
+			$value
+		);
+	}
+
+}
