@@ -7,13 +7,14 @@
 @forward 'modules/align/self';
 @forward 'modules/at-root-selector';
 @forward 'modules/bem';
+@forward 'modules/column/columns';
 @forward 'modules/column/count';
 @forward 'modules/column/fill';
 @forward 'modules/column/gap';
-@forward 'modules/column/rule';
 @forward 'modules/column/rule-color';
 @forward 'modules/column/rule-style';
 @forward 'modules/column/rule-width';
+@forward 'modules/column/rule';
 @forward 'modules/column/span';
 @forward 'modules/column/width';
 @forward 'modules/flex';
