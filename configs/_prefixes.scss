@@ -475,3 +475,15 @@ $prefixes-column-rule-color: webkit moz !default;
 /// @see {mixin} prefixer
 /// @see {mixin} column-rule-style
 $prefixes-column-rule-style: webkit moz !default;
+
+/// Список браузерных префиксов для
+/// CSS-свойства `column-rule-width`.
+/// ---
+/// @name prefixes-column-rule-width
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} column-rule-width
+$prefixes-column-rule-width: webkit moz !default;

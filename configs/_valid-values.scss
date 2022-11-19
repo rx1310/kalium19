@@ -303,3 +303,14 @@ $vvalues-column-gap: '<length>' '<percentage>' normal inherit initial revert uns
 /// @type List
 /// @see {mixin} column-rule-style
 $vvalues-column-rule-style: none hidden dotted dashed solid double groove ridge inset outset inherit initial unset !default;
+
+/// Список допустимых значений для
+/// миксина `column-rule-width()`.
+/// ---
+/// @name vvalues-column-rule-width
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} column-rule-width
+$vvalues-column-rule-width: '<length>' thin medium thick inherit initial revert revert-layer unset !default;
