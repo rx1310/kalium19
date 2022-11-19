@@ -1,0 +1,43 @@
+@use '../../configs' as *;
+
+/// Вспомогательный псевдоклас, помогающий нам
+/// разрешать ситуации со схлопывающейся высотой
+/// у родительского `div`, когда внутри него
+/// расположенный плавающие элементы, например
+/// с `float: left`.
+/// ---
+/// @name clearfix
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss Пример использования в Sass (SCSS)
+/// 	.block {
+/// 		@include clearfix();
+/// 	}
+/// @example css Результат в CSS
+/// 	.block::after {
+/// 		content: "";
+/// 		display: table;
+/// 		clear: both;
+/// 	}
+/// @param {Boolean} $create-notify-comment [$clearfix-notify] - создать комментарий в результатирующем CSS?
+@mixin clearfix($create-notify-comment: $clearfix-notify) {
+
+	&::after {
+
+		@if $create-notify-comment {
+			/* ! START CLEARFIX */
+		}
+
+		content: '';
+		display: table;
+		clear: both;
+
+		@if $create-notify-comment {
+			/* ! END CLEARFIX */
+		}
+
+	}
+
+}

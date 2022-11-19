@@ -503,3 +503,30 @@ $keyframes: (
 	ms: true,
 	o: true
 ) !default;
+
+/// Переменная отвечает за активацию генерации
+/// комментариев, обозначающих место работы
+/// миксина `clearfix()` в результатирующем CSS.
+/// ---
+/// @name clearfix-notify
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	@use 'path/to/kalium19' as * with (
+/// 		$clearfix-notify: true
+/// 	);
+///
+/// 	.example {
+/// 		@include clearfix();
+/// 	}
+/// @example css - Результат выполнения в CSS
+/// 	.example::after {
+/// 		/* ! START CLEARFIX */
+/// 		content: "";
+/// 		display: table;
+/// 		clear: both;
+/// 		/* ! END CLEARFIX */
+/// 	}
+/// @type Boolean
+$clearfix-notify: false !default;
