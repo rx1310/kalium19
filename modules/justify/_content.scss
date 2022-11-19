@@ -22,7 +22,7 @@
 /// 	  -webkit-justify-content: space-between;
 /// 	  justify-content: space-between;
 /// 	}
-/// @param {} $
+/// @param {String} $value [flex-start] - значение CSS-свойства `justify-content`
 @mixin justify-content($value: flex-start) {
 
 	// С помощью функции `is-exist()` проверяем
