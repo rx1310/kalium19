@@ -1,0 +1,35 @@
+@use '../../configs' as *;
+@use '../prefixer' as *;
+
+/// Миксин `column-rule()` позволяет сгенерировать
+/// CSS-свойство `column-rule` со всеми нужными
+/// браузерными префиксами.
+/// ---
+/// @name column-rule
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include column-rule(1px solid #ccc)
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 		-webkit-column-rule: 1px solid #ccc;
+/// 		-moz-column-rule: 1px solid #ccc;
+/// 		column-rule: 1px solid #ccc;
+/// 	}
+/// @param {String | Number} $params - значения свойства `column-rule`
+@mixin column-rule($params...) {
+
+	// С помощью миксина `prefixer()` генерируем
+	// CSS-свойство `column-rule` со всеми нужными
+	// браузерными префиксами:
+	@include prefixer(
+		column-rule,
+		$params,
+		$prefixes-column-rule
+	);
+
+}

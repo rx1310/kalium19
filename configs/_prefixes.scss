@@ -439,3 +439,15 @@ $prefixes-column-fill: webkit moz !default;
 /// @see {mixin} prefixer
 /// @see {mixin} column-gap
 $prefixes-column-gap: webkit moz !default;
+
+/// Список браузерных префиксов для
+/// CSS-свойства `column-rule`.
+/// ---
+/// @name prefixes-column-rule
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} column-rule
+$prefixes-column-rule: webkit moz !default;
