@@ -1,0 +1,53 @@
+@use '../../configs' as *;
+@use '../prefixer' as *;
+@use '../utilities/is-exist' as *;
+@use '../@invalid-value-message' as *;
+
+/// Миксин `column-span()` позволяет сгенерировать
+/// CSS-свойство `column-span` с браузерными
+/// префиксами и добавляет проверку вводимого
+/// значения, чтобы не было ошибок.
+/// ---
+/// @name column-span
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include column-span(all);
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 		-webkit-column-span: all;
+/// 		column-span: all;
+/// 	}
+/// @param {String} $value [none] - значение CSS-свойства `column-span`
+@mixin column-span($value: none) {
+
+	// С помощью функции `is-exist()` проверяем,
+	// есть ли значение параметра `$value`
+	// в списке `$vvalues-column-span`:
+	@if is-exist($vvalues-column-span, $value) {
+
+		// С помощью миксина `prefixer()` генерируем
+		// CSS-свойство `column-span` со всеми нужными
+		// браузерными префиксами:
+		@include prefixer(
+			column-span,
+			$value,
+			$prefixes-column-span
+		);
+
+	}
+
+	// Если нет, то отображаем сообщение об ошибке:
+	@else {
+		@include invalid-value-message(
+			$vvalues-column-span,
+			column-span,
+			$value
+		);
+	}
+
+}

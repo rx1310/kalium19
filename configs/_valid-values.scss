@@ -314,3 +314,14 @@ $vvalues-column-rule-style: none hidden dotted dashed solid double groove ridge 
 /// @type List
 /// @see {mixin} column-rule-width
 $vvalues-column-rule-width: '<length>' thin medium thick inherit initial revert revert-layer unset !default;
+
+/// Список допустимых значений для
+/// миксина `column-span()`.
+/// ---
+/// @name vvalues-column-span
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} column-span
+$vvalues-column-span: none all inherit initial revert revert-layer unset !default;
