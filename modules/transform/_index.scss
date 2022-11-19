@@ -16,11 +16,11 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  -webkit-transform: rotate(15deg);
-/// 	  -moz-transform: rotate(15deg);
-/// 	  -ms-transform: rotate(15deg);
-/// 	  -o-transform: rotate(15deg);
-/// 	  transform: rotate(15deg);
+/// 		-webkit-transform: rotate(15deg);
+/// 		-moz-transform: rotate(15deg);
+/// 		-ms-transform: rotate(15deg);
+/// 		-o-transform: rotate(15deg);
+/// 		transform: rotate(15deg);
 /// 	}
 /// @param {String} $params... - значения для CSS-свойства `transform`
 @mixin transform($params...) {

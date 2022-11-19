@@ -13,21 +13,21 @@
 /// 	@include scrollbar(15px, red);
 /// @example css - Результат в CSS
 /// 	::-webkit-scrollbar {
-/// 	  width: 15px;
-/// 	  height: 15px;
+/// 		width: 15px;
+/// 		height: 15px;
 /// 	}
 ///
 /// 	::-webkit-scrollbar-thumb {
-/// 	  background: red;
+/// 		background: red;
 /// 	}
 ///
 /// 	::-webkit-scrollbar-track {
-/// 	  background: #ff8080;
+/// 		background: #ff8080;
 /// 	}
 ///
 /// 	body {
-/// 	  scrollbar-face-color: red;
-/// 	  scrollbar-track-color: #ff8080;
+/// 		scrollbar-face-color: red;
+/// 		scrollbar-track-color: #ff8080;
 /// 	}
 /// @param {Number | String} $size - размер полосы прокрутки
 /// @param {String} $foreground-color - цвет полосы (`scrollbar-thumb`)

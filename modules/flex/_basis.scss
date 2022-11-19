@@ -16,8 +16,8 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  -webkit-flex-basis: 15%;
-/// 	  flex-basis: 15%;
+/// 		-webkit-flex-basis: 15%;
+/// 		flex-basis: 15%;
 /// 	}
 /// @param {String | Number} $size [auto] - размер элемента в `px`, `mm`, `pt` или в процентах вдоль главной оси.
 @mixin flex-basis($size: auto) {

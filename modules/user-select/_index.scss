@@ -18,10 +18,10 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  -webkit-user-select: all;
-/// 	  -moz-user-select: all;
-/// 	  -ms-user-select: all;
-/// 	  user-select: all;
+/// 		-webkit-user-select: all;
+/// 		-moz-user-select: all;
+/// 		-ms-user-select: all;
+/// 		user-select: all;
 /// 	}
 /// @param {String} $value - значение CSS-свойства `user-select`
 @mixin user-select($value) {
@@ -62,10 +62,10 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  -webkit-user-select: none;
-/// 	  -moz-user-select: none;
-/// 	  -ms-user-select: none;
-/// 	  user-select: none;
+/// 		-webkit-user-select: none;
+/// 		-moz-user-select: none;
+/// 		-ms-user-select: none;
+/// 		user-select: none;
 /// 	}
 /// @require {mixin} user-select
 @mixin unselect() {

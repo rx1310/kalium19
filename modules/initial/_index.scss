@@ -14,8 +14,8 @@
 /// 	}
 /// @example css Результат в CSS
 /// 	.example {
-/// 	  align-content: normal;
-/// 	  animation: none 0s ease 0s 1 normal none running;
+/// 		align-content: normal;
+/// 		animation: none 0s ease 0s 1 normal none running;
 /// 	}
 /// @param {List} $properties - CSS-свойства, значения которых будут сброшены
 /// @require {function} set-initial

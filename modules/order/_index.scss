@@ -20,8 +20,8 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  -webkit-order: -1;
-/// 	  order: -1;
+/// 		-webkit-order: -1;
+/// 		order: -1;
 /// 	}
 /// @param {String} $value [0] - значение свойства `order`
 @mixin order($value: 0) {

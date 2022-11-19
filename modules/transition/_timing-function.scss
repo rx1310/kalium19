@@ -27,24 +27,24 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  -webkit-transition-timing-function: ease-in-out;
-/// 	  -moz-transition-timing-function: ease-in-out;
-/// 	  -o-transition-timing-function: ease-in-out;
-/// 	  transition-timing-function: ease-in-out;
+/// 		-webkit-transition-timing-function: ease-in-out;
+/// 		-moz-transition-timing-function: ease-in-out;
+/// 		-o-transition-timing-function: ease-in-out;
+/// 		transition-timing-function: ease-in-out;
 /// 	}
 ///
 /// 	.example-cubic-bezier {
-/// 	  -webkit-transition-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
-/// 	  -moz-transition-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
-/// 	  -o-transition-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
-/// 	  transition-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
+/// 		-webkit-transition-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
+/// 		-moz-transition-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
+/// 		-o-transition-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
+/// 		transition-timing-function: cubic-bezier(0.1, -0.6, 0.2, 0);
 /// 	}
 ///
 /// 	.example-steps {
-/// 	  -webkit-transition-timing-function: steps(5, end);
-/// 	  -moz-transition-timing-function: steps(5, end);
-/// 	  -o-transition-timing-function: steps(5, end);
-/// 	  transition-timing-function: steps(5, end);
+/// 		-webkit-transition-timing-function: steps(5, end);
+/// 		-moz-transition-timing-function: steps(5, end);
+/// 		-o-transition-timing-function: steps(5, end);
+/// 		transition-timing-function: steps(5, end);
 /// 	}
 /// @param {String} $timing-function [ease] - значения для CSS-свойства `transition-timing-function`
 /// @require {function} is-exist

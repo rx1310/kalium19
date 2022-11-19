@@ -17,8 +17,8 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  -o-object-fit: fill;
-/// 	  object-fit: fill;
+/// 		-o-object-fit: fill;
+/// 		object-fit: fill;
 /// 	}
 /// @param {String} $value [fill] - значение CSS-свойства `object-fit`
 @mixin object-fit($value: fill) {

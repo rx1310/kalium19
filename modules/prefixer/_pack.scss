@@ -20,12 +20,12 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  -webkit-border-radius: 2px;
-/// 	  -moz-border-radius: 2px;
-/// 	  border-radius: 2px;
-/// 	  -webkit-box-shadow: none;
-/// 	  -moz-box-shadow: none;
-/// 	  box-shadow: none;
+/// 		-webkit-border-radius: 2px;
+/// 		-moz-border-radius: 2px;
+/// 		border-radius: 2px;
+/// 		-webkit-box-shadow: none;
+/// 		-moz-box-shadow: none;
+/// 		box-shadow: none;
 /// 	}
 /// @param {Map} $styles - карта стилей, к свойствам или значениям которого нужно добавить браузерные префиксы
 /// @param {List} $prefixes [()] - список браузерных префиксов

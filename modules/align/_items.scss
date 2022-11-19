@@ -19,8 +19,8 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  -webkit-align-items: center;
-/// 	  align-items: center;
+/// 		-webkit-align-items: center;
+/// 		align-items: center;
 /// 	}
 /// @param {String} $value [stretch] - значение CSS-свойства `align-items`
 @mixin align-items($value: stretch) {

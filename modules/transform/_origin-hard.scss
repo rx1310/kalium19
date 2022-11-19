@@ -18,11 +18,11 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  -webkit-transform-origin: 100% 0;
-/// 	  -moz-transform-origin: 100% 0;
-/// 	  -ms-transform-origin: 100% 0;
-/// 	  -o-transform-origin: 100% 0;
-/// 	  transform-origin: 100% 0;
+/// 		-webkit-transform-origin: 100% 0;
+/// 		-moz-transform-origin: 100% 0;
+/// 		-ms-transform-origin: 100% 0;
+/// 		-o-transform-origin: 100% 0;
+/// 		transform-origin: 100% 0;
 /// 	}
 /// @param {Number | String} $x [50%] - координата по оси X
 /// @param {Number | String} $y [50%] - координата по оси Y

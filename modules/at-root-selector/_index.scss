@@ -14,7 +14,7 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example:hover {
-/// 	  color: green;
+/// 		color: green;
 /// 	}
 /// @param {String} $selector - селектор, который будет добавлен к родительскому селектору
 @mixin at-root-selector($selector) {

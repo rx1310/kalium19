@@ -18,7 +18,7 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.block {
-/// 	  color: red;
+/// 		color: red;
 /// 	}
 /// @param {String} $block - название блока
 /// @content CSS-стили блока
@@ -48,11 +48,11 @@
 /// 	}
 /// @example css Результат в CSS
 /// 	.block {
-/// 	  color: red;
+/// 		color: red;
 /// 	}
 ///
 /// 	.block__element {
-/// 	  background-color: #fff;
+/// 		background-color: #fff;
 /// 	}
 /// @param {String} $element - название элемента
 /// @require {function} map-deep-get
@@ -122,19 +122,19 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.block {
-/// 	  /* Block */
+/// 		/* Block */
 /// 	}
 /// 	.block__element {
-/// 	  /* Element */
+/// 		/* Element */
 /// 	}
 /// 	.block__element--click {
-/// 	  /* Modificator */
+/// 		/* Modificator */
 /// 	}
 /// 	.block2 {
-/// 	  /* Block 2 */
+/// 		/* Block 2 */
 /// 	}
 /// 	.block2--click {
-/// 	  /* Modificator 2 */
+/// 		/* Modificator 2 */
 /// 	}
 /// @param {String} $modifier - название модификатора
 /// @require {function} map-deep-get

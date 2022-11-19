@@ -27,15 +27,15 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  -webkit-transform-style: flat;
-/// 	  -moz-transform-style: flat;
-/// 	  transform-style: flat;
+/// 		-webkit-transform-style: flat;
+/// 		-moz-transform-style: flat;
+/// 		transform-style: flat;
 /// 	}
 ///
 /// 	.example-preserve-3d {
-/// 	  -webkit-transform-style: preserve-3d;
-/// 	  -moz-transform-style: preserve-3d;
-/// 	  transform-style: preserve-3d;
+/// 		-webkit-transform-style: preserve-3d;
+/// 		-moz-transform-style: preserve-3d;
+/// 		transform-style: preserve-3d;
 /// 	}
 /// @param {String} $style [flat] - значения для CSS-свойства `transform-style`
 /// @require {function} is-exist

@@ -19,8 +19,8 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  -webkit-align-content: flex-start;
-/// 	  align-content: flex-start;
+/// 		-webkit-align-content: flex-start;
+/// 		align-content: flex-start;
 /// 	}
 /// @param {String} $value [stretch] - значение CSS-свойства `align-content`
 @mixin align-content($value: stretch) {

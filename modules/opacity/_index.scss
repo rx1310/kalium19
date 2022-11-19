@@ -17,13 +17,13 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  -moz-opacity: 0.2;
-/// 	  -khtml-opacity: 0.2;
-/// 	  opacity: 0.2;
-/// 	  /* for IE 5-7 */
-/// 	  filter: alpha(opacity=20);
-/// 	  /* for IE 8 */
-/// 	  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+/// 		-moz-opacity: 0.2;
+/// 		-khtml-opacity: 0.2;
+/// 		opacity: 0.2;
+/// 		/* for IE 5-7 */
+/// 		filter: alpha(opacity=20);
+/// 		/* for IE 8 */
+/// 		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
 /// 	}
 /// @param {Number | String} $opacity-degree - значение CSS-свойства `opacity`
 @mixin opacity($opacity-degree) {

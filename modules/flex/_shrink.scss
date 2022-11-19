@@ -20,8 +20,8 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  -webkit-flex-shrink: 1;
-/// 	  flex-shrink: 1;
+/// 		-webkit-flex-shrink: 1;
+/// 		flex-shrink: 1;
 /// 	}
 /// @param {String} $value [1] - значение свойства `flex-shrink`
 @mixin flex-shrink($value: 1) {

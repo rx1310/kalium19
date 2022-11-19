@@ -27,21 +27,21 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  position: -webkit-sticky;
-/// 	  position: sticky;
-/// 	  top: 2;
+/// 		position: -webkit-sticky;
+/// 		position: sticky;
+/// 		top: 2;
 /// 	}
 ///
 /// 	.example-short {
-/// 	  position: -webkit-sticky;
-/// 	  position: sticky;
-/// 	  right: 2;
+/// 		position: -webkit-sticky;
+/// 		position: sticky;
+/// 		right: 2;
 /// 	}
 ///
 /// 	.example-numpad-style {
-/// 	  position: -webkit-sticky;
-/// 	  position: sticky;
-/// 	  left: 2;
+/// 		position: -webkit-sticky;
+/// 		position: sticky;
+/// 		left: 2;
 /// 	}
 /// @param {String | Number} $side ["top"] - сторона, к которой будет прилипать элемент
 /// @param {Number} $offset [0] - отступ от стенки

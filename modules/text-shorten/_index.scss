@@ -21,20 +21,20 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  white-space: nowrap;
-/// 	  text-overflow: ellipsis;
-/// 	  overflow: hidden;
+/// 		white-space: nowrap;
+/// 		text-overflow: ellipsis;
+/// 		overflow: hidden;
 /// 	}
 /// 	@supports (-webkit-line-clamp: 3) {
-/// 	  .example {
-/// 	    overflow: hidden;
-/// 	    text-overflow: ellipsis;
-/// 	    white-space: initial;
-/// 	    -webkit-line-clamp: 3;
-/// 	    -webkit-box-orient: vertical;
-/// 	    display: -webkit-box;
-/// 	    display: -moz-box;
-/// 	  }
+/// 		.example {
+/// 		  overflow: hidden;
+/// 		  text-overflow: ellipsis;
+/// 		  white-space: initial;
+/// 		  -webkit-line-clamp: 3;
+/// 		  -webkit-box-orient: vertical;
+/// 		  display: -webkit-box;
+/// 		  display: -moz-box;
+/// 		}
 /// 	}
 /// @param {Number} $number-lines [1] - количество строк
 /// @require {function} is-int для проверки вводимых данных на соответствие типу `Number`

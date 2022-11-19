@@ -19,8 +19,8 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  -webkit-flex-flow: column wrap;
-/// 	  flex-flow: column wrap;
+/// 		-webkit-flex-flow: column wrap;
+/// 		flex-flow: column wrap;
 /// 	}
 /// @param {String} $value ['row nowrap'] - значение CSS-свойства `flex-flow`
 @mixin flex-flow($value: 'row nowrap') {

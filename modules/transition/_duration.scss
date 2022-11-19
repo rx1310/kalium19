@@ -17,10 +17,10 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  -webkit-transition-duration: 2s;
-/// 	  -moz-transition-duration: 2s;
-/// 	  -o-transition-duration: 2s;
-/// 	  transition-duration: 2s;
+/// 		-webkit-transition-duration: 2s;
+/// 		-moz-transition-duration: 2s;
+/// 		-o-transition-duration: 2s;
+/// 		transition-duration: 2s;
 /// 	}
 /// @param {Number} $duration [0s] - значения для CSS-свойства `transition-duration`
 @mixin transition-duration($duration: 0s) {

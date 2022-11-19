@@ -22,44 +22,44 @@
 /// 	};
 /// @example css - Результат в CSS
 /// 	@-webkit-keyframes example {
-/// 	  from {
-/// 	    transform: translateX(0%);
-/// 	  }
-/// 	  to {
-/// 	    transform: translateX(100%);
-/// 	  }
+/// 		from {
+/// 		  transform: translateX(0%);
+/// 		}
+/// 		to {
+/// 		  transform: translateX(100%);
+/// 		}
 /// 	}
 /// 	@-moz-keyframes example {
-/// 	  from {
-/// 	    transform: translateX(0%);
-/// 	  }
-/// 	  to {
-/// 	    transform: translateX(100%);
-/// 	  }
+/// 		from {
+/// 		  transform: translateX(0%);
+/// 		}
+/// 		to {
+/// 		  transform: translateX(100%);
+/// 		}
 /// 	}
 /// 	@-ms-keyframes example {
-/// 	  from {
-/// 	    transform: translateX(0%);
-/// 	  }
-/// 	  to {
-/// 	    transform: translateX(100%);
-/// 	  }
+/// 		from {
+/// 		  transform: translateX(0%);
+/// 		}
+/// 		to {
+/// 		  transform: translateX(100%);
+/// 		}
 /// 	}
 /// 	@-o-keyframes example {
-/// 	  from {
-/// 	    transform: translateX(0%);
-/// 	  }
-/// 	  to {
-/// 	    transform: translateX(100%);
-/// 	  }
+/// 		from {
+/// 		  transform: translateX(0%);
+/// 		}
+/// 		to {
+/// 		  transform: translateX(100%);
+/// 		}
 /// 	}
 /// 	@keyframes example {
-/// 	  from {
-/// 	    transform: translateX(0%);
-/// 	  }
-/// 	  to {
-/// 	    transform: translateX(100%);
-/// 	  }
+/// 		from {
+/// 		  transform: translateX(0%);
+/// 		}
+/// 		to {
+/// 		  transform: translateX(100%);
+/// 		}
 /// 	}
 /// @param {String} $custom-ident - идентификатор (имя) правила
 @mixin keyframes($custom-ident) {

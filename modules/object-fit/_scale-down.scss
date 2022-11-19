@@ -16,8 +16,8 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  -o-object-fit: scale-down;
-/// 	  object-fit: scale-down;
+/// 		-o-object-fit: scale-down;
+/// 		object-fit: scale-down;
 /// 	}
 /// @require {mixin} object-fit
 @mixin object-fit-scale-down {

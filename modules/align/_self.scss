@@ -19,8 +19,8 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  -webkit-align-self: flex-start;
-/// 	  align-self: flex-start;
+/// 		-webkit-align-self: flex-start;
+/// 		align-self: flex-start;
 /// 	}
 /// @param {String} $value [auto] - значение CSS-свойства `align-self`
 @mixin align-self($value: auto) {

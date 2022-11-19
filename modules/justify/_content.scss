@@ -19,8 +19,8 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  -webkit-justify-content: space-between;
-/// 	  justify-content: space-between;
+/// 		-webkit-justify-content: space-between;
+/// 		justify-content: space-between;
 /// 	}
 /// @param {String} $value [flex-start] - значение CSS-свойства `justify-content`
 @mixin justify-content($value: flex-start) {

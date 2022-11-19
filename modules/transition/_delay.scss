@@ -17,10 +17,10 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  -webkit-transition-delay: 0.5s;
-/// 	  -moz-transition-delay: 0.5s;
-/// 	  -o-transition-delay: 0.5s;
-/// 	  transition-delay: 0.5s;
+/// 		-webkit-transition-delay: 0.5s;
+/// 		-moz-transition-delay: 0.5s;
+/// 		-o-transition-delay: 0.5s;
+/// 		transition-delay: 0.5s;
 /// 	}
 /// @param {Number} $delay [0s] - значения для CSS-свойства `transition-delay`
 @mixin transition-delay($delay: 0s) {

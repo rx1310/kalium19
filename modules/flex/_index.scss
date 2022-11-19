@@ -16,11 +16,11 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  -webkit-box: 1;
-/// 	  -moz-box: 1;
-/// 	  -webkit-flex: 1 0 auto;
-/// 	  -ms-flex: 1 0 auto;
-/// 	  flex: 1 0 auto;
+/// 		-webkit-box: 1;
+/// 		-moz-box: 1;
+/// 		-webkit-flex: 1 0 auto;
+/// 		-ms-flex: 1 0 auto;
+/// 		flex: 1 0 auto;
 /// 	}
 /// @param {Number} $grow [1] - сколько пространства может занимать flex внутри контейнера
 /// @param {Number} $shrink [0] - коэффициент сжатия флексов в контейнере и задаёт, насколько элемент будет уменьшаться по отношению к другим флексам, чтобы разместить все элементы в одну строку

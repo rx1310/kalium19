@@ -16,11 +16,11 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  -webkit-transform-origin: 100% 0;
-/// 	  -moz-transform-origin: 100% 0;
-/// 	  -ms-transform-origin: 100% 0;
-/// 	  -o-transform-origin: 100% 0;
-/// 	  transform-origin: 100% 0;
+/// 		-webkit-transform-origin: 100% 0;
+/// 		-moz-transform-origin: 100% 0;
+/// 		-ms-transform-origin: 100% 0;
+/// 		-o-transform-origin: 100% 0;
+/// 		transform-origin: 100% 0;
 /// 	}
 /// @param {Number | String} $params... - значение CSS-свойства `transform-origin`
 @mixin transform-origin($params...) {

@@ -19,8 +19,8 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  -webkit-flex-wrap: wrap;
-/// 	  flex-wrap: wrap;
+/// 		-webkit-flex-wrap: wrap;
+/// 		flex-wrap: wrap;
 /// 	}
 /// @param {String} $value [nowrap] - значение свойства `flex-wrap`
 @mixin flex-wrap($value: nowrap) {
@@ -34,7 +34,7 @@
 		// миксина `prefixer()` добавляем нужные
 		// браузерные префиксы:
 		@include prefixer(flex-wrap, $value, $prefixes-flex-wrap);
-		
+
 	}
 
 	// Если соответствие не найдено, то

@@ -22,15 +22,15 @@
 /// 	);
 /// @example css - Результат в CSS
 /// 	@font-face {
-/// 	  font-family: "Roboto";
-/// 	  font-weight: 600;
-/// 	  font-style: normal;
-/// 	  /* Woff font */
-/// 	  src: url("../assets/fonts/Roboto/roboto.woff") format("woff");
-/// 	  /* Woff2 font */
-/// 	  src: url("../assets/fonts/Roboto/roboto.woff2") format("woff2");
-/// 	  /* TrueType font */
-/// 	  src: url("../assets/fonts/Roboto/roboto.ttf") format("truetype");
+/// 		font-family: "Roboto";
+/// 		font-weight: 600;
+/// 		font-style: normal;
+/// 		/* Woff font */
+/// 		src: url("../assets/fonts/Roboto/roboto.woff") format("woff");
+/// 		/* Woff2 font */
+/// 		src: url("../assets/fonts/Roboto/roboto.woff2") format("woff2");
+/// 		/* TrueType font */
+/// 		src: url("../assets/fonts/Roboto/roboto.ttf") format("truetype");
 /// 	}
 /// @param {String} $fonts-folder-path - папка, в которой содержатся файлы шрифтов
 /// @param {String} $font-family-name - название семейства шрифтов

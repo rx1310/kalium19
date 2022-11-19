@@ -403,3 +403,15 @@ $prefixes-align-items: webkit !default;
 /// @see {mixin} prefixer
 /// @see {mixin} align-content
 $prefixes-align-content: webkit !default;
+
+/// Список браузерных префиксов для
+/// CSS-свойства `column-count`.
+/// ---
+/// @name prefixes-column-count
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} column-count
+$prefixes-column-count: webkit moz !default;

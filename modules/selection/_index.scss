@@ -21,22 +21,22 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	::-moz-selection {
-/// 	  color: gold;
-/// 	  background: red;
+/// 		color: gold;
+/// 		background: red;
 /// 	}
 ///
 /// 	::selection {
-/// 	  color: gold;
-/// 	  background: red;
+/// 		color: gold;
+/// 		background: red;
 /// 	}
 ///
 /// 	.example::-moz-selection {
-/// 	  color: gold;
-/// 	  background: red;
+/// 		color: gold;
+/// 		background: red;
 /// 	}
 /// 	.example::selection {
-/// 	  color: gold;
-/// 	  background: red;
+/// 		color: gold;
+/// 		background: red;
 /// 	}
 /// @param {Boolean} $in-root [true] - указывает на генерацию псевдоэлемента в корне стилей
 /// @content Стили для псевдоэлемента `::selection`

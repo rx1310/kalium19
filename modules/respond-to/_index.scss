@@ -25,17 +25,17 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  color: red;
+/// 		color: red;
 /// 	}
 /// 	@media (min-width: 576px) {
-/// 	  .example {
-/// 	    color: green;
-/// 	  }
+/// 		.example {
+/// 		  color: green;
+/// 		}
 /// 	}
 /// 	@media (min-width: 1200px) {
-/// 	  .example {
-/// 	    color: blue;
-/// 	  }
+/// 		.example {
+/// 		  color: blue;
+/// 		}
 /// 	}
 /// @param {String | Number} $breakpoint - медиа-запрос из `$breakpoints`
 @mixin respond-to($breakpoint) {

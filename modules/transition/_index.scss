@@ -16,10 +16,10 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  -webkit-transition: 500ms linear;
-/// 	  -moz-transition: 500ms linear;
-/// 	  -o-transition: 500ms linear;
-/// 	  transition: 500ms linear;
+/// 		-webkit-transition: 500ms linear;
+/// 		-moz-transition: 500ms linear;
+/// 		-o-transition: 500ms linear;
+/// 		transition: 500ms linear;
 /// 	}
 /// @param {String} $params... - значения для CSS-свойства `transition`
 @mixin transition($params...) {

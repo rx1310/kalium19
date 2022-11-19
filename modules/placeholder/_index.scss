@@ -19,23 +19,23 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	input[type=search]::-ms-input-placeholder {
-/// 	  color: red;
+/// 		color: red;
 /// 	}
 ///
 /// 	input[type=search]::-webkit-input-placeholder {
-/// 	  color: red;
+/// 		color: red;
 /// 	}
 ///
 /// 	input[type=search]::-moz-placeholder {
-/// 	  color: red;
+/// 		color: red;
 /// 	}
 ///
 /// 	input[type=search]:-ms-input-placeholder {
-/// 	  color: red;
+/// 		color: red;
 /// 	}
 ///
 /// 	input[type=search]:-moz-placeholder {
-/// 	  color: red;
+/// 		color: red;
 /// 	}
 /// @param {Boolean} $with-pseudo-class [true] - генерация также псевдо-классов
 /// @require {mixin} at-root-selector

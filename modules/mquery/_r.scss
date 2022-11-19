@@ -14,9 +14,9 @@
 /// 	}
 /// @example css Результат в CSS
 /// 	@media only screen and (-webkit-min-device-pixel-ratio: 350px), only screen and (min--moz-device-pixel-ratio: 350px), only screen and (-o-min-device-pixel-ratio: 350px), only screen and (min-device-pixel-ratio: 350px) {
-/// 	  .example {
-/// 	    width: 100%;
-/// 	  }
+/// 		.example {
+/// 		  width: 100%;
+/// 		}
 /// 	}
 /// @param {Number} $width - максимальная ширина вьюпорта
 /// @param {Number | Boolean} $ratio [false] - минимальное соотношение пикселей устройства

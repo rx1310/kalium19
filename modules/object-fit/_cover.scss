@@ -16,8 +16,8 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 	  -o-object-fit: cover;
-/// 	  object-fit: cover;
+/// 		-o-object-fit: cover;
+/// 		object-fit: cover;
 /// 	}
 /// @require {mixin} object-fit
 @mixin object-fit-cover {
