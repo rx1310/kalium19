@@ -1,0 +1,64 @@
+@use '../../configs' as *;
+@use '../prefixer' as *;
+
+/// Миксин `box-shadow()` позволяет сгенерировать
+/// CSS-свойство `box-shadow` с браузерными префиксами.
+/// ---
+/// @name box-shadow
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example-first {
+/// 		@include box-shadow(rgba(149, 157, 165, 0.2) 0px 8px 24px);
+/// 	}
+///
+/// 	.example-second {
+/// 		@include box-shadow(
+/// 			blue 0px 0px 0px 2px inset,
+/// 			rgb(255, 255, 255) 10px -10px 0px -3px,
+/// 			rgb(31, 193, 27) 10px -10px,
+/// 			rgb(255, 255, 255) 20px -20px 0px -3px,
+/// 			rgb(255, 217, 19) 20px -20px,
+/// 			rgb(255, 255, 255) 30px -30px 0px -3px,
+/// 			rgb(255, 156, 85) 30px -30px,
+/// 			rgb(255, 255, 255) 40px -40px 0px -3px,
+/// 			rgb(255, 85, 85) 40px -40px
+/// 		);
+/// 	}
+///
+/// 	.example-third {
+/// 		$_box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+/// 		@include box-shadow($_box-shadow);
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example-first {
+/// 		-webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+/// 		-moz-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+/// 		box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+/// 	}
+/// 	
+/// 	.example-second {
+/// 		-webkit-box-shadow: blue 0px 0px 0px 2px inset, rgb(255, 255, 255) 10px -10px 0px -3px, rgb(31, 193, 27) 10px -10px, rgb(255, 255, 255) 20px -20px 0px -3px, rgb(255, 217, 19) 20px -20px, rgb(255, 255, 255) 30px -30px 0px -3px, rgb(255, 156, 85) 30px -30px, rgb(255, 255, 255) 40px -40px 0px -3px, rgb(255, 85, 85) 40px -40px;
+/// 		-moz-box-shadow: blue 0px 0px 0px 2px inset, rgb(255, 255, 255) 10px -10px 0px -3px, rgb(31, 193, 27) 10px -10px, rgb(255, 255, 255) 20px -20px 0px -3px, rgb(255, 217, 19) 20px -20px, rgb(255, 255, 255) 30px -30px 0px -3px, rgb(255, 156, 85) 30px -30px, rgb(255, 255, 255) 40px -40px 0px -3px, rgb(255, 85, 85) 40px -40px;
+/// 		box-shadow: blue 0px 0px 0px 2px inset, rgb(255, 255, 255) 10px -10px 0px -3px, rgb(31, 193, 27) 10px -10px, rgb(255, 255, 255) 20px -20px 0px -3px, rgb(255, 217, 19) 20px -20px, rgb(255, 255, 255) 30px -30px 0px -3px, rgb(255, 156, 85) 30px -30px, rgb(255, 255, 255) 40px -40px 0px -3px, rgb(255, 85, 85) 40px -40px;
+/// 	}
+///
+/// 	.example-third {
+/// 		-webkit-box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+/// 		-moz-box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+/// 		box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+/// 	}
+/// @param {String | Number | List} $params... - значение CSS-свойства `box-shadow`
+@mixin box-shadow($params...) {
+
+	// С помощью миксина `prefixer()` просто
+	// добавляем браузерные префиксы:
+	@include prefixer(
+		box-shadow,
+		$params,
+		$prefixes-box-shadow
+	);
+
+}
