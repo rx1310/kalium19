@@ -1,0 +1,41 @@
+@use '../../configs' as *;
+@use '../prefixer' as *;
+
+/// Генерирует CSS-функцию `calc()`, которая
+/// позволяет использовать математические
+/// выражения для данного свойства.
+/// ---
+/// @name calc
+/// @access public
+/// @since 6.0.0
+/// @access public
+/// @author Roman Matusevich
+/// @link https://github.com/romamatusevich Автор
+/// @link https://github.com/drublic/Sass-Mixins/blob/master/mixins.scss Исходный код миксина
+/// @link http://caniuse.com/calc Can I Use
+/// @link http://www.w3.org/TR/css3-values/#calc Спецификация `calc()`
+/// @example scss Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include calc(width, "600px - 2em");
+/// 	}
+/// @example css Результат в CSS
+/// 	.example {
+/// 		width: -webkit-calc(600px - 2em);
+/// 		width: calc(600px - 2em);
+/// 	}
+/// @param {String} $property - CSS-свойство, к которому надо добавить CSS-функцию `calc()`
+/// @param {String} $expression - математическое выражени, которое будет внутри CSS-функции `calc()`
+@mixin calc($property, $expression) {
+
+	// С помощью миксина `prefixer()` генерируем
+	// CSS-функцию `calc()` со всеми нужными браузерными
+	// префиксами:
+	@include prefixer(
+		$property,
+		calc(#{$expression}),
+		$prefixes-calc,
+		true, // сохранение свойства без префикса
+		true  // добавление префикса не к свойству,
+	);      // а к значени.
+
+}

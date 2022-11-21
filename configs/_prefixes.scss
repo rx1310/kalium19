@@ -523,3 +523,15 @@ $prefixes-column-width: webkit moz !default;
 /// @see {mixin} prefixer
 /// @see {mixin} columns
 $prefixes-columns: webkit moz !default;
+
+/// Список браузерных префиксов для
+/// CSS-свойства `calc`.
+/// ---
+/// @name prefixes-calc
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} calc
+$prefixes-calc: webkit !default;
