@@ -1,4 +1,5 @@
 @forward 'valid-values';
+@forward 'default-value';
 @forward 'prefixes';
 
 /// Переменная отвечает за включение "строгого" режима,
@@ -530,3 +531,4 @@ $keyframes: (
 /// 	}
 /// @type Boolean
 $clearfix-notify: false !default;
+

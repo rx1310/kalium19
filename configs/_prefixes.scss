@@ -548,7 +548,6 @@ $prefixes-calc: webkit !default;
 /// @see {mixin} box-sizing
 $prefixes-box-sizing: webkit moz o !default;
 
-
 /// Список браузерных префиксов для
 /// CSS-свойства `box-shadow`.
 /// ---
@@ -560,3 +559,15 @@ $prefixes-box-sizing: webkit moz o !default;
 /// @see {mixin} prefixer
 /// @see {mixin} box-shadow
 $prefixes-box-shadow: webkit moz !default;
+
+/// Список браузерных префиксов для
+/// CSS-свойства `border-radius`.
+/// ---
+/// @name prefixes-border-radius
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} border-radius
+$prefixes-border-radius: webkit moz !default;
