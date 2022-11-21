@@ -1,0 +1,66 @@
+@use '../../configs' as *;
+@use '../transform' as *;
+@use '../position' as *;
+@use '../utilities/is-exist' as *;
+@use '../@invalid-value-message' as *;
+
+/// Миксин `centering()` позволяет отцентрировать
+/// элементы с помощью CSS-свойств `position` и
+/// `transform`.
+/// ---
+/// @name centering
+/// @access public
+/// @since 6.0.0
+/// @access public
+/// @author Haba Kudzaev
+/// @link https://github.com/rx1310/kalium19
+/// @example scss Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include centering(b);
+/// 	}
+/// @example css Результат в CSS
+/// 	.example {
+/// 		position: absolute;
+/// 		top: 50%;
+/// 		left: 50%;
+/// 		-webkit-transform: translate(-50%, -50%);
+/// 		-moz-transform: translate(-50%, -50%);
+/// 		-ms-transform: translate(-50%, -50%);
+/// 		-o-transform: translate(-50%, -50%);
+/// 		transform: translate(-50%, -50%);
+/// 	}
+/// @param {String} $direction - направление, по которому будут центрированы элементы
+@mixin centering($direction) {
+
+	// С помощью функции `is-exist()` проверяем наличие
+	// значения параметра `$direction` в списке `$vvalue-centering`:
+	@if is-exist($vvalues-centering, $direction) {
+
+		@if $direction == 'vertical' or $direction == 'v' {
+			@include position(absolute, 50%);
+			@include transform(translateY(-50%));
+		}
+
+		@else if $direction == 'horizontal' or $direction == 'h' {
+			@include position(absolute, null, null, null, 50%);
+			@include transform(translateX(-50%));
+		}
+
+		@else if $direction == 'both' or $direction == 'b' {
+			@include position(absolute, 50%, null, null, 50%);
+			@include transform(translate(-50%, -50%));
+		}
+
+	}
+
+	// Если значение `$direction` не найдено в списке
+	// `$vvalues-centering`, то отображаем сообщение:
+	@else {
+		@include invalid-value-message(
+			$vvalues-centering,
+			'centering()',
+			$direction
+		)
+	}
+
+}

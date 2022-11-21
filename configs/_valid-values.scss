@@ -336,3 +336,14 @@ $vvalues-column-span: none all inherit initial revert revert-layer unset !defaul
 /// @type List
 /// @see {mixin} column-width
 $vvalues-column-width: '<length>' auto inherit initial revert revert-layer unset !default;
+
+/// Список допустимых значений для
+/// миксина `centering()`.
+/// ---
+/// @name vvalues-centering
+/// @group Configs
+/// @access private
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} centering
+$vvalues-centering: vertical v horizontal h both b;
