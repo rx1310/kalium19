@@ -347,3 +347,14 @@ $vvalues-column-width: '<length>' auto inherit initial revert revert-layer unset
 /// @type List
 /// @see {mixin} centering
 $vvalues-centering: vertical v horizontal h both b;
+
+/// Список допустимых значений для
+/// миксина `box-sizing()`.
+/// ---
+/// @name vvalues-box-sizing
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} box-sizing
+$vvalues-box-sizing: border-box content-box inherit initial revert revert-layer unset !default;

@@ -1,0 +1,63 @@
+@use '../../configs' as *;
+@use '../prefixer' as *;
+@use '../utilities/is-exist' as *;
+@use '../@invalid-value-message' as *;
+
+/// Миксин `box-sizing()` позволяет сгенерировать
+/// CSS-свойство `box-sizing` с браузерными префиксами.
+/// ---
+/// @name box-sizing
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include box-sizing(bb);
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 		-webkit-box-sizing: border-box;
+/// 		-moz-box-sizing: border-box;
+/// 		-o-box-sizing: border-box;
+/// 		box-sizing: border-box;
+/// 	}
+/// @param {String} $model [border-box] - значение CSS-свойства `box-sizing()`
+@mixin box-sizing($model: border-box) {
+
+	// Это сокращения для значений `border|content-box`,
+	// чтобы каждый раз не писать полностью.
+	//
+	// Тут мы просто переопределяем значение, введенное
+	// пользователем, на то, что нужно.
+	@if $model == 'cb' {
+		$model: 'content-box';
+	} @else if $model == 'bb' {
+		$model: 'border-box';
+	}
+
+	// С помощью функции `is-exist()` проверяем, есть ли
+	// значение `$model` в списке `$vvalues-box-sizing`:
+	@if is-exist($vvalues-box-sizing, $model) {
+
+		// Если есть, то просто с помощью миксина
+		// `prefixer()` генерируем свойство `box-sizing`
+		// со всеми нужными браузерными префиксами:
+		@include prefixer(
+			box-sizing,
+			$model,
+			$prefixes-box-sizing
+		);
+
+	}
+
+	// Если соответствий нет, то выводим ошибку:
+	@else {
+		@include invalid-value-message(
+			$vvalues-box-sizing,
+			box-sizing,
+			$model
+		);
+	}
+
+}

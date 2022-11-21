@@ -535,3 +535,15 @@ $prefixes-columns: webkit moz !default;
 /// @see {mixin} prefixer
 /// @see {mixin} calc
 $prefixes-calc: webkit !default;
+
+/// Список браузерных префиксов для
+/// CSS-свойства `box-sizing`.
+/// ---
+/// @name prefixes-box-sizing
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} box-sizing
+$prefixes-box-sizing: webkit moz o !default;
