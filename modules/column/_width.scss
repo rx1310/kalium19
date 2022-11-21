@@ -24,8 +24,8 @@
 /// 		-moz-column-width: 200px;
 /// 		column-width: 200px;
 /// 	}
-/// @param {String} $value [auto] - значение свойства `column-width`
-@mixin column-width($value: auto) {
+/// @param {String} $value [$dvalue-column-width] - значение свойства `column-width`
+@mixin column-width($value: $dvalue-column-width) {
 
 	// Если значение `$value` является числом или соответствует
 	// списку `$vvalues-column-width`, то генерируем

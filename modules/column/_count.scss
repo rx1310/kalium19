@@ -24,8 +24,8 @@
 /// 		-moz-column-count: 1;
 /// 		column-count: 1;
 /// 	}
-/// @param {String} $value [auto] - значение свойства `column-count`
-@mixin column-count($value: auto) {
+/// @param {String} $value [$dvalue-column-count] - значение свойства `column-count`
+@mixin column-count($value: $dvalue-column-count) {
 
 	// Если значение `$value` является числом или соответствует
 	// списку `$vvalues-column-count`, то генерируем

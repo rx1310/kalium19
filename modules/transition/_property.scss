@@ -21,8 +21,8 @@
 /// 		-o-transition-property: none;
 /// 		transition-property: none;
 /// 	}
-/// @param {String} $property [all] - значения для CSS-свойства `transition-property`
-@mixin transition-property($property: all) {
+/// @param {String} $property [$dvalue-transition-property] - значения для CSS-свойства `transition-property`
+@mixin transition-property($property: $dvalue-transition-property) {
 
 	// С помощью миксина `prefixer()` генерируем
 	// CSS-свойство `transition-property()` с браузерными префиксами:

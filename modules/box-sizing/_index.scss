@@ -22,8 +22,8 @@
 /// 		-o-box-sizing: border-box;
 /// 		box-sizing: border-box;
 /// 	}
-/// @param {String} $model [border-box] - значение CSS-свойства `box-sizing()`
-@mixin box-sizing($model: border-box) {
+/// @param {String} $model [$dvalue-box-sizing] - значение CSS-свойства `box-sizing()`
+@mixin box-sizing($model: $dvalue-box-sizing) {
 
 	// Это сокращения для значений `border|content-box`,
 	// чтобы каждый раз не писать полностью.

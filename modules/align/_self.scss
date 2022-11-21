@@ -22,8 +22,8 @@
 /// 		-webkit-align-self: flex-start;
 /// 		align-self: flex-start;
 /// 	}
-/// @param {String} $value [auto] - значение CSS-свойства `align-self`
-@mixin align-self($value: auto) {
+/// @param {String} $value [$dvalue-align-self] - значение CSS-свойства `align-self`
+@mixin align-self($value: $dvalue-align-self) {
 
 	// С помощью функции `is-exist()` проверяем
 	// соответсвие значения `$value` значениям

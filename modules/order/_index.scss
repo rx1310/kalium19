@@ -23,8 +23,8 @@
 /// 		-webkit-order: -1;
 /// 		order: -1;
 /// 	}
-/// @param {String} $value [0] - значение свойства `order`
-@mixin order($value: 0) {
+/// @param {String} $value [$dvalue-order] - значение свойства `order`
+@mixin order($value: $dvalue-order) {
 
 	// Если значение `$value` является числом или соответствует
 	// списку `$vvalues-order`, то генерируем

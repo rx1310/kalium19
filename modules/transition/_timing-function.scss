@@ -46,11 +46,11 @@
 /// 		-o-transition-timing-function: steps(5, end);
 /// 		transition-timing-function: steps(5, end);
 /// 	}
-/// @param {String} $timing-function [ease] - значения для CSS-свойства `transition-timing-function`
+/// @param {String} $timing-function [$dvalue-transition-timing-function] - значения для CSS-свойства `transition-timing-function`
 /// @require {function} is-exist
 /// @require {function} string-contains
 /// @require {mixin} prefixer
-@mixin transition-timing-function($timing-function: ease) {
+@mixin transition-timing-function($timing-function: $dvalue-transition-timing-function) {
 
 	// Проверяем, есть ли значение `$timing-function` в
 	// списке допустимых:

@@ -22,8 +22,8 @@
 /// 		-webkit-align-content: flex-start;
 /// 		align-content: flex-start;
 /// 	}
-/// @param {String} $value [stretch] - значение CSS-свойства `align-content`
-@mixin align-content($value: stretch) {
+/// @param {String} $value [$dvalue-align-content] - значение CSS-свойства `align-content`
+@mixin align-content($value: $dvalue-align-content) {
 
 	// С помощью функции `is-exist()` проверяем
 	// соответсвие значения `$value` значениям

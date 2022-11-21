@@ -22,9 +22,9 @@
 /// 		-o-tab-size: 3;
 /// 		tab-size: 3;
 /// 	}
-/// @param {Number} $size [2] - значение CSS-свойства `tab-size`
+/// @param {Number} $size [$dvalue-tab-size] - значение CSS-свойства `tab-size`
 /// @require {function} is-int
-@mixin tab-size($size: 2) {
+@mixin tab-size($size: $dvalue-tab-size) {
 
 	// С помощью функции `is-int()` проверяем
 	// соответствие значение `$size` Sass-типу

@@ -21,8 +21,8 @@
 /// 		-moz-column-rule-style: hidden;
 /// 		column-rule-style: hidden;
 /// 	}
-/// @param {String} $value [none] - значение свойства `column-rule-style`
-@mixin column-rule-style($value: none) {
+/// @param {String} $value [$dvalue-column-rule-style] - значение свойства `column-rule-style`
+@mixin column-rule-style($value: $dvalue-column-rule-style) {
 
 	// С помощью функции `is-exist()` проверяем,
 	// есть ли значение параметра `$value`

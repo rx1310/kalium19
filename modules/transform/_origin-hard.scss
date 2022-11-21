@@ -24,10 +24,13 @@
 /// 		-o-transform-origin: 100% 0;
 /// 		transform-origin: 100% 0;
 /// 	}
-/// @param {Number | String} $x [50%] - координата по оси X
-/// @param {Number | String} $y [50%] - координата по оси Y
-/// @param {Number} $z [0] - координата по оси Z
-@mixin transform-origin-hard($x: 50%, $y: 50%, $z: 0) {
+/// @param {Number | String} $x [$dvalue-transform-origin-hard_x] - координата по оси X
+/// @param {Number | String} $y [$dvalue-transform-origin-hard_y] - координата по оси Y
+/// @param {Number} $z [$dvalue-transform-origin-hard_z] - координата по оси Z
+@mixin transform-origin-hard(
+	$x: $dvalue-transform-origin-hard_x,
+	$y: $dvalue-transform-origin-hard_y,
+	$z: $dvalue-transform-origin-hard_z) {
 
 	// Генерируем свойство с браузерными префиксами
 	// с помощью миксина `prefixer()`:

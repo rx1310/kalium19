@@ -32,9 +32,9 @@
 /// 		  scroll-behavior: auto;
 /// 		}
 /// 	}
-/// @param {String} $value [smooth] - значение свойства `scroll-behavior`
+/// @param {String} $value [$dvalue-scroll-behavior] - значение свойства `scroll-behavior`
 /// @require {function} is-exist
-@mixin scroll-behavior($value: smooth) {
+@mixin scroll-behavior($value: $dvalue-scroll-behavior) {
 
 	// С помощью функции `is-exist()` проверяем наличие
 	// значения из `$value` в `$vvalues-scroll-behavior`.

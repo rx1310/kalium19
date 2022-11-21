@@ -22,8 +22,8 @@
 /// 		-webkit-flex-wrap: wrap;
 /// 		flex-wrap: wrap;
 /// 	}
-/// @param {String} $value [nowrap] - значение свойства `flex-wrap`
-@mixin flex-wrap($value: nowrap) {
+/// @param {String} $value [$dvalue-flex-wrap] - значение свойства `flex-wrap`
+@mixin flex-wrap($value: $dvalue-flex-wrap) {
 
 	// С помощью функции `is-exist()` проверяем
 	// значение `$value` на соответсвие списку

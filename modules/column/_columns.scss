@@ -20,8 +20,8 @@
 /// 		-moz-columns: 200px auto;
 /// 		columns: 200px auto;
 /// 	}
-/// @param {String | Number} $value [auto] - значения свойства `columns`
-@mixin columns($value: auto) {
+/// @param {String | Number} $value [$dvalue-columns] - значения свойства `columns`
+@mixin columns($value: $dvalue-columns) {
 
 	// С помощью миксина `prefixer()` генерируем
 	// CSS-свойство `columns` со всеми нужными

@@ -36,9 +36,9 @@
 /// 		  display: -moz-box;
 /// 		}
 /// 	}
-/// @param {Number} $number-lines [1] - количество строк
+/// @param {Number} $number-lines [$dvalue-text-shroten] - количество строк
 /// @require {function} is-int для проверки вводимых данных на соответствие типу `Number`
-@mixin text-shorten($number-lines: 1) {
+@mixin text-shorten($number-lines: $dvalue-text-shroten) {
 
 	// Проверяем, является ли значение `$number-lines`
 	// числом с помощью функции `is-int()`:

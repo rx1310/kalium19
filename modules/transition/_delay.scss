@@ -22,8 +22,8 @@
 /// 		-o-transition-delay: 0.5s;
 /// 		transition-delay: 0.5s;
 /// 	}
-/// @param {Number} $delay [0s] - значения для CSS-свойства `transition-delay`
-@mixin transition-delay($delay: 0s) {
+/// @param {Number} $delay [$dvalue-transition-delay] - значения для CSS-свойства `transition-delay`
+@mixin transition-delay($delay: $dvalue-transition-delay) {
 
 	// Проверяем с помощью функции `is-time()`
 	// введенный параметр:

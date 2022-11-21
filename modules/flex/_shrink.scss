@@ -23,8 +23,8 @@
 /// 		-webkit-flex-shrink: 1;
 /// 		flex-shrink: 1;
 /// 	}
-/// @param {String} $value [1] - значение свойства `flex-shrink`
-@mixin flex-shrink($value: 1) {
+/// @param {String} $value [$dvalue-flex-shrink] - значение свойства `flex-shrink`
+@mixin flex-shrink($value: $dvalue-flex-shrink) {
 
 	// Если значение `$value` является числом или соответствует
 	// списку `$vvalues-flex-shrink`, то генерируем

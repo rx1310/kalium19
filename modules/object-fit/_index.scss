@@ -20,8 +20,8 @@
 /// 		-o-object-fit: fill;
 /// 		object-fit: fill;
 /// 	}
-/// @param {String} $value [fill] - значение CSS-свойства `object-fit`
-@mixin object-fit($value: fill) {
+/// @param {String} $value [$dvalue-object-fit] - значение CSS-свойства `object-fit`
+@mixin object-fit($value: $dvalue-object-fit) {
 
 	// С помощью функции `is-exist()` проверяем
 	// на допустимость знчения из `$value`:

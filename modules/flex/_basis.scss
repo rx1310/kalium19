@@ -19,8 +19,8 @@
 /// 		-webkit-flex-basis: 15%;
 /// 		flex-basis: 15%;
 /// 	}
-/// @param {String | Number} $size [auto] - размер элемента в `px`, `mm`, `pt` или в процентах вдоль главной оси.
-@mixin flex-basis($size: auto) {
+/// @param {String | Number} $size [$dvalue-flex-basis] - размер элемента в `px`, `mm`, `pt` или в процентах вдоль главной оси.
+@mixin flex-basis($size: $dvalue-flex-basis) {
 
 	// С помощью миксина `prefixer()` генерируем
 	// CSS-свойство `flex-basis` со всеми нужными

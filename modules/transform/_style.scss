@@ -37,10 +37,10 @@
 /// 		-moz-transform-style: preserve-3d;
 /// 		transform-style: preserve-3d;
 /// 	}
-/// @param {String} $style [flat] - значения для CSS-свойства `transform-style`
+/// @param {String} $style [$dvalue-transform-style] - значения для CSS-свойства `transform-style`
 /// @require {function} is-exist
 /// @require {mixin} prefixer
-@mixin transform-style($style: flat) {
+@mixin transform-style($style: $dvalue-transform-style) {
 
 	// С помощью функции `is-exist()` проверяем
 	// есть ли в списке допустимых значений

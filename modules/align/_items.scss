@@ -22,8 +22,8 @@
 /// 		-webkit-align-items: center;
 /// 		align-items: center;
 /// 	}
-/// @param {String} $value [stretch] - значение CSS-свойства `align-items`
-@mixin align-items($value: stretch) {
+/// @param {String} $value [$dvalue-align-items] - значение CSS-свойства `align-items`
+@mixin align-items($value: $dvalue-align-items) {
 
 	// С помощью функции `is-exist()` проверяем
 	// соответсвие значения `$value` значениям

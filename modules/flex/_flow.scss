@@ -22,8 +22,8 @@
 /// 		-webkit-flex-flow: column wrap;
 /// 		flex-flow: column wrap;
 /// 	}
-/// @param {String} $value ['row nowrap'] - значение CSS-свойства `flex-flow`
-@mixin flex-flow($value: 'row nowrap') {
+/// @param {String} $value [$dvalue-flex-flow] - значение CSS-свойства `flex-flow`
+@mixin flex-flow($value: $dvalue-flex-flow) {
 
 	// С помощью функции `is-exist()` проверяем
 	// соответсвие значения `$value` значениям

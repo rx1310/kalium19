@@ -23,8 +23,8 @@
 /// 		-moz-column-fill: auto;
 /// 		column-fill: auto;
 /// 	}
-/// @param {String} $value [balance] - значение CSS-свойства `column-fill`
-@mixin column-fill($value: balance) {
+/// @param {String} $value [$dvalue-column-fill] - значение CSS-свойства `column-fill`
+@mixin column-fill($value: $dvalue-column-fill) {
 
 	// С помощью функции `is-exist()` проверяем,
 	// есть ли значение параметра `$value`

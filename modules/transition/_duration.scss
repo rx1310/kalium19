@@ -22,8 +22,8 @@
 /// 		-o-transition-duration: 2s;
 /// 		transition-duration: 2s;
 /// 	}
-/// @param {Number} $duration [0s] - значения для CSS-свойства `transition-duration`
-@mixin transition-duration($duration: 0s) {
+/// @param {Number} $duration [$dvalue-transition-duration] - значения для CSS-свойства `transition-duration`
+@mixin transition-duration($duration: $dvalue-transition-duration) {
 
 	// Проверяем с помощью функции `is-time()`
 	// введенный параметр:

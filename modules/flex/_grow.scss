@@ -23,8 +23,8 @@
 /// 		-webkit-flex-grow: 1;
 /// 		flex-grow: 1;
 /// 	}
-/// @param {String} $value [0] - значение свойства `flex-grow`
-@mixin flex-grow($value: 0) {
+/// @param {String} $value [$dvalue-flex-grow] - значение свойства `flex-grow`
+@mixin flex-grow($value: $dvalue-flex-grow) {
 
 	// Если значение `$value` является числом или соответствует
 	// списку `$vvalues-flex-grow`, то генерируем

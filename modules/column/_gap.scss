@@ -24,8 +24,8 @@
 /// 		-moz-column-gap: 2%;
 /// 		column-gap: 2%;
 /// 	}
-/// @param {String} $value [normal] - значение свойства `column-gap`
-@mixin column-gap($value: normal) {
+/// @param {String} $value [$dvalue-column-gap] - значение свойства `column-gap`
+@mixin column-gap($value: $dvalue-column-gap) {
 
 	// Если значение `$value` является числом или соответствует
 	// списку `$vvalues-column-gap`, то генерируем

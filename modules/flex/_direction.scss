@@ -20,8 +20,8 @@
 /// 		-webkit-flex-direction: column;
 /// 		flex-direction: column;
 /// 	}
-/// @param {String} $direction [row] - направление основных осей в контейнере
-@mixin flex-direction($direction: row) {
+/// @param {String} $direction [$dvalue-flex-direction] - направление основных осей в контейнере
+@mixin flex-direction($direction: $dvalue-flex-direction) {
 
 	// С помощью функции `is-exist()` проверяем,
 	// есть ли значение параметра `$direction`

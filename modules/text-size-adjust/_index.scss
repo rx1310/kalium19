@@ -44,8 +44,8 @@
 /// 		-ms-text-size-adjust: auto;
 /// 		text-size-adjust: auto;
 /// 	}
-/// @param {String | Number} $value [none] - значения для CSS-свойства `text-size-adjust`
-@mixin text-size-adjust($value: none) {
+/// @param {String | Number} $value [$dvalue-text-size-adjust] - значения для CSS-свойства `text-size-adjust`
+@mixin text-size-adjust($value: $dvalue-text-size-adjust) {
 
 	// С помощью миксина `prefixer()` сгенерируем
 	// CSS-свойство `text-size-adjust` со всеми

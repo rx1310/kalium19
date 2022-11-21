@@ -22,10 +22,14 @@
 /// 		-ms-flex: 1 0 auto;
 /// 		flex: 1 0 auto;
 /// 	}
-/// @param {Number} $grow [1] - сколько пространства может занимать flex внутри контейнера
-/// @param {Number} $shrink [0] - коэффициент сжатия флексов в контейнере и задаёт, насколько элемент будет уменьшаться по отношению к другим флексам, чтобы разместить все элементы в одну строку
-/// @param {Number | String} $basis [auto] - размер элемента в px, mm, pt или в процентах вдоль главной оси
-@mixin flex($grow: 1, $shrink: 0, $basis: auto) {
+/// @param {Number} $grow [$dvalue-flex-grow] - сколько пространства может занимать flex внутри контейнера
+/// @param {Number} $shrink [$dvalue-flex-shrink] - коэффициент сжатия флексов в контейнере и задаёт, насколько элемент будет уменьшаться по отношению к другим флексам, чтобы разместить все элементы в одну строку
+/// @param {Number | String} $basis [$dvalue-flex-basis] - размер элемента в px, mm, pt или в процентах вдоль главной оси
+@mixin flex(
+	$grow: $dvalue-flex-grow,
+	$shrink: $dvalue-flex-shrink,
+	$basis: $dvalue-flex-basis
+	) {
 
 	// Установите переменную, которая будет
 	// использоваться свойствами `box-flex`:

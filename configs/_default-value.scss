@@ -7,3 +7,346 @@
 /// @type Number
 /// @see {mixin} border-radius
 $dvalue-border-radius: 0 !default;
+
+/// Дефолтное значение миксина `align-content()`.
+/// ---
+/// @name dvalue-align-content
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} align-content
+$dvalue-align-content: stretch !default;
+
+/// Дефолтное значение миксина `align-items()`.
+/// ---
+/// @name dvalue-align-items
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} align-items
+$dvalue-align-items: stretch !default;
+
+/// Дефолтное значение миксина `align-self()`.
+/// ---
+/// @name dvalue-align-self
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} align-self
+$dvalue-align-self: auto !default;
+
+/// Дефолтное значение миксина `box-sizing()`.
+/// ---
+/// @name dvalue-box-sizing
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} box-sizing
+$dvalue-box-sizing: border-box !default;
+
+/// Дефолтное значение миксина `columns()`.
+/// ---
+/// @name dvalue-columns
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} columns
+$dvalue-columns: auto !default;
+
+/// Дефолтное значение миксина `column-count()`.
+/// ---
+/// @name dvalue-column-count
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} column-count
+$dvalue-column-count: auto !default;
+
+/// Дефолтное значение миксина `column-fill()`.
+/// ---
+/// @name dvalue-column-fill
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} column-fill
+$dvalue-column-fill: balance !default;
+
+/// Дефолтное значение миксина `column-gap()`.
+/// ---
+/// @name dvalue-column-gap
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} column-gap
+$dvalue-column-gap: normal !default;
+
+/// Дефолтное значение миксина `column-rule-style()`.
+/// ---
+/// @name dvalue-column-rule-style
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} column-rule-style
+$dvalue-column-rule-style: none !default;
+
+/// Дефолтное значение миксина `column-rule-width()`.
+/// ---
+/// @name dvalue-column-rule-width
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} column-rule-width
+$dvalue-column-rule-width: medium !default;
+
+/// Дефолтное значение миксина `column-span()`.
+/// ---
+/// @name dvalue-column-span
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} column-span
+$dvalue-column-span: none !default;
+
+/// Дефолтное значение миксина `column-width()`.
+/// ---
+/// @name dvalue-column-width
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} column-width
+$dvalue-column-width: auto !default;
+
+/// Дефолтное значение миксина `flex-basis()`.
+/// ---
+/// @name dvalue-flex-basis
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} flex-basis
+$dvalue-flex-basis: auto !default;
+
+/// Дефолтное значение миксина `flexbox()`.
+/// ---
+/// @name dvalue-flexbox
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} flexbox
+$dvalue-flexbox: block !default;
+
+/// Дефолтное значение миксина `flex-direction()`.
+/// ---
+/// @name dvalue-flex-direction
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} flex-direction
+$dvalue-flex-direction: row !default;
+
+/// Дефолтное значение миксина `flex-flow()`.
+/// ---
+/// @name dvalue-flex-flow
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} flex-flow
+$dvalue-flex-flow: 'row nowrap' !default;
+
+/// Дефолтное значение миксина `flex-grow()`.
+/// ---
+/// @name dvalue-flex-grow
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type Number
+/// @see {mixin} flex-grow
+$dvalue-flex-grow: 0 !default;
+
+/// Дефолтное значение миксина `flex-shrink()`.
+/// ---
+/// @name dvalue-flex-shrink
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type Number
+/// @see {mixin} flex-shrink
+$dvalue-flex-shrink: 1 !default;
+
+/// Дефолтное значение миксина `flex-wrap()`.
+/// ---
+/// @name dvalue-flex-wrap
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} flex-wrap
+$dvalue-flex-wrap: nowrap !default;
+
+/// Дефолтное значение миксина `justify-content()`.
+/// ---
+/// @name dvalue-justify-content
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} justify-content
+$dvalue-justify-content: flex-start !default;
+
+/// Дефолтное значение миксина `object-fit()`.
+/// ---
+/// @name dvalue-object-fit
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} object-fit
+$dvalue-object-fit: fill !default;
+
+/// Дефолтное значение миксина `order()`.
+/// ---
+/// @name dvalue-order
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type Number
+/// @see {mixin} order
+$dvalue-order: 0 !default;
+
+/// Дефолтное значение миксина `scroll-behavior()`.
+/// ---
+/// @name dvalue-scroll-behavior
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} scroll-behavior
+$dvalue-scroll-behavior: smooth !default;
+
+/// Дефолтное значение миксина `tab-size()`.
+/// ---
+/// @name dvalue-tab-size
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type Number
+/// @see {mixin} tab-size
+$dvalue-tab-size: 2 !default;
+
+/// Дефолтное значение миксина `text-shroten()`.
+/// ---
+/// @name dvalue-text-shroten
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type Number
+/// @see {mixin} text-shroten
+$dvalue-text-shroten: 1 !default;
+
+/// Дефолтное значение миксина `text-size-adjust()`.
+/// ---
+/// @name dvalue-text-size-adjust
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String | Number
+/// @see {mixin} text-size-adjust
+$dvalue-text-size-adjust: none !default;
+
+/// Дефолтное значение миксина `transform-origin-hard()`.
+/// Ось X
+/// ---
+/// @name dvalue-transform-origin-hard_x
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type Number
+/// @see {mixin} transform-origin-hard
+$dvalue-transform-origin-hard_x: 50% !default;
+
+/// Дефолтное значение миксина `transform-origin-hard()`.
+/// Ось Y
+/// ---
+/// @name dvalue-transform-origin-hard_y
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type Number
+/// @see {mixin} transform-origin-hard
+$dvalue-transform-origin-hard_y: 50% !default;
+
+/// Дефолтное значение миксина `transform-origin-hard()`.
+/// Ось Z
+/// ---
+/// @name dvalue-transform-origin-hard_z
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type Number
+/// @see {mixin} transform-origin-hard
+$dvalue-transform-origin-hard_z: 0 !default;
+
+/// Дефолтное значение миксина `transform-style()`.
+/// ---
+/// @name dvalue-transform-style
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} transform-style
+$dvalue-transform-style: flat !default;
+
+/// Дефолтное значение миксина `transition-delay()`.
+/// ---
+/// @name dvalue-transition-delay
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type Number
+/// @see {mixin} transition-delay
+$dvalue-transition-delay: 0s !default;
+
+/// Дефолтное значение миксина `transition-duration()`.
+/// ---
+/// @name dvalue-transition-duration
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type Number
+/// @see {mixin} transition-duration
+$dvalue-transition-duration: 0s !default;
+
+/// Дефолтное значение миксина `transition-property()`.
+/// ---
+/// @name dvalue-transition-property
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} transition-property
+$dvalue-transition-property: all !default;
+
+/// Дефолтное значение миксина `transition-timing-function()`.
+/// ---
+/// @name dvalue-transition-timing-function
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} transition-timing-function
+$dvalue-transition-timing-function: ease !default;

@@ -24,8 +24,8 @@
 /// 		-moz-column-rule-width: thick;
 /// 		column-rule-width: thick;
 /// 	}
-/// @param {String} $value [medium] - значение свойства `column-rule-width`
-@mixin column-rule-width($value: medium) {
+/// @param {String} $value [$dvalue-column-rule-width] - значение свойства `column-rule-width`
+@mixin column-rule-width($value: $dvalue-column-rule-width) {
 
 	// Если значение `$value` является числом или соответствует
 	// списку `$vvalues-column-rule-width`, то генерируем

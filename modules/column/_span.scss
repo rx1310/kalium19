@@ -22,8 +22,8 @@
 /// 		-webkit-column-span: all;
 /// 		column-span: all;
 /// 	}
-/// @param {String} $value [none] - значение CSS-свойства `column-span`
-@mixin column-span($value: none) {
+/// @param {String} $value [$dvalue-column-span] - значение CSS-свойства `column-span`
+@mixin column-span($value: $dvalue-column-span) {
 
 	// С помощью функции `is-exist()` проверяем,
 	// есть ли значение параметра `$value`

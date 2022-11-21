@@ -23,8 +23,8 @@
 /// 		display: -webkit-box;
 /// 		display: -moz-box;
 /// 	}
-/// @param {String} $value [block] - тип контейнера
-@mixin flexbox($value: block) {
+/// @param {String} $value [$dvalue-flexbox] - тип контейнера
+@mixin flexbox($value: $dvalue-flexbox) {
 
 	// Если значение параметра `$value` равно
 	// `block`, то генерируем `display: flex`:
