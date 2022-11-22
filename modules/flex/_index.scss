@@ -35,7 +35,7 @@
 	// использоваться свойствами `box-flex`:
 	$_box-flex: $grow;
 
-	@if is-list(grow) {
+	@if is-list($grow) {
 		$_box-flex: nth($grow, 1);
 	}
 

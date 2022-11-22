@@ -14,7 +14,7 @@
 /// 	@debug url-encode('#foo@bar'); //=> %23foo%40bar
 /// 	@debug url-encode('https://github.com'); //=> https%3A%2F%2Fgithub.com
 /// @param {String} $url - ссылка, символы которой нужно закодировать
-/// @return {String} строку с закодированными символами
+/// @return {String} - строку с закодированными символами
 /// @require {function} string-replace
 @function url-encode($url) {
 
