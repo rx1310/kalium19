@@ -16,10 +16,10 @@
 /// 	}
 /// @example css - Результат в CSS
 /// 	.example {
-/// 		-webkit-animation-delay: animationName 3s ease-in-out infinite;
-/// 		-moz-animation-delay: animationName 3s ease-in-out infinite;
-/// 		-o-animation-delay: animationName 3s ease-in-out infinite;
-/// 		animation-delay: animationName 3s ease-in-out infinite;
+/// 		-webkit-animation: animationName 3s ease-in-out infinite;
+/// 		-moz-animation: animationName 3s ease-in-out infinite;
+/// 		-o-animation: animationName 3s ease-in-out infinite;
+/// 		animation: animationName 3s ease-in-out infinite;
 /// 	}
 /// @param {String | Number} $params... - значение CSS-свойства `animation`
 @mixin animation($params...) {
@@ -27,7 +27,7 @@
 	// С помощью миксина `prefixer()` добавляем
 	// к свойству все необходимые браузерные префиксы:
 	@include prefixer(
-		animation-delay,
+		animation,
 		$params,
 		$prefixes-animation
 	);
