@@ -369,3 +369,14 @@ $vvalues-box-sizing: border-box content-box inherit initial revert revert-layer 
 /// @type List
 /// @see {mixin} animation-delay
 $vvalues-animation-delay: '<time>', 'Example: 0s', 'Example: 3s', 'Example: -10s' !default;
+
+/// Список допустимых значений для
+/// миксина `animation-direction()`.
+/// ---
+/// @name vvalues-animation-direction
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} animation-direction
+$vvalues-animation-direction: normal reverse alternate alternate-reverse inherit initial revert revert-layer unset 'normal, reverse' 'alternate, reverse, normal' !default;

@@ -595,3 +595,15 @@ $prefixes-animation: webkit moz o !default;
 /// @see {mixin} prefixer
 /// @see {mixin} animation-delay
 $prefixes-animation-delay: webkit moz o !default;
+
+/// Список браузерных префиксов для
+/// CSS-свойства `animation-direction`.
+/// ---
+/// @name prefixes-animation-direction
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} animation-direction
+$prefixes-animation-direction: webkit moz o !default;

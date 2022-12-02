@@ -388,3 +388,12 @@ $dvalue-amcss_prefix: 'am-' !default;
 /// @see {mixin} transition-animation-delay
 $dvalue-animation-delay: 0s !default;
 
+/// Дефолтное значение миксина `transition-animation-direction()`.
+/// ---
+/// @name dvalue-animation-direction
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} transition-animation-direction
+$dvalue-animation-direction: normal !default;
