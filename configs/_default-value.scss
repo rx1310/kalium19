@@ -397,3 +397,13 @@ $dvalue-animation-delay: 0s !default;
 /// @type String
 /// @see {mixin} transition-animation-direction
 $dvalue-animation-direction: normal !default;
+
+/// Дефолтное значение миксина `transition-animation-duration()`.
+/// ---
+/// @name dvalue-animation-duration
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String | Number
+/// @see {mixin} transition-animation-duration
+$dvalue-animation-duration: 0s !default;

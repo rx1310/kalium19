@@ -1,0 +1,55 @@
+@use '../../configs' as *;
+@use '../prefixer' as *;
+@use '../utilities/is-time' as *;
+@use '../@invalid-value-message' as *;
+
+/// Миксин `animation-duration()` позволяет сгенерировать
+/// свойство `animation-duration` с нужными браузерными
+/// префиксами.
+/// ---
+/// @name animation-duration
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include animation-duration(.7s);
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 		-webkit-animation-duration: 0.7s;
+/// 		-moz-animation-duration: 0.7s;
+/// 		-o-animation-duration: 0.7s;
+/// 		animation-duration: 0.7s;
+/// 	}
+/// @param {Number} $duration [$dvalue-animation-duration] - значение CSS-свойства `animation-duration`
+/// @require {function} is-time
+@mixin animation-duration($duration: $dvalue-animation-duration) {
+
+	// С помощью функции `is-time()` проверяем
+	// соответствие значения `$duration`:
+	@if is-time($duration, false) {
+
+		// С помощью миксина `prefixer()`
+		// добавляем нужные браузерные префиксы
+		// CSS-свойству `animation-duration`:
+		@include prefixer(
+			animation-duration,
+			$duration,
+			$prefixes-animation-duration
+		);
+
+	}
+
+	// Если функция `is-time()` выдала
+	// `false`, то отображаем ошибку:
+	@else {
+		@include invalid-value-message(
+			$vvalues-animation-duration,
+			animation-duration,
+			$duration
+		);
+	}
+
+}

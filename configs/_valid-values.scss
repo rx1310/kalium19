@@ -380,3 +380,14 @@ $vvalues-animation-delay: '<time>', 'Example: 0s', 'Example: 3s', 'Example: -10s
 /// @type List
 /// @see {mixin} animation-direction
 $vvalues-animation-direction: normal reverse alternate alternate-reverse inherit initial revert revert-layer unset 'normal, reverse' 'alternate, reverse, normal' !default;
+
+/// Список допустимых значений для
+/// миксина `animation-duration()`.
+/// ---
+/// @name vvalues-animation-duration
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} animation-duration
+$vvalues-animation-duration: '<time>', 'Example: 0s', 'Example: 3s', 'Example: -10s' !default;
