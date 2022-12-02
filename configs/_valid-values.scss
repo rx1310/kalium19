@@ -391,3 +391,14 @@ $vvalues-animation-direction: normal reverse alternate alternate-reverse inherit
 /// @type List
 /// @see {mixin} animation-duration
 $vvalues-animation-duration: '<time>', 'Example: 0s', 'Example: 3s', 'Example: -10s' !default;
+
+/// Список допустимых значений для
+/// миксина `animation-iteration-count()`.
+/// ---
+/// @name vvalues-animation-iteration-count
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} animation-iteration-count
+$vvalues-animation-iteration-count: '<number>' infinite inherit initial revert revert-layer unset !default;
