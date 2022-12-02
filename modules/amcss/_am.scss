@@ -1,0 +1,49 @@
+@use 'index' as *;
+@use '../../configs' as *;
+
+/// Миксин `am()` является алиасом миксина
+/// `amcss()` и делает ровно то же самое.
+/// ---
+/// @name am
+/// @alias amcss
+/// @access public
+/// @since 6.0.0
+/// @author AMCSS
+/// @link http://sassmeister.com/gist/2709da070d6aac25a9f5
+/// @link https://github.com/W3cplus/SassMagic/blob/master/src/mixins/_amcss.scss Исходный код
+/// @link https://habr.com/ru/post/256109/ Краткое описание методологии AMCSS на Хабре
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	@include am(module) {
+/// 		color: red;
+/// 	}
+/// 	@include am(module, blue) {
+/// 		color: blue;
+/// 	}
+/// 	@include am(module, large) {
+/// 		font-size: 2em;
+/// 	}
+/// @example css - Результат в CSS
+/// 	[am-module] {
+/// 		color: red;
+/// 	}
+///
+/// 	[am-module~=blue] {
+/// 		color: blue;
+/// 	}
+///
+/// 	[am-module~=large] {
+/// 		font-size: 2em;
+/// 	}
+/// @param {String} $module - название модуля
+/// @param {String | Number} $trait [$dvalue-amcss_trait] - значение модуля
+/// @param {String} prefix [$dvalue-amcss_prefix] - префикс для атрибута
+@mixin am(
+	$module,
+	$trait: $dvalue-amcss_trait,
+	$prefix: $dvalue-amcss_prefix) {
+
+	@include amcss($module, $trait, $prefix) {
+		@content
+	}
+
+}
