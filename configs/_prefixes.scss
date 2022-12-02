@@ -571,3 +571,15 @@ $prefixes-box-shadow: webkit moz !default;
 /// @see {mixin} prefixer
 /// @see {mixin} border-radius
 $prefixes-border-radius: webkit moz !default;
+
+/// Список браузерных префиксов для
+/// CSS-свойства `animation`.
+/// ---
+/// @name prefixes-animation
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} animation
+$prefixes-animation: webkit moz o !default;
