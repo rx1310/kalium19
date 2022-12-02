@@ -380,10 +380,11 @@ $dvalue-amcss_prefix: 'am-' !default;
 
 /// Дефолтное значение миксина `transition-animation-delay()`.
 /// ---
-/// @name dvalue-transition-animation-delay
+/// @name dvalue-animation-delay
 /// @group Configs
 /// @access public
 /// @since 6.0.0
 /// @type String | Number
 /// @see {mixin} transition-animation-delay
-$dvalue-transition-animation-delay: 0s !default;
+$dvalue-animation-delay: 0s !default;
+
