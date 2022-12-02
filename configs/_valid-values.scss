@@ -359,3 +359,13 @@ $vvalues-centering: vertical v horizontal h both b;
 /// @see {mixin} box-sizing
 $vvalues-box-sizing: border-box content-box inherit initial revert revert-layer unset !default;
 
+/// Список допустимых значений для
+/// миксина `animation-delay()`.
+/// ---
+/// @name vvalues-animation-delay
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} animation-delay
+$vvalues-animation-delay: '<time>', 'Example: 0s', 'Example: 3s', 'Example: -10s' !default;
