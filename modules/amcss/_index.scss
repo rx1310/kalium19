@@ -1,0 +1,58 @@
+@use '../../configs' as *;
+
+/// Немного про AMCSS:
+/// Название подхода означает «Модули атрибутов для CSS» (Attribute Modules for CSS).
+/// Это достаточно необычный подход, упоминания которого,
+/// тем не менее, все чаще встречаются в блогах гуру разработки.
+/// Этот миксин позволяет писать стили с учетом методологии намного проще.
+/// ---
+/// @name amcss
+/// @access public
+/// @since 6.0.0
+/// @author AMCSS
+/// @link http://sassmeister.com/gist/2709da070d6aac25a9f5
+/// @link https://github.com/W3cplus/SassMagic/blob/master/src/mixins/_amcss.scss Исходный код
+/// @link https://habr.com/ru/post/256109/ Краткое описание методологии AMCSS на Хабре
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	@include amcss(module) {
+/// 		color: red;
+/// 	}
+/// 	@include amcss(module, blue) {
+/// 		color: blue;
+/// 	}
+/// 	@include amcss(module, large) {
+/// 		font-size: 2em;
+/// 	}
+/// @example css - Результат в CSS
+/// 	[am-module] {
+/// 		color: red;
+/// 	}
+///
+/// 	[am-module~=blue] {
+/// 		color: blue;
+/// 	}
+///
+/// 	[am-module~=large] {
+/// 		font-size: 2em;
+/// 	}
+/// @param {String} $module - название модуля
+/// @param {String | Number} $trait [$dvalue-amcss_trait] - значение модуля
+/// @param {String} prefix [$dvalue-amcss_prefix] - префикс для атрибута
+@mixin amcss(
+	$module,
+	$trait: $dvalue-amcss_trait,
+	$prefix: $dvalue-amcss_prefix) {
+
+	@if $trait != null {
+		[#{$prefix}#{$module}~="#{$trait}"]{
+			@content;
+		}
+	}
+
+	@else {
+		[#{$prefix}#{$module}]{
+			@content;
+		}
+	}
+
+}

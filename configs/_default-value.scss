@@ -1,3 +1,8 @@
+// ? $dvalue-amcss_trait
+// ? `$dvalue` - "пространство имен" для категории переменных
+// ? `amcss` - название миксина или функции
+// ? `trait` - имя параметра миксина или функции (разделение через ниж. подчеркивание)
+
 /// Дефолтное значение миксина `border-radius()`.
 /// ---
 /// @name dvalue-border-radius
@@ -350,3 +355,25 @@ $dvalue-transition-property: all !default;
 /// @type String
 /// @see {mixin} transition-timing-function
 $dvalue-transition-timing-function: ease !default;
+
+/// Дефолтное значение параметра `$trait`
+/// миксина `amcss()`.
+/// ---
+/// @name dvalue-amcss_trait
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} amcss
+$dvalue-amcss_trait: null !default;
+
+/// Дефолтное значение параметра `$prefix`
+/// миксина `amcss()`.
+/// ---
+/// @name dvalue-amcss_prefix
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} amcss
+$dvalue-amcss_prefix: 'am-' !default;
