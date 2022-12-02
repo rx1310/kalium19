@@ -1,7 +1,7 @@
-@use '../../../configs' as *;
-@use '../../prefixer' as *;
-@use '../../utilities/is-exist' as *;
-@use '../../@invalid-value-message' as *;
+@use '../../configs' as *;
+@use '../prefixer' as *;
+@use '../utilities/is-exist' as *;
+@use '../@invalid-value-message' as *;
 
 /// Миксин `animation-direction()` позволяет сгенерировать
 /// CSS-свойство `animation-direction` со всеми нужными
