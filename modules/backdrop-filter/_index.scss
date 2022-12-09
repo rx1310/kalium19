@@ -19,5 +19,10 @@
 	// С помощью миксина `prefixer()` добавляем
 	// CSS-свойству `backdrop-filter` необходимые
 	// браузерные префиксы:
-	@include prefixer(backdrop-filter, $params, $prefixes-backdrop-filter);
+	@include prefixer(
+		backdrop-filter,
+		$params,
+		$prefixes-backdrop-filter
+	);
+
 }
