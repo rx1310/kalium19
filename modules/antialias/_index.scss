@@ -1,0 +1,37 @@
+@use '../../configs' as *;
+
+/// В разных операционных системах и разных браузерах используются
+/// разные механизмы сглаживания шрифта. Браузерные варианты свойства
+/// `font-smooth` позволяют управлять сглаживанием шрифта, пока только в macOS.
+/// ---
+/// @name antialias
+/// @access public
+/// @since 6.0.0
+/// @author gpessia
+/// @link https://github.com/gpessia
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include antialias();
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 	  font-smooth: auto;
+/// 	  -webkit-font-smoothing: antialiased;
+/// 	  -moz-osx-font-smoothing: grayscale;
+/// 	}
+/// @param {Boolean} $create-notify-comment [$antialias-notify] - создать комментарий в результатирующем CSS?
+@mixin antialias($create-notify-comment: $antialias-notify) {
+
+	@if $create-notify-comment {
+		/* ! START ANTIALIAS */
+	}
+
+	font-smooth: auto; // включает сглаживания оттенками серого, когда в сглаживании участвуют целые пиксели
+	-webkit-font-smoothing: antialiased; // сглаживает по аналогии со значением antialiased для WebKit
+	-moz-osx-font-smoothing: grayscale;
+
+	@if $create-notify-comment {
+		/* ! END ANTIALIAS */
+	}
+
+}
