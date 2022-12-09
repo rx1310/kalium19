@@ -438,3 +438,13 @@ $dvalue-animation-name: none !default;
 /// @type String | Number
 /// @see {mixin} animation-play-state
 $dvalue-animation-play-state: running !default;
+
+/// Дефолтное значение миксина `animation-timing-function()`.
+/// ---
+/// @name dvalue-animation-timing-function
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String | Number
+/// @see {mixin} animation-timing-function
+$dvalue-animation-timing-function: ease !default;

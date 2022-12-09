@@ -413,3 +413,14 @@ $vvalues-animation-iteration-count: '<number>' infinite inherit initial revert r
 /// @type List
 /// @see {mixin} animation-play-state
 $vvalues-animation-play-state: running, paused, inherit, initial, revert, revert-layer, unset !default;
+
+/// Список допустимых значений для
+/// миксина `animation-timing-function()`.
+/// ---
+/// @name vvalues-animation-timing-function
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} animation-timing-function
+$vvalues-animation-timing-function: ease ease-in ease-out ease-in-out linear step-start step-end inherit initial unset revert revert-layer !default;
