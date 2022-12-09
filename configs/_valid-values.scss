@@ -402,3 +402,14 @@ $vvalues-animation-duration: '<time>', 'Example: 0s', 'Example: 3s', 'Example: -
 /// @type List
 /// @see {mixin} animation-iteration-count
 $vvalues-animation-iteration-count: '<number>' infinite inherit initial revert revert-layer unset !default;
+
+/// Список допустимых значений для
+/// миксина `animation-play-state()`.
+/// ---
+/// @name vvalues-animation-play-state
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} animation-play-state
+$vvalues-animation-play-state: running, paused, inherit, initial, revert, revert-layer, unset !default;

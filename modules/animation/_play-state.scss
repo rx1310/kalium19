@@ -1,0 +1,40 @@
+@use '../../configs' as *;
+@use '../prefixer' as *;
+@use '../utilities/is-exist' as *;
+@use '../@invalid-value-message' as *;
+
+/// Миксин `animation-play-state()` позволяет сгенерировать
+/// CSS-свойство `animation-play-state` со всеми нужными
+/// браузерными префиксами и добавляет проверку вводимого
+/// значения, чтобы не было ошибок.
+/// ---
+/// @name animation-play-state
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+
+/// @example css - Результат в CSS
+
+/// @param {String} $state [$dvalue-animation-play-state] - значение CSS-свойства `animation-play-state`
+@mixin animation-play-state($state: $dvalue-animation-play-state) {
+
+	// С помощью функции `is-exist()` проверяем
+	// соответсвие значения `$state` значениям
+	// из списка `$vvalues-animation-play-state`:
+	@if is-exist($vvalues-animation-play-state, $state) {
+
+		// Если соответствие найдено, то с помощью
+		// миксина `prefixer()` генерируем CSS-свойство
+		// `animation-play-state` со всеми нужными браузерными префиксами:
+		@include prefixer(animation-play-state, $state, $prefixes-animation-play-state);
+
+	}
+
+	// Если нет соответствий, то выводим ошибку:
+	@else {
+		@include invalid-value-message($vvalues-animation-play-state, animation-play-state, $state);
+	}
+
+}
