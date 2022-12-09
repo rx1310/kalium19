@@ -1,0 +1,23 @@
+@use '../../configs' as *;
+@use '../prefixer' as *;
+
+/// Миксин `backdrop-filter()` также является лишь обёрткой над
+/// миксином `prefixer()`, который добавляет CSS-свойству
+/// `backdrop-filter` браузерные префиксы (в нашем случае префиксы
+/// прописаны в переменной `$prfxs_backdrop-filter`).
+/// ---
+/// @name backdrop-filter
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// @example css - Результат в CSS
+/// @param {String | Number} $params... - значение CSS-свойства `backdrop-filter`
+@mixin backdrop-filter($params...) {
+
+	// С помощью миксина `prefixer()` добавляем
+	// CSS-свойству `backdrop-filter` необходимые
+	// браузерные префиксы:
+	@include prefixer(backdrop-filter, $params, $prefixes-backdrop-filter);
+}
