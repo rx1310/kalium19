@@ -14,9 +14,16 @@
 /// @author Haba Kudzaev (rx1310)
 /// @link https://rx1310.github.io/kalium19
 /// @example scss - Пример использования в Sass (SCSS)
-
+/// 	.example {
+/// 		@include animation-play-state(paused);
+/// 	}
 /// @example css - Результат в CSS
-
+/// 	.example {
+/// 	  -webkit-animation-play-state: paused;
+/// 	  -moz-animation-play-state: paused;
+/// 	  -o-animation-play-state: paused;
+/// 	  animation-play-state: paused;
+/// 	}
 /// @param {String} $state [$dvalue-animation-play-state] - значение CSS-свойства `animation-play-state`
 @mixin animation-play-state($state: $dvalue-animation-play-state) {
 
