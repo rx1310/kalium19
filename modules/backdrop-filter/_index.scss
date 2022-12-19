@@ -12,7 +12,14 @@
 /// @author Haba Kudzaev (rx1310)
 /// @link https://rx1310.github.io/kalium19
 /// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include backdrop-filter(blur(4px))
+/// 	}
 /// @example css - Результат в CSS
+/// 	.example {
+/// 	  -webkit-backdrop-filter: blur(4px);
+/// 	  backdrop-filter: blur(4px);
+/// 	}
 /// @param {String | Number} $params... - значение CSS-свойства `backdrop-filter`
 @mixin backdrop-filter($params...) {
 
