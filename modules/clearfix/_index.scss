@@ -21,8 +21,8 @@
 /// 		display: table;
 /// 		clear: both;
 /// 	}
-/// @param {Boolean} $create-notify-comment [$clearfix-notify] - создать комментарий в результатирующем CSS?
-@mixin clearfix($create-notify-comment: $clearfix-notify) {
+/// @param {Boolean} $create-notify-comment [$notify-clearfix] - создать комментарий в результатирующем CSS?
+@mixin clearfix($create-notify-comment: $notify-clearfix) {
 
 	&::after {
 

@@ -19,8 +19,8 @@
 /// 	  -webkit-font-smoothing: antialiased;
 /// 	  -moz-osx-font-smoothing: grayscale;
 /// 	}
-/// @param {Boolean} $create-notify-comment [$antialias-notify] - создать комментарий в результатирующем CSS?
-@mixin antialias($create-notify-comment: $antialias-notify) {
+/// @param {Boolean} $create-notify-comment [$notify-antialias] - создать комментарий в результатирующем CSS?
+@mixin antialias($create-notify-comment: $notify-antialias) {
 
 	@if $create-notify-comment {
 		/* ! START ANTIALIAS */
