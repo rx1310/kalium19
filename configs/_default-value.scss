@@ -458,3 +458,13 @@ $dvalue-animation-timing-function: ease !default;
 /// @type String
 /// @see {mixin} background-blend-mode
 $dvalue-background-blend-mode: normal !default;
+
+/// Дефолтное значение миксина `background-clip()`.
+/// ---
+/// @name dvalue-background-clip
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} background-clip
+$dvalue-background-clip: border-box !default;

@@ -22,7 +22,7 @@
 @mixin background-blend-mode($mode: $dvalue-background-blend-mode) {
 
 	// С помощью функции `is-exisit()` проверяем наличие значения
-	// `$mode` в списке `$dvalue-background-blend-mode`:
+	// `$mode` в списке `$vvalue-background-blend-mode`:
 	@if is-exist($vvalue-background-blend-mode, $mode) {
 
 		// Дополнительно проверяем на совместимость с Safari 9:
@@ -47,7 +47,7 @@
 	}
 
 	// Если значение из `$mode` не найдено в списке
-	// `$dvalue-background-blend-mode`, то отображаем информацию об этом:
+	// `$vvalue-background-blend-mode`, то отображаем информацию об этом:
 	@else {
 		@include invalid-value-message(
 			$mode,

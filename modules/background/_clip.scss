@@ -1,0 +1,54 @@
+@use '../../configs' as *;
+@use '../prefixer' as *;
+@use '../utilities/is-exist' as *;
+@use '../@invalid-value-message' as *;
+
+/// CSS-свойство `background-clip` определяет как
+/// цвет фона или фоновое изображение будут
+/// выводиться под границами блока. Миксин в свою очередь
+/// позволяет сгенерировать это свойство со всеми необходимыми
+/// браузерными префиксами.
+/// ---
+/// @name background-clip
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include background-clip(padding-box)
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 	  -webkit-background-clip: padding-box;
+/// 	  -moz-background-clip: padding-box;
+/// 	  background-clip: padding-box;
+/// 	}
+/// @param {String} $value [$dvalue-background-clip] - значение CSS-свойства `background-clip`.
+@mixin background-clip($value: $dvalue-background-clip) {
+
+	// С помощью функции `is-exist` проверяем наличие
+	// значение `$value` в списке `$vvalue-background-clip`:
+	@if is-exist($vvalue-background-clip, $value) {
+
+		// С помощью миксина `prefixer()` добавляем необходимые
+		// браузерные префиксы:
+		@include prefixer(
+			background-clip,
+			$value,
+			$prefixes-background-clip
+		);
+
+	}
+
+	// Если значение из `$value` отстутствует в списке
+	// `$vvalue-background-clip` то выводим ошибку:
+	@else {
+		@include invalid-value-message(
+			$vvalue-background-clip,
+			background-clip,
+			$value
+		);
+	}
+
+}

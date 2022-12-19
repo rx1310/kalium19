@@ -679,3 +679,15 @@ $prefixes-animation-timing-function: webkit moz o !default;
 /// @see {mixin} prefixer
 /// @see {mixin} backdrop-filter
 $prefixes-backdrop-filter: webkit !default;
+
+/// Список браузерных префиксов для
+/// CSS-свойства `background-clip`.
+/// ---
+/// @name prefixes-background-clip
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} prefixer
+/// @see {mixin} background-clip
+$prefixes-background-clip: webkit moz !default;
