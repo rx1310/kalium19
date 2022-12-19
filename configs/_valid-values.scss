@@ -424,3 +424,25 @@ $vvalues-animation-play-state: running, paused, inherit, initial, revert, revert
 /// @type List
 /// @see {mixin} animation-timing-function
 $vvalues-animation-timing-function: ease ease-in ease-out ease-in-out linear step-start step-end inherit initial unset revert revert-layer !default;
+
+/// Список допустимых значений для
+/// миксина `background-blend-mode()`.
+/// ---
+/// @name vvalues-background-blend-mode
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} background-blend-mode
+$vvalue-background-blend-mode: normal multiply screen overlay darken lighten color-dodge color-burn hard-light soft-light difference exclusion hue saturation color luminosity !default;
+
+/// Список допустимых значений для
+/// миксина `background-blend-mode() для Safari 9`.
+/// ---
+/// @name vvalues-background-blend-mode_safari9
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type List
+/// @see {mixin} background-blend-mode
+$vvalue-background-blend-mode_safari9: hue saturation color luminosity !default;

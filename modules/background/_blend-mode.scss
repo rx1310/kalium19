@@ -1,0 +1,59 @@
+@use '../../configs' as *;
+@use '../@invalid-value-message' as *;
+@use '../utilities/is-exist' as *;
+
+/// Определяет режим наложения фонового изображения
+/// на фоновый цвет или другие фоновые изображения.
+/// ---
+/// @name background-blend-mode
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include background-blend-mode(multiply)
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 	  background-blend-mode: multiply;
+/// 	}
+/// @param {String} $mode [$dvalue-background-blend-mode] - значение CSS-свойства `background-blend-mode`.
+@mixin background-blend-mode($mode: $dvalue-background-blend-mode) {
+
+	// С помощью функции `is-exisit()` проверяем наличие значения
+	// `$mode` в списке `$dvalue-background-blend-mode`:
+	@if is-exist($vvalue-background-blend-mode, $mode) {
+
+		// Дополнительно проверяем на совместимость с Safari 9:
+		@if is-exist($vvalue-background-blend-mode_safari9, $mode) {
+
+			$_safari9-unsupported-message: '🟧 Safari до версии 10 и iOS Safari до версии 10.3 не поддерживают значения `hue`, `saturation`, `color` и `luminosity`!';
+
+			@if $notify-background-blend-mode-safari9 == true {
+				@if $strict-mode == error {
+					@error $_safari9-unsupported-message;
+				} @else if $strict-mode == warn {
+					@warn $_safari9-unsupported-message;
+				} @else {
+					/* #{$_safari9-unsupported-message} */
+				}
+			}
+
+		}
+
+		background-blend-mode: #{$mode};
+
+	}
+
+	// Если значение из `$mode` не найдено в списке
+	// `$dvalue-background-blend-mode`, то отображаем информацию об этом:
+	@else {
+		@include invalid-value-message(
+			$mode,
+			background-blend-mode,
+			$vvalue-background-blend-mode
+		);
+	}
+
+}

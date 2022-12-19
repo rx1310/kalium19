@@ -540,7 +540,30 @@ $clearfix-notify: false !default;
 /// @group Configs
 /// @access public
 /// @since 6.0.0
-/// @example scss - Пример использования в Sass (SCSS)
-/// @example css - Результат выполнения в CSS
 /// @type Boolean
 $antialias-notify: false !default;
+
+/// Переменная отвечает за активацию генерации
+/// комментариев и предупреждений о несовместимости
+/// некоторых значений CSS-свойства `background-blend-mode`
+/// в некоторых версиях браузера Safari.
+/// ---
+/// @name notify-background-blend-mode-safari9
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type Boolean
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	@use '../kalium19' as * with (
+/// 		$strict-mode: warn,
+/// 		$notify-background-blend-mode-safari9: true
+/// 	);
+///
+/// 	.example {
+/// 		@include background-blend-mode(hue)
+/// 	}
+/// @example css - Результат выполнения в CSS
+/// 	Warning: 🟧 Safari до версии 10 и iOS Safari до версии 10.3 не поддерживают значения `hue`, `saturation`, `color` и `luminosity`!
+/// 	    modules/background/_blend-mode.scss 33:6  background-blend-mode()
+/// 	    test.scss 6:2                             root stylesheet
+$notify-background-blend-mode-safari9: true !default;

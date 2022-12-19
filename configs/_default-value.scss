@@ -415,7 +415,7 @@ $dvalue-animation-duration: 0s !default;
 /// @group Configs
 /// @access public
 /// @since 6.0.0
-/// @type String | Number
+/// @type Number
 /// @see {mixin} transition-animation-iteration-count
 $dvalue-animation-iteration-count: 1 !default;
 
@@ -425,7 +425,7 @@ $dvalue-animation-iteration-count: 1 !default;
 /// @group Configs
 /// @access public
 /// @since 6.0.0
-/// @type String | Number
+/// @type String
 /// @see {mixin} transition-animation-name
 $dvalue-animation-name: none !default;
 
@@ -435,7 +435,7 @@ $dvalue-animation-name: none !default;
 /// @group Configs
 /// @access public
 /// @since 6.0.0
-/// @type String | Number
+/// @type String
 /// @see {mixin} animation-play-state
 $dvalue-animation-play-state: running !default;
 
@@ -445,6 +445,16 @@ $dvalue-animation-play-state: running !default;
 /// @group Configs
 /// @access public
 /// @since 6.0.0
-/// @type String | Number
+/// @type String
 /// @see {mixin} animation-timing-function
 $dvalue-animation-timing-function: ease !default;
+
+/// Дефолтное значение миксина `background-blend-mode()`.
+/// ---
+/// @name dvalue-background-blend-mode
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} background-blend-mode
+$dvalue-background-blend-mode: normal !default;
