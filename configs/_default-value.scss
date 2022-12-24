@@ -490,3 +490,13 @@ $dvalue-background-opacity_color: #000 !default;
 /// @type Number
 /// @see {mixin} background-opacity
 $dvalue-background-opacity_degree: 0.85 !default;
+
+/// Дефолтное значение миксина `background-origin()`.
+/// ---
+/// @name dvalue-background-origin
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String
+/// @see {mixin} background-origin
+$dvalue-background-origin: padding-box !default;
