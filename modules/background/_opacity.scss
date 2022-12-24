@@ -1,0 +1,29 @@
+@use '../../configs' as *;
+
+/// Миксин `background-opacity()` подволяет добавить
+/// к фону (CSS-свойство `background`) прозрачность.
+/// ---
+/// @name background-opacity
+/// @access public
+/// @since 6.0.0
+/// @author Haba Kudzaev (rx1310)
+/// @link https://rx1310.github.io/kalium19
+/// @example scss - Пример использования в Sass (SCSS)
+/// 	.example {
+/// 		@include background-opacity(#ff0000, .71)
+/// 	}
+/// @example css - Результат в CSS
+/// 	.example {
+/// 		background: #ff0000;
+/// 		background: rgba(255, 0, 0, 0.71);
+/// 	}
+/// @param {String | Number} $color [$dvalue-background-opacity_color] - цвет фона.
+/// @param {Number} $degree [$dvalue-background-opacity_degree] - прозрачность фона (alpha-канал по RGBA).
+@mixin background-opacity(
+	$color: $dvalue-background-opacity_color,
+	$degree: $dvalue-background-opacity_degree) {
+
+	background: $color;
+	background: rgba($color, $degree);
+
+}

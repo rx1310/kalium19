@@ -468,3 +468,25 @@ $dvalue-background-blend-mode: normal !default;
 /// @type String
 /// @see {mixin} background-clip
 $dvalue-background-clip: border-box !default;
+
+/// Дефолтное значение параметра `$color`
+/// миксина `background-opacity()`.
+/// ---
+/// @name dvalue-background-opacity_color
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type String | Number
+/// @see {mixin} background-opacity
+$dvalue-background-opacity_color: #000 !default;
+
+/// Дефолтное значение параметра `$degree`
+/// миксина `background-opacity()`.
+/// ---
+/// @name dvalue-background-opacity_degree
+/// @group Configs
+/// @access public
+/// @since 6.0.0
+/// @type Number
+/// @see {mixin} background-opacity
+$dvalue-background-opacity_degree: 0.85 !default;
